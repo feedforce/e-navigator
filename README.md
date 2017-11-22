@@ -1,2 +1,18 @@
-# e-navigator
-Rails template for e-Navigator applicaiton
+# e-Navigator で作って欲しいアプリケーションの説明
+
+## セットアップの手順
+
+セットアップの手順は以下の通りです。
+
+Github上でforkして、これから作るRailsアプリケーションの雛形をコピーします。
+画面の右上にあるforkボタンを押すことで、自分のアカウントにこのアプリケーションをコピーしてくることができます。
+
+[写真]
+
+次に、`bin/setup`を実行します。
+
+最後に、`bundle exec rails s`してから、`http://localhost:3000`にアクセスしてください。
+
+いつもの画面が表示されればセットアップは完了です。
+
+[youre_on_rails]
