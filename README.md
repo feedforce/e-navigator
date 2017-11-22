@@ -9,9 +9,9 @@ Github上でforkして、これから作るRailsアプリケーションの雛�
 
 [写真]
 
-次に、`bin/setup`を実行します。
+次に、`$ bin/setup`を実行します。
 
-最後に、`bundle exec rails s`してから、`http://localhost:3000`にアクセスしてください。
+最後に、`$ bundle exec rails s`してから、`http://localhost:3000`にアクセスしてください。
 
 いつもの画面が表示されればセットアップは完了です。
 
