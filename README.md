@@ -7,7 +7,7 @@
 Github上でforkして、これから作るRailsアプリケーションの雛形をコピーします。
 画面の右上にあるforkボタンを押すことで、自分のアカウントにこのアプリケーションをコピーしてくることができます。
 
-[写真]
+![fork_button](https://github.com/feedforce/e-navigator/wiki/images/fork_button.jpg)
 
 次に、`$ bin/setup`を実行します。
 
@@ -15,7 +15,7 @@ Github上でforkして、これから作るRailsアプリケーションの雛�
 
 いつもの画面が表示されればセットアップは完了です。
 
-[youre_on_rails]
+![youre_on_rails](https://github.com/feedforce/e-navigator/wiki/images/youre_on_rails.png)
 
 ## 作って欲しいもの
 
