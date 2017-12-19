@@ -1,6 +1,13 @@
 # e-Navigator で作って欲しいアプリケーションの説明
 
-## セットアップの手順
+## セットアップ
+
+### 事前にインストールしておいて欲しいもの
+- ruby (version 2.4.3)
+- Bundler
+- PostgreSQL
+
+### セットアップの手順
 
 セットアップの手順は以下の通りです。
 
@@ -8,6 +15,8 @@ Github上でforkして、これから作るRailsアプリケーションの雛�
 画面の右上にあるforkボタンを押すことで、自分のアカウントにこのアプリケーションをコピーしてくることができます。
 
 ![fork_button](https://github.com/feedforce/e-navigator/wiki/images/fork_button.jpg)
+
+forkしたらローカルにcloneしておいてください。
 
 次に、`$ bin/setup`を実行します。
 
