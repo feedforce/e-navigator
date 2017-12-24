@@ -1,0 +1,20 @@
+<h1>profile</h1>
+<form>
+  <p>
+    mail : <%= @user.email %>
+  </p>
+  <p>
+    name : <input type="text" name="name" value="<%= @user.name %>">
+  </p>
+  <p>
+    birthday: <input type="date" name="birthday" value="<%= @user.birthday %>">
+  </p>
+  <p>
+    <input type="radio" name="sex" value=0>other
+    <input type="radio" name="sex" value=1>male
+    <input type="radio" name="sex" value=2>female
+  </p>
+  <p>
+    school : <input type="text" name="school" value="<%= @user.school %>">
+  </p>
+</form>
