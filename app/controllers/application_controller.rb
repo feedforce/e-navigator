@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: DEVISE_PERMISSIBLE_ATTRIBUTES)
     devise_parameter_sanitizer.permit(:account_update, keys: DEVISE_PERMISSIBLE_ATTRIBUTES)
   end
+
+  def after_sign_in_path_for(resource)
+    '/users/edit'
+  end
 end
