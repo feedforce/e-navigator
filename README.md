@@ -86,7 +86,13 @@ gemは何を使っても大丈夫ですし、もちろんフルスクラッチ�
 
 **レビューと今後のアドバイスをしますので、PRを作り、Herokuに途中までのアプリケーションをデプロイしてLINE等で教えてください！**
 
-もし fork した場合の Pull Request の作り方が分からない場合は下記のQiita記事が参考になると思います。
+Herokuにデプロイする際のアプリ名は`e-navigator-{あなたのGithubのID}`としてください。例えばGithubのIDが`feedforce`であれば、以下のようになります。
+
+```
+$ heroku create e-navigator-feedforce
+```
+
+また、fork した際の Pull Request の作り方が分からない場合は、下記のQiita記事が参考になると思います。
 
 - [【GitHub】Pull Requestの手順](https://qiita.com/Commander-Aipa/items/d61d21988a36a4d0e58b)
 
@@ -174,9 +180,10 @@ $ heroku keys:add
 ```
 
 ログインできたら、Herokuのサーバーにアプリケーションの実行場所を作りましょう。
+アプリ名は`e-navigator-{あなたのGithubのID}`としてください。例えばGithubのIDが`feedforce`であれば、以下のようになります。
 
 ```
-$ heroku create
+$ heroku create e-navigator-feedforce
 ```
 
 ### Herokuにデプロイする
