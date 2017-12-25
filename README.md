@@ -81,14 +81,16 @@ gemは何を使っても大丈夫ですし、もちろんフルスクラッチ�
 - 学校名
   - 文字列で大丈夫です
 
-**ここまでできたら前半は完了です！**
+### 前半終了！
+ここまでできたら前半は完了です！
+
 **レビューと今後のアドバイスをしますので、PRを作り、Herokuに途中までのアプリケーションをデプロイしてLINE等で教えてください！**
 
 もし fork した場合の Pull Request の作り方が分からない場合は下記のQiita記事が参考になると思います。
 
 - [【GitHub】Pull Requestの手順](https://qiita.com/Commander-Aipa/items/d61d21988a36a4d0e58b)
 
-Pull Requestを作る際には、Base Repository を自分のGithubアカウントのmasterに切り替えてください。
+Pull Requestを作る際には、以下の画像を参考にして Base Repository を自分のGithubアカウントのmasterに切り替えてください。
 
 ![base_repository](https://github.com/feedforce/e-navigator/wiki/images/base_repository.jpeg)
 
