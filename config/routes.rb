@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'profile' => 'pages#profile'
+  post 'edit' => 'pages#edit'
 
   devise_for :users
   devise_scope :user do
