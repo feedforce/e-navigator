@@ -88,8 +88,9 @@ gemは何を使っても大丈夫ですし、もちろんフルスクラッチ�
 
 - [【GitHub】Pull Requestの手順](https://qiita.com/Commander-Aipa/items/d61d21988a36a4d0e58b)
 
-(後編は後ほど公開します。少々お待ち下さい。)
+Pull Requestを作る際には、Base Repository を自分のGithubアカウントのmasterに切り替えてください。
 
+![base_repository](https://github.com/feedforce/e-navigator/wiki/images/base_repository.jpeg)
 
 ## 後編
 
