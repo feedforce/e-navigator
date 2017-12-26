@@ -1,0 +1,33 @@
+<h1>profile</h1>
+<%= form_for :post, :url => {:action => 'edit'} do |f| %>
+  <p>
+    <%= f.label :email, "mail" %><br>
+    <%= @user.email %>
+  </p>
+
+  <p>
+    <%= f.label :name, "name" %><br>
+    <%= f.text_field :name, value: @user.name %>
+  </p>
+
+  <p>
+    <%= f.label :birthday, "birthday" %><br>
+    <%= f.date_field :birthday, value: @user.birthday %><br>
+  </p>
+
+  <p>
+    <%= f.label :sex, "sex" %><br>
+    <label><%= f.radio_button :sex, :other , checked: "checked"%> other</label>
+    <label><%= f.radio_button :sex, :male %> male</label>
+    <label><%= f.radio_button :sex, :female %> female</label>
+  </p>
+
+  <p>
+    <%= f.label :school, "school" %><br>
+    <%= f.text_field :school, value: @user.school %>
+  </p>
+
+  <p>
+    <input type="submit">
+  </p>
+<% end %>
