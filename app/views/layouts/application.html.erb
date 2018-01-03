@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <header>
+        <% if session[:user_id] %>
+          <%= link_to("ユーザー編集", "/user/#{session[:user_id]}/edit", {method: "post"}) %>
+        <% else %>
+          <%= link_to("新規登録", "/user/new") %>
+        <% end %>
+    </header>
+
     <%= yield %>
   </body>
 </html>

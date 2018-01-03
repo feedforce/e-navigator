@@ -1,0 +1,23 @@
+postgres: could not access directory "/usr/local/pgsql/data": No such file or directory
+Run initdb or pg_basebackup to initialize a PostgreSQL data directory.
+2017-12-29 01:13:51.792 JST [96598] LOG:  could not bind IPv6 address "::1": Address already in use
+2017-12-29 01:13:51.792 JST [96598] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2017-12-29 01:13:51.793 JST [96598] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2017-12-29 01:13:51.793 JST [96598] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2017-12-29 01:13:51.794 JST [96598] WARNING:  could not create listen socket for "localhost"
+2017-12-29 01:13:51.794 JST [96598] FATAL:  could not create any TCP/IP sockets
+2017-12-29 01:13:51.794 JST [96598] LOG:  database system is shut down
+2018-01-03 17:16:35.606 JST [26204] LOG:  could not bind IPv6 address "::1": Address already in use
+2018-01-03 17:16:35.606 JST [26204] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2018-01-03 17:16:35.608 JST [26204] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2018-01-03 17:16:35.608 JST [26204] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2018-01-03 17:16:35.609 JST [26204] WARNING:  could not create listen socket for "localhost"
+2018-01-03 17:16:35.609 JST [26204] FATAL:  could not create any TCP/IP sockets
+2018-01-03 17:16:35.609 JST [26204] LOG:  database system is shut down
+2018-01-03 17:17:23.268 JST [26247] LOG:  could not bind IPv6 address "::1": Address already in use
+2018-01-03 17:17:23.268 JST [26247] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2018-01-03 17:17:23.268 JST [26247] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2018-01-03 17:17:23.268 JST [26247] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2018-01-03 17:17:23.268 JST [26247] WARNING:  could not create listen socket for "localhost"
+2018-01-03 17:17:23.268 JST [26247] FATAL:  could not create any TCP/IP sockets
+2018-01-03 17:17:23.268 JST [26247] LOG:  database system is shut down

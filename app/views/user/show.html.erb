@@ -1,0 +1,17 @@
+<div>
+
+<%= form_tag("/user/update/#{@user.id}") do %>
+<div class="edit">
+  <p>名前</p>
+  <input name="name" value="山田太郎">
+  <p>生年月日</p>
+  <input name="birthday"　value="1990年1月28日">
+  <p>性別</p>
+  <input name="sex">
+  <p>学校名</p>
+  <input name="school_name" value="東京大学">
+  <input type="submit">
+</div>
+<% end %>
+
+</div>
