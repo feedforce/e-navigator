@@ -10,11 +10,32 @@
 
   <body>
     <% if notice %>
-      <p class="notice"><%= notice %></p>
+      <p class="notice display_message"><%= notice %></p>
     <% end %>
     <% if alert %>
-      <p class="alert"><%= alert %></p>
+      <p class="alert display_message"><%= alert %></p>
     <% end %>
+    <header>
+      <nav>
+        <ul>
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to 'プロフィールの編集', edit_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to('ログイン', new_user_session_path) %>
+            </li>
+            <li>
+              <%= link_to('新規登録', new_user_registration_path) %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
