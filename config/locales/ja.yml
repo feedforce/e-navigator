@@ -1,0 +1,18 @@
+ja:
+  enums:
+    user:
+      gender:
+        male: 男性
+        female: 女性
+        unknown: その他
+  activerecord:
+    attributes:
+      user:
+        first_name: 名前
+        last_name: 苗字
+        password: パスワード
+        password_confirmation: パスワード確認
+        email: メールアドレス
+        school_name: 学校名
+        gender: 性別
+        birth_date: 生年月日
