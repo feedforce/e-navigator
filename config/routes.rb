@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions'
    }
 
-  root to: 'toppages#index'
+  root 'toppages#index'
 
   get 'toppages/show'
 
