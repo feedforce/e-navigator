@@ -1,1 +1,32 @@
-edit page.
+<h2>Edit</h2>
+
+<%= form_for(@user) do |f| %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_select :birthday, start_year: (Time.current.year - 30),  end_year: (Time.current.year - 17) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sex %><br />
+    <%= f.select :sex, User.sexes.keys, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :school %><br />
+    <%= f.text_field :school %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
