@@ -1,0 +1,28 @@
+header {
+  align-items: center;
+  display: flex;
+  font-size: 16px;
+  height: 56px;
+  line-height: 40px;
+  padding: 8px 16px;
+  position: relative;
+  .header-brand {
+    height: 40px;
+    .header-link {
+      &:hover {
+        color: inherit;
+      }
+      color: #007bff;
+      text-decoration: none;
+      padding: 0 20px;
+    }
+  }
+  .header-menu {
+    .header-menu-contents {
+      .header-menu-content {
+        color: rgba(0,0,0,0.5);
+        padding: 0 6px;
+      }
+    }
+  }
+}
