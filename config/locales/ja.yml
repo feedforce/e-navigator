@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        password: パスワード
+        password_confirmation: パスワード(確認用)
+        email: Email
+        brithday: 生年月日
+        school: 学校名
+        gender: 性別
