@@ -1,1 +1,12 @@
+<h2>
 index page.
+</h2>
+
+<ul>
+  <li>
+    <%= link_to "Edit Profile", edit_user_path(current_user) %>
+  </li>
+  <li>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  </li>
+</ul>
