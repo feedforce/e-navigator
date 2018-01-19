@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'erb2haml'
-# gem 'devise'
+gem 'devise'
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'therubyracer', platforms: :ruby
 
