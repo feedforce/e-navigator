@@ -1,0 +1,11 @@
+<div class="collapse navbar-collapse" id="navbar-collapse-menu">
+  <ul class="nav navbar-nav navbar-left">
+    <li><%= link_to "e-Navigator", root_path %></li>
+
+    <% if user_signed_in? %>
+    <li><%= link_to "プロフィール", edit_user_registration_path %></li>
+    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+    <% end %>
+
+  </ul>
+</div>
