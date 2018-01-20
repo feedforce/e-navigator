@@ -8,12 +8,13 @@
         %span.icon-bar
       = link_to "e-Navigator", root_path, class: "navbar-brand"
     #navbar-contents.collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        %li
-          = link_to "プロフィール", edit_user_path(current_user.id), class: "header-menu-content"
-        %li
-          = link_to "自分の面接一覧", "", class: "header-menu-content"
-        %li
-          = link_to "メール", "", class: "header-menu-content"
-        %li
-          = link_to "ログアウト", destroy_user_session_path,method: :delete, class: "header-menu-content"
+      -if user_signed_in?
+        %ul.nav.navbar-nav
+          %li
+            = link_to "プロフィール", edit_user_path(current_user.id)
+          %li
+            = link_to "自分の面接一覧", ""
+          %li
+            = link_to "メール", ""
+          %li
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
