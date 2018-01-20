@@ -1,0 +1,25 @@
+%h2 プロフィールページ
+#user-profile
+  = form_for @user do |f|
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    .field
+      = f.label :name
+      %br/
+      = f.text_field :name, autofocus: true
+    .field
+      = f.label :birthday
+      %br/
+      = f.date_select :birthday, start_year: 1988, end_year: (Time.now.year - 18), default: Date.new(1988, 1, 1)
+    .field
+      = f.label :gender
+      %br/
+      = f.select :gender, User.genders_i18n.keys.map {|k| [User.genders_i18n[k], k]}
+    .field
+      = f.label :school
+      %br/
+      = f.text_field :school, autofocus: true
+    .actions
+      = f.submit "登録する", class: "btn btn-success"
