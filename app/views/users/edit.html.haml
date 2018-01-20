@@ -1,3 +1,6 @@
+- if flash[:notice]
+  .alert.alert-info
+    = flash[:notice]
 %h2 プロフィールページ
 #user-profile
   = form_for @user do |f|

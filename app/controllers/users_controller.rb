@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def update
     @user.update(user_params) if @user.id = current_user.id
     if @user.save
-      redirect_back(fallback_location: "")
+      redirect_back(fallback_location: "", notice: '保存しました')
     else
       render :edit
     end
