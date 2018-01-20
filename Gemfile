@@ -15,6 +15,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'devise'
+gem 'bootstrap-sass'
+gem 'enum_help'
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'therubyracer', platforms: :ruby
 

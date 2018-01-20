@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        password: パスワード
+        password_confirmation: パスワード(確認用)
+        email: Email
+        birthday: 生年月日
+        school: 学校名
+        gender: 性別
+  enums:
+    user:
+      gender:
+        female: 女性
+        male: 男性
+        unanswered: 未回答

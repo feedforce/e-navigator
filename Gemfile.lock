@@ -39,12 +39,17 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (8.0.0)
+    autoprefixer-rails (7.2.5)
+      execjs
     bcrypt (3.1.11)
     better_errors (2.4.0)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
     bindex (0.5.0)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.1.0)
     coderay (1.1.2)
@@ -63,6 +68,8 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    enum_help (0.0.17)
+      activesupport (>= 3.0.0)
     erb2haml (0.1.5)
       html2haml
     erubi (1.7.0)
@@ -202,9 +209,11 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
   devise
+  enum_help
   erb2haml
   haml-rails
   jbuilder (~> 2.5)

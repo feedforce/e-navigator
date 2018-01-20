@@ -1,0 +1,60 @@
+#new_user,
+#user-profile {
+  font-size: 16px;
+  .field-flex {
+    display: flex;
+    justify-content:  flex-start;
+  }
+  .field {
+    label {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    input,
+    select {
+      border-radius: 5px;
+      background:none;
+      border: 1px solid #ccc;
+    }
+    input {
+      padding: 6px 8px;
+      width: 100%;
+      &:focus {
+        border: 3px solid #68B2FF;
+        outline: 0;
+      }
+    }
+    select {
+      height: 38px;
+      width: 82px;
+      text-align: center;
+      padding: 12px;
+    }
+    .check_box {
+      font-weight: normal;
+      width: auto;
+      margin-right: 10px;
+    }
+  }
+    .btn-primary,
+    .btn-success {
+      color: #fff;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .btn-success {
+      background-color: #28a745;
+      border-color: #28a745;
+    }
+}
+
+.devise-link {
+  display: block;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #007bff;
+}
