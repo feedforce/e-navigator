@@ -1,6 +1,10 @@
 #new_user,
 #user-profile {
   font-size: 16px;
+  .field-flex {
+    display: flex;
+    justify-content:  flex-start;
+  }
   .field {
     label {
       font-size: 16px;
@@ -15,12 +19,21 @@
     input {
       padding: 6px 8px;
       width: 100%;
+      &:focus {
+        border: 3px solid #68B2FF;
+        outline: 0;
+      }
     }
     select {
       height: 38px;
       width: 82px;
       text-align: center;
       padding: 12px;
+    }
+    .check_box {
+      font-weight: normal;
+      width: auto;
+      margin-right: 10px;
     }
   }
     .btn-primary,

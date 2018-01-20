@@ -1,4 +1,4 @@
-%h2 Log in
+%h2 ログイン
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .field
     = f.label :email
@@ -9,9 +9,9 @@
     %br/
     = f.password_field :password, autocomplete: "off"
   - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
+    .field.field-flex
+      = f.check_box :remember_me, class: "check_box"
+      = f.label :remember_me, "ログインを記憶する", class: "check_box"
   .actions
-    = f.submit "Log in"
+    = f.submit "ログイン", class: "btn btn-success"
 = render "devise/shared/links"

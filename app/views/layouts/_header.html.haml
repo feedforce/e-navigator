@@ -4,7 +4,7 @@
   - if user_signed_in?
     .header-menu
       .header-menu-contents
-        = link_to "プロフィール", "", class: "header-menu-content"
+        = link_to "プロフィール", edit_user_path(current_user.id), class: "header-menu-content"
         = link_to "自分の面接一覧", "", class: "header-menu-content"
         = link_to "メール", "", class: "header-menu-content"
-        = link_to "ログアウト", destroy_user_session_path, class: "header-menu-content"
+        = link_to "ログアウト", destroy_user_session_path,method: :delete, class: "header-menu-content"
