@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
   get '/user/sign_up', to: 'toppages#root', as: "signup"
   get '/user/login', to: 'sessions#new' , as: "login"
-  
+  post 'user/login',   to: 'sessions#create'
+  delete 'user/logout',  to: 'sessions#destroy',as: "logout"
   
 end

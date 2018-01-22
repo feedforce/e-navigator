@@ -12,7 +12,19 @@ header
           | e-Navigator
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right
-          li
-            = link_to 'ログイン', login_path
-          li
-            = link_to '新規登録', signup_path
+          - if sign_in?
+            li.dropdown
+              a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" role="button" 
+                span
+                img class="gravatar" alt="" src="#{gravatar_url(current_user, size: 20)}" 
+                =  current_user.name
+                  span.caret
+            li
+              = link_to 'マイページ', user_path(current_user)
+            li
+              = link_to 'ログアウト', logout_path , method: :delete
+          -else
+            li
+              = link_to 'ログイン', login_path
+            li
+              = link_to '新規登録', signup_path

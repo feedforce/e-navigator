@@ -6,7 +6,7 @@
           .panel-heading
               | ログイン
           .panel-body
-              = bootstrap_form_for(@user) do |f|
+              = bootstrap_form_for(:session, url: login_path) do |f|
                 = f.email_field :email, label: "メールアドレス", placeholder: 'EmailAddress'
                 = f.password_field :password, label: "パスワード" ,placeholder: 'Password'
                 .text-right
