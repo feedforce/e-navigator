@@ -1,0 +1,15 @@
+.container
+  .container-inner
+    .row
+      .col-xs12.col-md-8.col-md-offset-2
+        .panel.panel-default
+          .panel-heading
+              | 新規登録
+          .panel-body
+              = bootstrap_form_for(@user) do |f|
+                = f.text_field :name, label: "お名前", placeholder: 'Name'
+                = f.email_field :email, label: "メールアドレス", placeholder: 'EmailAddress'
+                = f.password_field :password, label: "パスワード" ,placeholder: 'Password'
+                = f.password_field :password_confirmation, label: "パスワード(確認用)", placeholder: 'Password Confirm'
+                .text-right
+                  = f.submit 'Sign Up', class: 'btn btn-success text-right' 
