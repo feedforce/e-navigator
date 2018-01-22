@@ -1,6 +1,6 @@
 class ToppagesController < ApplicationController
   def root
-    render :root
+    @user = User.new
   end
     
 end
