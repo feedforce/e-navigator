@@ -12,7 +12,8 @@
     <header>
         <nav>
             <% if user_signed_in? %>
-                <strong><%= link_to 'e-Navigator', toppages_show_path %></strong>
+                <strong><%= link_to 'e-Navigator', root_path %></strong>
+                <%= link_to 'ユーザーページ', users_show_path %>
                 <%= link_to 'プロフィール変更', edit_user_registration_path %>
                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
             <% else %>
