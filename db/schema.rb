@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 20180122110418) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
-    t.string "name", null: false
-    t.date "birthday", null: false
-    t.integer "sex", null: false
+    t.string "name"
+    t.date "birthday"
+    t.integer "sex"
     t.string "school_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

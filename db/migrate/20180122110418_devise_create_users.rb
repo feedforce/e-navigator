@@ -33,9 +33,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       # t.datetime :locked_at
 
       ## addin culumn
-      t.string  :name,               null: false
-      t.date    :birthday,           null: false
-      t.integer :sex,                null: false
+      t.string  :name
+      t.date    :birthday
+      t.integer :sex
       t.string  :school_name
 
       t.timestamps null: false
