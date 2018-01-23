@@ -19,12 +19,10 @@ class User < ApplicationRecord
   end
   
   def self.find_or_create_from_auth(auth)
-    
     self.find_or_create_by(provider: auth[:provider], uid: auth[:uid]) do |user|
       user.name = auth[:info][:nickname]
       user.email = User.dummy_email(auth)
     end
-    
   end
   
   def self.dummy_email(auth)
