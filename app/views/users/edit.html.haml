@@ -2,29 +2,29 @@
 = form_for(current_user) do |f|
   .field
     .field-label
-      = f.label :email
+      = f.label :email, "Email"
     .field-input
       = f.email_field :email, autofocus: true
   .field
     .field-label
-      = f.label :名前
+      = f.label :name, "名前"
     .field-input
       = f.text_field :name
   .field
     .field-label
-      = f.label :誕生日
+      = f.label :birthday, "誕生日"
     .field-input
       = f.date_select(:birthday, use_month_numbers: true, default: Date.new(1990, 1, 1))
 
   .field
     .field-label
-      = f.label :性別
+      = f.label :sex, "性別"
     .field-input
       = f.select :sex, User.sexes.keys.map {|k| [k, k]}
 
   .field
     .field-label
-      = f.label :学校名
+      = f.label :shool_name, "学校名"
     .field-input
       = f.text_field :school_name
 
