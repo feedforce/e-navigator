@@ -57,3 +57,5 @@ gem 'sweetalert-rails'
 gem 'jquery-rails'
 
 gem 'bootstrap'
+
+gem 'omniauth-github'

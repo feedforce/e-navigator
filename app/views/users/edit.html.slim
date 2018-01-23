@@ -1,0 +1,17 @@
+.container
+  .container-inner
+    .row
+      .col-xs12.col-md-8.col-md-offset-2
+        .panel.panel-default
+          .panel-heading
+              | プロフィールページ
+          .panel-body
+              = bootstrap_form_for(@user) do |f|
+                = f.email_field :email, label: "メールアドレス", placeholder: 'EmailAddress'
+                = f.text_field :name, label: "お名前" ,placeholder: 'Name'
+                = f.date_field :birth_of_date, label: "年齢" ,placeholder: 'Age'
+                = f.text_field :school, label: "学校名" ,placeholder: 'Your schoolname'
+                /= f.select :gender, [["男性", 1], ["女性", 2]],  prompt:"選択してください" 
+                = f.select :gender, User.genders.keys ,  prompt:"選択してください" 
+                .text-right
+                  = f.submit 'プロフィールを更新する', class: 'btn btn-warning btn-block text-right' 

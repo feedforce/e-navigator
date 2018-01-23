@@ -9,7 +9,8 @@
               = bootstrap_form_for(:session, url: login_path) do |f|
                 = f.email_field :email, label: "メールアドレス", placeholder: 'EmailAddress'
                 = f.password_field :password, label: "パスワード" ,placeholder: 'Password'
-                .text-right
-                  = f.submit 'ログイン', class: 'btn btn-success btn-block text-right' 
+                = f.label :remember_me, class: "checkbox inline" do
+                  = f.check_box :ログイン情報を記憶する
+                = f.submit 'ログイン', class: 'btn btn-success btn-block text-right'   
         = link_to "ユーザ登録", signup_path
           

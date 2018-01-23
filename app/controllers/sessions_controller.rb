@@ -7,13 +7,12 @@ class SessionsController < ApplicationController
     user = User.find_by(email: session_params[:email].downcase) # 入力されたEmailを持つユーザが存在するか?
     if user && user.authenticate(session_params[:password])
       session[:user_id] = user.id
-      redirect_to user
+      redirect_to "/"
     else
       swal { error 'ログインに失敗いたしました' }
-      render :new 
+      render :new
     end
   end
-  
   
   def destroy
     session.clear  # session[:user:id] = nil 
