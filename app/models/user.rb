@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: true
-  has_secure_password(validations: false) # bcryptを使用
+  has_secure_password(validations: false) # varidation 無効化
   # 通常のログインの時、６文字以上のバリデーションを付与する
   validates :password, presence: true, length: { minimum: 6 }, confirmation: true, allow_nil: true, if: :password_required?
   
@@ -19,10 +19,12 @@ class User < ApplicationRecord
   end
   
   def self.find_or_create_from_auth(auth)
+    
     self.find_or_create_by(provider: auth[:provider], uid: auth[:uid]) do |user|
       user.name = auth[:info][:nickname]
       user.email = User.dummy_email(auth)
     end
+    
   end
   
   def self.dummy_email(auth)
