@@ -9,8 +9,8 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       
       # OAuth認証 用のカラム
       t.string :provider
-      t.string :uid
-      t.string :nickname
+      t.string :name
+      t.text  :uid
       
       t.timestamps
     end
