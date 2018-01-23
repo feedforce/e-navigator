@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  before_action :require_sign_in, except: [:create] # ログインフィルター
   before_action :set_user, only: [:edit, :update]
+  before_action :check_user, only: [:edit, :update]
   
   def create
     @user = User.new(user_params)
@@ -17,7 +19,7 @@ class UsersController < ApplicationController
   
   def update
    @user = User.find(params[:id])
-   if @user.update_attributes(user_params)
+    if @user.update_attributes(user_params)
       # 更新に成功した場合を扱う。
       swal{ success 'ユーザ情報の編集に成功しました' }
       redirect_to "/"
@@ -36,6 +38,12 @@ class UsersController < ApplicationController
   
   def set_user 
     @user = User.find(params[:id])
+  end
+  
+  def check_user 
+    return if @user == current_user
+    swal{ error '権限がありません' }
+    redirect_to "/"
   end
     
 end
