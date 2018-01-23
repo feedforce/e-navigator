@@ -1,5 +1,8 @@
 <h1>Your interview list</h1>
 
 <% @interviews.each do |interview| %>
-  <%= interview.interview_date %>
+  <%= interview.interview_date %><br>
 <% end %>
+<br>
+<%= link_to "Create new interview", new_user_interview_path %><br><br>
+<%= link_to "Back to index page", users_path %>

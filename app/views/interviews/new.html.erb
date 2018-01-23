@@ -1,0 +1,9 @@
+<h1>Create new interview</h1>
+
+<%= form_for [@user, @interview] do |f| %>
+
+  <%= f.label :interview_date, "Interview Date" %><br>
+  <%= f.datetime_select :interview_date %>
+
+  <%= f.submit "Create new interview" %>
+<% end %>
