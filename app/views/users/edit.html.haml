@@ -20,7 +20,7 @@
     .field-label
       = f.label :sex, "性別"
     .field-input
-      = f.select :sex, User.sexes.keys.map {|k| [k, k]}
+    = f.select :sex, User.sexes.keys.to_a
 
   .field
     .field-label
