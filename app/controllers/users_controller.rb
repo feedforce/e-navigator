@@ -8,11 +8,9 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to action: 'index'
-      flash[:notice] = "プロフィールを更新しました"
+      redirect_to users_path, notice: "プロフィールを更新しました"
     else
-      redirect_to action: 'index'
-      flash[:notice] = "プロフィール更新に失敗しました。"
+      redirect_to users_path, alert: "プロフィール更新に失敗しました"
     end
   end
 
