@@ -1,11 +1,10 @@
 <h1>Your interview list</h1>
 
 <% @interviews.each do |interview| %>
-  <%= interview.interview_date %>
+  <%= interview.interview_date.strftime('%Y年%m月%d日 %H時%M分') %>
   <%= link_to "Edit this interview", edit_user_interview_path(@user, interview) %>
   <%= link_to "Delete this interview", user_interview_path(@user,interview), method: :delete %>
   <br>
 <% end %>
 <br>
 <%= link_to "Create new interview", new_user_interview_path %><br><br>
-<%= link_to "Back to index page", users_path %>
