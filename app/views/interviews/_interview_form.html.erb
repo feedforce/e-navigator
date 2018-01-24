@@ -1,0 +1,17 @@
+<% if @interview.errors.any? %>
+  <ul>
+    <% @interview.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for [@user, @interview] do |f| %>
+
+  <%= f.label :interview_date, "Interview Date" %><br>
+  <%= f.datetime_select :interview_date,
+    start_year: Time.current.year,
+    start_month: Time.current.month %>
+
+  <%= f.submit yield(:button_text) %>
+<% end %>
