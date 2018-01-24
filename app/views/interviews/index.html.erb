@@ -3,6 +3,7 @@
 <% @interviews.each do |interview| %>
   <%= interview.interview_date %>
   <%= link_to "Edit this interview", edit_user_interview_path(@user, interview) %>
+  <%= link_to "Delete this interview", user_interview_path(@user,interview), method: :delete %>
   <br>
 <% end %>
 <br>

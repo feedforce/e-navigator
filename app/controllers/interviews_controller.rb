@@ -34,6 +34,13 @@ class InterviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = current_user
+    @interview = Interview.find(params[:id])
+    @interview.destroy
+    redirect_to user_interviews_url
+  end
+
   private
 
   def interview_params
