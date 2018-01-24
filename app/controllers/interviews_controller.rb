@@ -13,6 +13,7 @@ class InterviewsController < ApplicationController
   def create
     @interview = Interview.new(interview_params)
     if @interview.save
+      flash[:success] = "Interview created."
       redirect_to user_interviews_url
     else
       render 'new'
@@ -24,6 +25,7 @@ class InterviewsController < ApplicationController
 
   def update
     if  @interview.update(interview_params)
+      flash[:success] = "Interview updated."
       redirect_to user_interviews_url
     else
       render 'edit'
@@ -32,6 +34,7 @@ class InterviewsController < ApplicationController
 
   def destroy
     @interview.destroy
+    flash[:success] = "Interview deleted."
     redirect_to user_interviews_url
   end
 
