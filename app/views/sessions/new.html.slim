@@ -9,5 +9,6 @@
               = bootstrap_form_for(:session, url: login_path) do |f|
                 = f.email_field :email, label: "メールアドレス", placeholder: 'EmailAddress'
                 = f.password_field :password, label: "パスワード" ,placeholder: 'Password'
+                = f.submit 'ログイン', class: 'btn btn-success btn-block text-right'   
         = link_to "ユーザ登録", signup_path
         = link_to 'Githubアカウントでログイン', '/auth/github', class: 'btn btn-github' 
