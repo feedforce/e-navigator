@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20180123020600) do
     t.string "password_digest"
     t.date "birth_of_date"
     t.string "school"
+    t.integer "permission"
     t.string "provider"
     t.text "uid"
     t.datetime "created_at", null: false
