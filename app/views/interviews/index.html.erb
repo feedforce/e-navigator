@@ -1,7 +1,9 @@
 <h1>Your interview list</h1>
 
 <% @interviews.each do |interview| %>
-  <%= interview.interview_date %><br>
+  <%= interview.interview_date %>
+  <%= link_to "Edit this interview", edit_user_interview_path(@user, interview) %>
+  <br>
 <% end %>
 <br>
 <%= link_to "Create new interview", new_user_interview_path %><br><br>
