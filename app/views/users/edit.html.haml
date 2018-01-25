@@ -14,7 +14,7 @@
     .field-label
       = f.label :birthday, "誕生日"
     .field-input
-      = f.date_select(:birthday, use_month_numbers: true, default: Date.new(1990, 1, 1))
+      = f.date_select(:birthday, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year), default: Date.new(1990, 1, 1), date_separator: '/')
 
   .field
     .field-label
