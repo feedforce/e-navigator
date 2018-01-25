@@ -3,7 +3,7 @@ class InterviewsController < ApplicationController
   before_action :set_interview, only: [:edit, :update, :destroy]
 
   def index
-    @interviews = @user.interviews.order("interview_date ASC")
+    @interviews = @user.interviews.order("interview_date")
   end
 
   def new
