@@ -24,7 +24,7 @@ gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -45,3 +45,19 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'slim-rails'
+
+gem "bootstrap_form"
+
+gem 'rough_swal'
+
+gem 'sweetalert-rails'
+
+gem 'jquery-rails'
+
+gem 'bootstrap'
+
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'dotenv-rails'

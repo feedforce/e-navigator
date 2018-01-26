@@ -17,13 +17,16 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  template: template0
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
+
 development:
   <<: *default
   database: e-navigator_development
+  template: template0
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -78,8 +81,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: e-navigator_production
-  username: e-navigator
-  password: <%= ENV['E-NAVIGATOR_DATABASE_PASSWORD'] %>

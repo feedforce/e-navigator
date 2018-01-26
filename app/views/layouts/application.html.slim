@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title
+      | ENavigator
+    = csrf_meta_tags
+    link[rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"]
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = stylesheet_link_tag  'application', media: 'all'
+    = javascript_include_tag 'application'
+    script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" 
+    script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js" 
+  body
+    = render 'layouts/navbar'
+    .container
+      = render 'layouts/flash_message'
+    = yield
