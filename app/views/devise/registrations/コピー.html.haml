@@ -1,0 +1,33 @@
+%body
+  .container
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-faded
+      %div{"class:" => ""}
+        %a.nav-link{"data-method" => "get", :href => "/"} e-Navigator
+      %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+    %h2 ユーザー登録
+    %form#new_user.new_user{"accept-charset" => "UTF-8", :action => "/users", :method => "post"}
+      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+      %input{:name => "authenticity_token", :type => "hidden", :value => "dOyZP9K6s9tYeVfXVSh+DnK/6xHHZ0BO8j5/sJEkwRnaSetyZ4xugHDn2dGT5g7uhAEtU5OlHvgKvElrzkcxIw=="}/
+      .field
+        %strong
+          %label{:for => "user_email"} Eメール
+        %br/
+        %input#user_email.form-control{:autofocus => "autofocus", :name => "user[email]", :type => "email", :value => ""}/
+      .field
+        %strong
+          %label{:for => "user_password"} パスワード
+        %em (6 文字以上で入力してください)
+        %br/
+        %input#user_password.form-control{:autocomplete => "off", :name => "user[password]", :type => "password"}/
+      .field
+        %strong
+          %label{:for => "user_password_confirmation"} パスワード（確認用）
+        %br/
+        %input#user_password_confirmation.form-control{:autocomplete => "off", :name => "user[password_confirmation]", :type => "password"}/
+      %br/
+      .actions
+        %input.btn.btn-primary{"data-disable-with" => "登録", :name => "commit", :type => "submit", :value => "登録"}/
+    %br/
+    %a{:href => "/users/sign_in"} ログイン画面へ
+    %br/
