@@ -1,3 +1,6 @@
-%h1 interview#index
-= @interviews.each do |interview|
-  = interview.id
+= "#{@user.name}さんの面接一覧"
+%br
+- @interviews.each do |interview|
+  / = interview.interview_datetime
+  = interview.interview_datetime.strftime("%Y/%m/%d  %H:%M:%S")
+  %br
