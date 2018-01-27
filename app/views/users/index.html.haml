@@ -1,0 +1,17 @@
+.container
+  %nav.navbar.navbar-expand-lg.navbar-light
+    .navbar-brand
+      %a.nav-link{"data-method" => "get", :href => "/"} e-Navigator
+    %button.navbar-toggler.btn{type: "button", data:{target: "navbarNav", toggle: "collapse"}}
+      %span.navbar-toggler-icon
+    .collapse.navbar-collapse#navbarNav
+      %ul.navbar-nav
+        %li.nav-item
+          = link_to edit_user_path(id: current_user.id) do
+            %span
+              プロフィール
+        %li.nav-item
+          = link_to destroy_user_session_path, method: :delete do
+            %span
+              ログアウト
+  %h2 ユーザー一覧

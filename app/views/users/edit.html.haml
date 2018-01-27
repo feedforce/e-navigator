@@ -1,0 +1,47 @@
+.container
+  %nav.navbar.navbar-expand-lg.navbar-light.bg-faded
+    .navbar-brand
+      = link_to root_path do
+        e-Navigator
+    %button.navbar-toggler{type: "button", data:{target: "navbarNav", toggle: "collapse"}}
+      %span.navbar-toggler-icon
+    #navbarNav.collapse.navbar-collapse
+      %ul.navbar-nav
+        %li.nav-item
+          = link_to edit_user_path(id: current_user.id) do
+            %span
+              プロフィール
+        %li.nav-item
+          = link_to destroy_user_session_path, method: :delete do
+            %span
+              ログアウト
+
+  %h1 プロフィールページ
+
+  = form_for @user do |f|
+    .field
+      = f.label :email, class: "user_email"
+      %br/
+      = f.email_field :email, class: "form-control", id: "user_enail", autofocus: true, autocomplete: "email"
+    .field
+      = f.label :名前, class: "user_email"
+      %br/
+      = f.text_field :name, class: "form-control", id: "user_name"
+    .field
+      = f.label :年齢, class: "user_email"
+      %br/
+      = f.date_select :birthday, start_year: 1988, end_year: 2000, use_month_numbers: true, class: "form-control", id: "user_birthday"
+
+    .field
+      = f.label :性別, class: "user_email"
+      %br/
+      = f.select :sex, User.sexes.keys, class: "form-control", id: "user_sex"
+
+    .field
+      = f.label :学校名, class: "user_school"
+      %br/
+      = f.text_field :school, class: "form-control", id: "user_school"
+    %br/
+    .actions
+      = f.submit "登録する", class: "btn btn-success"
+

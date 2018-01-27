@@ -1,0 +1,31 @@
+nav {
+  color: rgba(0,0,0,0.5);
+  border-color: rgba(0,0,0,0.1);
+  align-items: center;
+  display: flex;
+}
+
+
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  -webkit-appearance: none;
+  overflow: visible;
+  touch-action: manipulation;
+}
+
+button {
+
+}
+
+ul {
+  list-style:none;
+  li {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
