@@ -1,0 +1,27 @@
+.container
+  %nav.navbar.navbar-expand-lg.navbar-light.bg-faded
+    .navbar-brand
+      %a.nav-link{"data-method" => "get", :href => "/"} e-Navigator
+  %h2 ユーザー登録
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .field
+      = f.label :email, class: "user_email"
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id: "user_email"
+    .field
+      = f.label :password, class: "user_password", id: "user_password"
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} characters minimum)
+      %br/
+      = f.password_field :password, class: "form-control", id: "user_password", autocomplete: "off"
+    .field
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, class: "form-control", id: "user_password_confirmation", autocomplete: "off"
+    %br/
+    .actions
+      = f.submit "登録", class: "btn btn-primary"
+  %br/
+  = render "devise/shared/links"

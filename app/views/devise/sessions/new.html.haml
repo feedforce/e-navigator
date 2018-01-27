@@ -1,0 +1,23 @@
+.container
+  %nav.navbar.navbar-expand-lg.navbar-light.bg-faded
+    .navbar-brand
+      %a.nav-link{"data-method" => "get", :href => "/"} e-Navigator
+  %h2 ログイン
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .field
+      = f.label :email, class: "user_email"
+      %br/
+      = f.email_field :email, class: "form-control", id: "user_enail", autofocus: true, autocomplete: "email"
+    .field
+      = f.label :password, class: "user_password"
+      %br/
+      = f.password_field :password, class: "form-control", id: "user_password", autocomplete: "off"
+    - if devise_mapping.rememberable?
+      .field
+        = f.check_box :remember_me, id: "user_remember_me"
+        = f.label :ログインを記録する
+    %br/
+    .actions
+      = f.submit "ログイン", class: "btn btn-success"
+  %br/
+  = render "devise/shared/links"
