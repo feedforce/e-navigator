@@ -1,78 +1,75 @@
 <h2>プロフィールページ</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email, 'Email' %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%= bootstrap_devise_error_messages! %>
+<div class="panel panel-default devise-bs">
+  <div class="panel-heading">
+    <h4><%= t('.title', resource: resource_class.model_name.human , default: "Edit #{resource_name.to_s.humanize}") %></h4>
   </div>
+  <div class="panel-body">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <div class="form-group">
+        <%= f.label :email, 'Email' %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "Email" %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :username, '名前' %><br />
-    <%= f.text_field :username %>
-  </div>
+      <div class="form-group">
+        <%= f.label :username, '名前' %><br />
+        <%= f.text_field :username %>
+      </div>
 
-    <div class="form-group">
-    <%= f.label :birthdate, '生年月日' %><br />
-    <%= raw sprintf(
-        f.date_select(
-          :birthdate,
-          use_month_numbers: true,
-          start_year:        1988,
-          end_year:          (Time.now.year - 18),
-          default:           Date.new(1989, 1, 1),
-          date_separator:    '%s'),
-              '年 ', '月 ') + '日' %>
-  </div>
+      <div class="form-group">
+      <%= f.label :birthdate, '生年月日' %><br />
+      <%= raw sprintf(
+          f.date_select(
+            :birthdate,
+            use_month_numbers: true,
+            start_year:        1988,
+            end_year:          (Time.now.year - 18),
+            default:           Date.new(1989, 1, 1),
+            date_separator:    '%s'),
+                '年 ', '月 ') + '日' %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :sex, '性別' %><br />
-    <%= f.select :sex, [["男性", "male"], ["女性", "female"], ["その他", "other"]] %>
-  </div>
+      <div class="form-group">
+        <%= f.label :sex, '性別' %><br />
+        <%= f.select :sex, [["男性", "male"], ["女性", "female"], ["その他", "other"]] %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :schoolname, '学校名' %><br />
-    <%= f.text_field :schoolname %>
-  </div>
+      <div class="form-group">
+        <%= f.label :schoolname, '学校名' %><br />
+        <%= f.text_field :schoolname %>
+      </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
 
-<!-- パスワード変更部分(コメントアウト)
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <div class="form-group">
+        <%= f.label :password, 'パスワード' %><br/>
+        <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, 'パスワード(再入力)' %><br/>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :current_password, 'パスワード確認欄' %><br />
+        <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit t('.update', default: '登録する'), class: 'btn btn-primary' %>
+      </div>
+      
     <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-  -->
-
-
-  <div class="field">
-    <%= f.label :current_password, 'パスワード確認欄' %><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "登録する" %>
-  </div>
-<% end %>
+</div>
 
 <!-- ユーザー削除部分(コメントアウト)
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= t('.unhappy', default: 'Unhappy') %>? <%= link_to t('.cancel_my_account', default: 'Cancel my account'), registration_path(resource_name), data: { confirm: t('.are_you_sure', default: "Are you sure?") }, method: :delete %>.</p>
 -->
-
 <!-- 戻るボタン(コメントアウト)
-<%= link_to "Back", :back %>
+<%= link_to t('.back', default: 'Back'), :back %>
 -->

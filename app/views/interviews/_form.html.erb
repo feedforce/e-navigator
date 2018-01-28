@@ -1,0 +1,13 @@
+<%= form_for([user, interview]) do |f| %>
+    <%= f.hidden_field :user_id, value: user.id %>
+    <%= f.hidden_field :interview_status, value: '保留' %>
+
+    <div class="form-group">
+        <%= f.label :interview_date, '開始時間' %><br />
+        <%= f.datetime_select :interview_date, class: 'form-control' , :use_month_numbers => true , :default => Time.now + 7.day %>
+    </div>
+
+    <div class="text-center">
+        <%= f.submit '登録', class: 'btn btn-info' %>
+    </div>
+<% end %>

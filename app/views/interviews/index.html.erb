@@ -1,0 +1,23 @@
+<h1><%= @user.username %>さんの面接一覧</h1>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>面接開始時間</th>
+      <th>承認状態</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @interviews.each do |interview| %>
+    <tr>
+      <td><%= interview.interview_date_format %></td>
+      <td><%= interview.interview_status%></td>
+      <td><%= link_to '編集', edit_user_interview_path(@user,interview) %></td>
+      <td><%= link_to '削除', user_interview_path(@user,interview), method: :delete, data: { confirm: '本当に削除しますか？' }  %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to '新規面接作成', new_user_interview_path(@user) %>

@@ -1,2 +1,35 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>ユーザー一覧</h1>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>Email</th>
+      <th>年齢</th>
+      <th>性別</th>
+      <th>学校名</th>
+      <th>面接日時</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.username %></td>
+      <td><%= user.email%></td>
+      <td><%= user.age%></td>
+      <td><%= user.sex%></td>
+      <td><%= user.schoolname%></td>
+
+      <% #今後承認状態有無によって分岐 %>
+      <% if user.interviews.count>0 %>
+        <% user_interview_date=user.interviews.first.interview_date_format %>
+      <% else %>
+        <% user_interview_date='' %>
+      <% end %>
+      <td><%= user_interview_date %></td>
+      <td><%= link_to '面接一覧', user_interviews_path(user) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
