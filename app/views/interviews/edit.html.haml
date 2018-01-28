@@ -7,3 +7,5 @@
       = f.datetime_select :interview_datetime, use_month_numbers: true, start_year: Time.now.year, end_year: Time.now.year + 2, minute_step: 10
   .actions
     = f.submit "登録", class: 'btn'
+%br
+= link_to "面接日程一覧", user_interviews_path(current_user.id)
