@@ -1,7 +1,7 @@
 class InterviewsController < ApplicationController
 
   def index
-    @interviews = Interview.where(user_id: current_user.id).order("interview_datetime ASC")
+    @interviews = Interview.where(user_id: current_user.id).order(interview_datetime: :asc)
   end
 
   def new
@@ -9,8 +9,7 @@ class InterviewsController < ApplicationController
   end
 
   def create
-    @interview = Interview.create(create_params)
-    if @interview.save
+    if Interview.create(create_params)
       redirect_to user_interviews_path, notice: '日程を作成しました'
     else
       redirect_to user_interviews_path, alert: '失敗しました。やり直して下さい'
@@ -30,8 +29,7 @@ class InterviewsController < ApplicationController
   end
 
   def destroy
-    interview = Interview.find(params[:id])
-    if interview.destroy
+    if Interview.destroy(params[:id])
       redirect_to user_interviews_path, notice: '日程を削除しました'
     else
       redirect_to user_interviews_path, alert: '失敗しました。やり直して下さい'
