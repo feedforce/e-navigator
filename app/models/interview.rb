@@ -6,6 +6,6 @@ class Interview < ApplicationRecord
   validates :interview_status, length: { maximum: 50 }
 
   def interview_date_format
-    return self.interview_date.to_s(:published_on)
+    interview_date.to_s(:published_on)
   end
 end

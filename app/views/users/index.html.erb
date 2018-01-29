@@ -20,14 +20,7 @@
       <td><%= user.age%></td>
       <td><%= user.sex%></td>
       <td><%= user.schoolname%></td>
-
-      <% #今後承認状態有無によって分岐 %>
-      <% if user.interviews.count>0 %>
-        <% user_interview_date=user.interviews.first.interview_date_format %>
-      <% else %>
-        <% user_interview_date='' %>
-      <% end %>
-      <td><%= user_interview_date %></td>
+      <td><%= user.approvaldate %></td>
       <td><%= link_to '面接一覧', user_interviews_path(user) %></td>
     </tr>
     <% end %>
