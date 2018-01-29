@@ -1,7 +1,6 @@
 class InterviewsController < ApplicationController
 
   def index
-    @user       = User.find(current_user.id)
     @interviews = Interview.where(user_id: current_user.id).order("interview_datetime ASC")
   end
 
