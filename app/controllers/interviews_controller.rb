@@ -1,20 +1,19 @@
 class InterviewsController < ApplicationController
+  before_action :set_user, only: [:index, :new, :create]
+  before_action :set_interview, only: [:show, :edit, :update, :destroy]
+
   def index
-    set_user
     @interviews = @user.interviews.order('created_at DESC')
   end
 
   def show
-    set_interview
   end
 
   def new
-    set_user
     @interview = @user.interviews.build
   end
 
   def create
-    set_user
     @interview = @user.interviews.build(interview_params)
     if @interview.save
       flash[:success] = '面接が作成されました'
@@ -26,11 +25,9 @@ class InterviewsController < ApplicationController
   end
 
   def edit
-    set_interview
   end
 
   def update
-    set_interview
     if @interview.update(interview_params)
       flash[:success] = '面接が更新されました'
       redirect_to @interview
@@ -41,7 +38,6 @@ class InterviewsController < ApplicationController
   end
 
   def destroy
-    set_interview
     @interview.destroy
     flash[:success] = '面接が削除されました'
     redirect_to user_interviews_path(@user)
