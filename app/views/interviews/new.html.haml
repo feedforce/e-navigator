@@ -4,8 +4,8 @@
     .field-label
       = f.label :interview_datetime, "開始時間"
     .field-input
-      = f.datetime_select :interview_datetime, use_month_numbers: true, start_year: Time.now.year, end_year: Time.now.year + 2, minute_step: 10
+      = f.datetime_select :interview_datetime, use_month_numbers: true, start_year: Time.now.year, end_year: Time.now.year + 2, minute_step: 5
   .actions
     = f.submit "登録", class: 'btn'
 %br
-= link_to "面接日程一覧", user_interviews_path(current_user.id)
+= link_to "面接日程一覧", user_interviews_path
