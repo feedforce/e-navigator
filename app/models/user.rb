@@ -9,10 +9,13 @@ class User < ApplicationRecord
   has_many :interviews
 
   def age
-    date_format = "%Y%m%d"
-    today = Date.today
-    birthdate = self.birthdate
-    (today.strftime(date_format).to_i - birthdate.strftime(date_format).to_i) / 10000
+    if birthdate
+      date_format = "%Y%m%d"
+      today = Date.today
+      (today.strftime(date_format).to_i - birthdate.strftime(date_format).to_i) / 10000
+    else
+      nil
+    end
   end
 
   def approvaldate

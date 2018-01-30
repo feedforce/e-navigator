@@ -1,8 +1,9 @@
 class InterviewsController < ApplicationController
-  before_action :set_user, only: [:index, :new, :create]
+  before_action :set_user, only: [:new, :create]
   before_action :set_interview, only: [:show, :edit, :update, :destroy]
 
   def index
+    @user = User.find(params[:user_id])
     @interviews = @user.interviews.order('created_at DESC')
   end
 
@@ -46,7 +47,7 @@ class InterviewsController < ApplicationController
   private
 
   def set_user
-    @user = User.find(params[:user_id])
+    @user = current_user
   end
 
   def set_interview

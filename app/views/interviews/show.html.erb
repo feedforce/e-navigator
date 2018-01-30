@@ -1,4 +1,4 @@
 <p>開始時間：<%= @interview.interview_date_format %></p>
 <p>承認状態：<%= @interview.interview_status %></p>
 
-<%= link_to '面接一覧へ', interviews_path %>
+<%= link_to '面接一覧へ', user_interviews_path(@user) %>
