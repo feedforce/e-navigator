@@ -1,0 +1,39 @@
+
+/*header*/
+header {
+  height: 60px;
+  background-color: orange;
+}
+
+ul {
+  list-style:none;
+  vertical-align: middle;
+  padding: 20px;
+}
+
+li{
+  float: left;
+  margin-left: 50px;
+  color: white;
+}
+
+.navi {
+  color: white;
+}
+
+
+
+/*edit/user*/
+
+.user_edit_form{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.user_edit_form h2 {
+  margin-top: 70px
+}
+
+.field {
+  margin: 40px;
+}
