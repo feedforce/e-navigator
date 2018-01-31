@@ -11,10 +11,14 @@
 <% end %>
 
 <%= form_for [@user, @interview] do |f| %>
-  <%= f.label :interview_date, "Interview Date" %><br>
-  <%= f.datetime_select :interview_date,
-    start_year: Time.current.year,
-    start_month: Time.current.month %>
 
-  <%= f.submit yield(:button_text) %>
+  <div class="form-group">
+    <%= f.label :interview_date, "Interview Date" %><br>
+    <%= f.datetime_select :interview_date,
+      {start_year: Time.current.year,
+      start_month: Time.current.month},
+      class: "form-control bootstrap_date_select" %>
+  </div>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
