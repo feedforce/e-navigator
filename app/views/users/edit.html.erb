@@ -1,0 +1,34 @@
+<div class="user_edit_form">
+<h2>プロフィールページ</h2>
+<%= form_for @user do |f| %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :名前 %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :年齢 %><br />
+    <%= f.date_select(:birthday, use_month_numbers: true, start_year: 1988, end_year:   (Time.now.year), default: Date.new(1988, 1, 1)) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :性別 %><br />
+    <%= f.select :sex, {"男性" => "男性", "女性" => "女性"} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :学校名 %><br />
+    <%= f.text_field :school, autofocus: true, autocomplete: "school" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "登録する" %>
+  </div>
+<% end %>
+</div>
