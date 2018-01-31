@@ -1,13 +1,16 @@
 <% if @interview.errors.any? %>
-  <ul>
-    <% @interview.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
+  <div class="error_explanation">
+    <div class="alert alert-error">
+      <ul>
+        <% @interview.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 <% end %>
 
 <%= form_for [@user, @interview] do |f| %>
-
   <%= f.label :interview_date, "Interview Date" %><br>
   <%= f.datetime_select :interview_date,
     start_year: Time.current.year,
