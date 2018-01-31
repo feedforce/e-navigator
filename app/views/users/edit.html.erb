@@ -1,32 +1,31 @@
-<h2>Edit</h2>
+<h2>Edit Your Profile</h2>
 
 <%= form_for(@user) do |f| %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
+  <div class="form-group">
+  <%= f.label :email %>
+  <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :birthday %><br />
-    <%= f.date_select :birthday, start_year: (Time.current.year - 30),  end_year: (Time.current.year - 17) %>
+  <div class="form-group">
+  <%= f.label :birthday %><br>
+  <%= f.date_select :birthday, {start_year: (Time.current.year - 30),  end_year: (Time.current.year - 17)}, class: "form-control bootstrap_date_select" %>
   </div>
 
-  <div class="field">
-    <%= f.label :sex %><br />
-    <%= f.select :sex, User.sexes.keys, class: "form-control" %>
+  <div class="form-group">
+  <%= f.label :sex %>
+  <%= f.select :sex, User.sexes.keys, {}, class: "form-control bootstrap_select" %>
   </div>
 
-  <div class="field">
-    <%= f.label :school %><br />
-    <%= f.text_field :school %>
+  <div class="form-group">
+  <%= f.label :school %>
+  <%= f.text_field :school, class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+
+  <%= f.submit "Update", class: "btn btn-primary" %>
 <% end %>
