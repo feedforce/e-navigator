@@ -1,0 +1,53 @@
+<%= render "layouts/header" %>
+<h1>ユーザー一覧</h1>
+<table class = "table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>Email</th>
+      <th>年齢</th>
+      <th>性別</th>
+      <th>学校名</th>
+      <th>面接日時</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+      <td>
+        <div class = "text-center">
+          <%= user.name %>
+          <% if user.id == current_user.id %>
+            (自分)
+          <% end %>
+        </div>
+      </td>
+      <td>
+        <div class = "text-center">
+          <%= user.email %>
+        </div>
+      </td>
+      <td>
+        <div class = "text-center">
+          <%= user.age %>
+        </div>
+      </td>
+      <td>
+        <div class = "text-center">
+          <%= user.gender %>
+        </div>
+      </td>
+      <td>
+        <div class = "text-center">
+          <%= user.school_name %>
+        </div>
+      </td>
+      <td>
+        <div class = "text-center">
+          未定
+        </div>
+      </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

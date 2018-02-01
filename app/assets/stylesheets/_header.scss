@@ -1,0 +1,11 @@
+.navbar{
+    display: flex;
+}
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    a {
+        padding-left: 20px;
+        color: rgba(0,0,0,0.5);
+    }
+}
