@@ -14,6 +14,7 @@ ja:
 #      unauthenticated: 'You need to sign in or sign up before continuing.'
       already_authenticated: '既にログイン済みです'
       unconfirmed: '本登録を行ってください。'
+      not_found_in_database: 'ユーザーが見つかりませんでした。'
 #      unconfirmed: 'You have to confirm your account before continuing.'
       locked: 'あなたのアカウントは凍結されています。'
 #      locked: 'Your account is locked.'
