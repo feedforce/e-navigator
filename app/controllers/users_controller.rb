@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_info_params)
-    redirect_to root_path
+    redirect_to root_path, notice: 'プロフィールの変更を保存しました。'
   end
 
   private
