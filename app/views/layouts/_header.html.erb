@@ -7,7 +7,7 @@
       <%= link_to "プロフィール編集", edit_user_path(current_user.id) %>
     </div>
     <div class = "nav-item">
-      <%= link_to "自分の面接一覧", root_path %>
+      <%= link_to "自分の面接一覧", user_interviews_path(current_user.id) %>
     </div>
     <div class = "nav-item">
       <%= link_to "メール", root_path %>
