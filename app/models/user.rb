@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  enum gender: { 男性: 0, 女性: 1 }
+  enum gender: { man: 0, woman: 1 }
 
   def age
     if birth_date.present?
