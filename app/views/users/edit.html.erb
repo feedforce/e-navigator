@@ -22,7 +22,7 @@
   </div>
   <div class="field">
   性別<br />
-  <%= f.select :gender, User.genders.keys.to_a %>
+  <%= f.select :gender, User.genders_i18n.keys.map {|k| [User.genders_i18n[k], k]}  %>
   </div>
   <div class="field">
   学校名<br />
