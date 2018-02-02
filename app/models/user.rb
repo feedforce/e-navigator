@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   def age
     if birth_date.present?
-    (Date.today.strftime("%Y%m%d").to_i - birth_date.strftime("%Y%m%d").to_i) / 10000
+      (Date.today.strftime("%Y%m%d").to_i - birth_date.strftime("%Y%m%d").to_i) / 10000
     else
       return ""
     end
