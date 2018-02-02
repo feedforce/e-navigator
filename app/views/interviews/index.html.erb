@@ -1,0 +1,38 @@
+<%= render "layouts/header" %>
+<h1><%= current_user.name %>さんの面接一覧</h1>
+<table class = "table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>面接開始時間</th>
+      <th>承認状態</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% current_user.interviews do |interview| %>
+      <tr>
+      <td>
+        <div class = "text-center">
+          <%= interview.start_time %>
+        </div>
+      </td>
+      <td>
+        <div class = "text-center">
+          <%= interview.status %>
+        </div>
+      </td>
+      <td>
+        <div class = "text-center">
+          編集
+        </div>
+      </td>
+      <td>
+        <div class = "text-center">
+          削除
+        </div>
+      </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "面接日程の新規作成",new_user_interview_path %>
