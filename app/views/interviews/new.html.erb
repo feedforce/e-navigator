@@ -1,0 +1,9 @@
+<%= render "layouts/header" %>
+<h1>新規面接日程作成</h1>
+  <%= form_for [current_user,@interview] do |f| %>
+  <div class="field">
+  開始日時<br />
+  <%=f.datetime_select :start_time %>
+  </div>
+  <%=f.submit "日時を登録する", class:"btn" %>
+  <% end %>
