@@ -1,0 +1,22 @@
+
+%h1 #{current_user.name}さんの面接一覧
+%p 新規日程作成より面接日程を登録しましょう。日程の変更、削除もできます。
+%table
+  %thead
+    %td 面接開始時間
+    %td{ colspan: "2" } 日程編集
+  %tbody
+  - @interviews.each do |interview|
+    %tr
+      %td
+        = interview.interview_datetime.strftime("%Y/%m/%d  %H:%M:%S")
+      %td
+        = link_to "編集", edit_user_interview_path(id: interview.id)
+      %td
+        = link_to "削除", user_interview_path(id: interview.id), method: :DELETE
+
+
+%br
+= link_to "新規日程作成", new_user_interview_path
+= link_to "トップページ", users_path
+
