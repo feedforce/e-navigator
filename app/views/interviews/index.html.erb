@@ -1,0 +1,23 @@
+<h1>Your interview list</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">State</th>
+      <th scope="col" colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @interviews.each do |interview| %>
+    <tr>
+      <td><%= interview.interview_date.strftime('%Y年%m月%d日 %H時%M分') %></td>
+      <td><%= interview.status %></td>
+      <td><%= link_to "Edit", edit_user_interview_path(@user, interview), class: "btn btn-info" %></td>
+      <td><%= link_to "Delete", user_interview_path(@user,interview), method: :delete, class: "btn btn-danger" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to "Create new interview", new_user_interview_path, class: "btn btn-primary" %><br><br>
