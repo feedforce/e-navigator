@@ -209,4 +209,11 @@ ja:
       gender:
         man: 男性
         woman: 女性
+    interview:
+        status:
+          default: 保留
+          approved: 承認
+          declined: 拒否
+  attributes:
+    start_time: 開始時刻
 
