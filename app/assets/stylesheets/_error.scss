@@ -1,17 +1,10 @@
-.flash {
+#error_explanation {
     position: relative;
     padding: 0.75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
-  &__alert{
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
-  }
-  &__notice {
-    color: #0c5460;
-    background-color: #d1ecf1;
-    border-color: #bee5eb;
-  }
 }
