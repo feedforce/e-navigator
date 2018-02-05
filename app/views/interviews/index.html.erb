@@ -1,24 +1,25 @@
 <%= render "layouts/header" %>
-<h1><%= current_user.name %>さんの面接一覧</h1>
+<h1><%= current_user.name %>さんの面接候補日一覧</h1>
 <table class = "table table-bordered table-hover">
   <thead>
     <tr>
       <th>面接開始時間</th>
       <th>承認状態</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <% current_user.interviews do |interview| %>
+    <% @interviews.each do |interview| %>
       <tr>
       <td>
         <div class = "text-center">
-          <%= interview.start_time %>
+          <%= interview.start_time.strftime("%Y年%m月%d日 %H時%M分") %>
         </div>
       </td>
       <td>
         <div class = "text-center">
-          <%= interview.status %>
+          <%= interview.status_i18n %>
         </div>
       </td>
       <td>
