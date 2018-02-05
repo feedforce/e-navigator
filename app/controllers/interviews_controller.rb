@@ -10,7 +10,7 @@ class InterviewsController < ApplicationController
   def create
     @interview = Interview.new(interview_params)
     if @interview.save
-      redirect_to root_path, notice: "面接日程を追加しました。"
+      redirect_to user_interviews_path, notice: "面接日程を追加しました。"
     else
       render :new
     end
