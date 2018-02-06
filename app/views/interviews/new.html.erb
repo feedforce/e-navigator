@@ -16,7 +16,7 @@
       {
         start_year:     Time.zone.now.year,
         end_year:       Time.zone.now.next_year.year,
-        default:        Time.zone.now,
+        default:        1.days.from_now.since(30.minutes),
         use_month_numbers: true,
         minute_step: 10,
         date_separator: '%s',
