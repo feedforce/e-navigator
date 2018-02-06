@@ -1,6 +1,6 @@
 class InterviewsController < ApplicationController
   def index
-    @interviews = current_user.interviews.order(" start_time ASC")
+    @interviews = current_user.interviews.order(start_time: :asc)
   end
 
   def new
