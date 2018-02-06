@@ -2,17 +2,17 @@
   <div class = "nav-name">
   <%= link_to "e-Navigator",root_path %>
   </div>
-  <div class = "navbar-nav">
-    <div class = "nav-item">
+  <div class="navbar-nav">
+    <div class="nav-item">
       <%= link_to "プロフィール編集", edit_user_path(current_user.id) %>
     </div>
-    <div class = "nav-item">
+    <div class="nav-item">
       <%= link_to "自分の面接一覧", user_interviews_path(current_user.id) %>
     </div>
-    <div class = "nav-item">
+    <div class="nav-item">
       <%= link_to "メール", root_path %>
     </div>
-    <div class = "nav-item">
+    <div class="nav-item">
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     </div>
   </div>

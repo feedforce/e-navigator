@@ -1,6 +1,6 @@
 <%= render "layouts/header" %>
 <h1><%= current_user.name %>さんの面接候補日一覧</h1>
-<table class = "table table-bordered table-hover">
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
       <th>面接開始時間</th>
@@ -13,22 +13,22 @@
     <% @interviews.each do |interview| %>
       <tr>
       <td>
-        <div class = "text-center">
+        <div class="text-center">
           <%= interview.start_time.strftime("%Y年%m月%d日 %H時%M分") %>
         </div>
       </td>
       <td>
-        <div class = "text-center">
+        <div class="text-center">
           <%= interview.status_i18n %>
         </div>
       </td>
       <td>
-        <div class = "text-center">
+        <div class="text-center">
           編集
         </div>
       </td>
       <td>
-        <div class = "text-center">
+        <div class="text-center">
           削除
         </div>
       </td>
@@ -36,4 +36,4 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to "面接日程の新規作成",new_user_interview_path %>
+<%= link_to "面接日程の新規作成", new_user_interview_path %>

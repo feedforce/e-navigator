@@ -15,7 +15,7 @@
     <% @users.each do |user| %>
       <tr>
       <td>
-        <div class = "text-center">
+        <div class="text-center">
           <%= user.name %>
           <% if user.id == current_user.id %>
             (自分)
@@ -23,27 +23,27 @@
         </div>
       </td>
       <td>
-        <div class = "text-center">
+        <div class="text-center">
           <%= user.email %>
         </div>
       </td>
       <td>
-        <div class = "text-center">
+        <div class="text-center">
           <%= user.age %>
         </div>
       </td>
       <td>
-        <div class = "text-center">
+        <div class="text-center">
           <%= user.gender_i18n %>
         </div>
       </td>
       <td>
-        <div class = "text-center">
+        <div class="text-center">
           <%= user.school_name %>
         </div>
       </td>
       <td>
-        <div class = "text-center">
+        <div class="text-center">
           未定
         </div>
       </td>
