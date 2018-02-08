@@ -24,12 +24,12 @@
       </td>
       <td>
         <div class="text-center">
-          編集
+          <%= link_to "編集", edit_user_interview_path(current_user, interview), class:"btn edit_btn" %>
         </div>
       </td>
       <td>
         <div class="text-center">
-          削除
+          <%= link_to "削除", user_interview_path(current_user, interview), method: :delete , class:"btn delete_btn", data: { confirm:'本当に削除しますか？'} %>
         </div>
       </td>
       </tr>
