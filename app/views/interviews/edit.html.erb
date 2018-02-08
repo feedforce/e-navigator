@@ -1,0 +1,32 @@
+<%= render "layouts/header" %>
+<% if @interview.errors.any? %>
+  <div id="error_explanation">
+    <% @interview.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
+<% end %>
+<h1>面接日程の編集</h1>
+  <%= form_for [current_user,@interview] do |f| %>
+  <div class="field">
+  開始日時<br />
+  <%= raw sprintf(
+    f.datetime_select(
+      :start_time,
+      {
+        start_year:     Time.zone.now.year,
+        end_year:       Time.zone.now.next_year.year,
+        default:        1.days.from_now.since(1.hours),
+        use_month_numbers: true,
+        minute_step: 10,
+        date_separator: '%s',
+        datetime_separator: '%s',
+        time_separator: '%s'
+      },
+      { class: 'form-controll'}
+    ),
+    '年 ', '月 ', '日 ', '時 ') + '分'
+  %>
+  </div>
+  <%=f.submit "日時を登録する", class:"btn" %>
+  <% end %>

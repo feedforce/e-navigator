@@ -1,0 +1,38 @@
+<h2>ユーザー編集</h2>
+
+<%= form_for(current_user) do |f| %>
+  <div class="field">
+  メール<br />
+  <%=f.text_field :email, class:"form_field" %>
+  </div>
+  <div class="field">
+  名前<br />
+  <%=f.text_field :name, class:"form_field" %>
+  </div>
+  <div class="field">
+  生年月日<br />
+  <%= raw sprintf(
+              f.date_select(
+                  :birth_date,
+                  {
+                    use_month_numbers: true,
+                    start_year:        1980,
+                    end_year:          (Time.now.year - 20),
+                    date_separator:    '%s'
+                  },
+                  { class: 'form-controll'}
+                  ),
+              '年 ', '月 ') + '日' %>
+  </div>
+  <div class="field">
+  性別<br />
+  <%= f.select :gender, User.genders_i18n.keys.map {|k| [User.genders_i18n[k], k]}, {}, { class: 'form-controll'}  %>
+  </div>
+  <div class="field">
+  学校名<br />
+  <%=f.text_field :school_name, class:"form_field" %>
+  </div>
+  <%=f.submit "変更する", class:"btn" %>
+<% end %>
+
+<%= link_to "トップ画面に戻る", root_path %>
