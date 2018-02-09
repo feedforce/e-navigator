@@ -1,0 +1,8 @@
+<h2>Current interview date</h2>
+<div>ここに面談日時を載せる</div>
+<div>
+  <p>変更する場合は以下から選択</p>
+<% @interviews.each do |interview| %>
+  <%= link_to interview.interview_date.strftime('%Y年%m月%d日 %H時%M分'), "#", class: "btn btn-success" %><br>
+<% end %>
+</div>
