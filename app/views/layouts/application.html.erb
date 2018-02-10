@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>ENavigator</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all' %>
+            <%= javascript_include_tag 'application' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+    <% if notice %>
+        <p class="alert alert-success">
+            <%= notice %>
+        </p>
+        <% end %>
+            <% if alert %>
+                <p class="alert alert-danger">
+                    <%= alert %>
+                </p>
+                <% end %>
+                    <%= yield %>
+</body>
+
 </html>
