@@ -10,19 +10,6 @@
                 <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
-        <!-- <div class="birth_date_field">
-                <%= f.label :birth_date, autocomplete: "birth_date" %>
-                    <%= raw sprintf(
-                        f.date_select(
-                            :birth_date,
-                            use_month_numbers: true,
-                            start_year:        1930,
-                            end_year:          (Time.now.year),
-                            default:           Date.new(1989, 1, 1),
-                            date_separator:    '%s'),
-                        '年 ', '月 ') + '日' %>
-            </div> -->
-
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for:
                 <%= resource.unconfirmed_email %>
@@ -58,6 +45,28 @@
                         <%= f.select :sex, User.sexes.keys.map {|k| [k, k]}, autocomplete: "sex" %>
                 </div>
 
+                <div class="birth_time_field">
+                    <%= f.label :birth_time, autocomplete: "birth_time" %>
+                        <%= raw sprintf(
+                          f.date_select(
+                            :birth_time,
+                            {
+                              start_year:     1970,
+                              end_year:       Time.zone.now.next_year.year,
+                              default:        Time.zone.now,
+                              datetime_separator: '%s',
+                              use_two_digit_numbers: true,
+                              date_separator: '%s',
+                              
+                            },
+                            { class: 'date-select' }
+                          ),
+                          '年 ', '月 ', '日 ')
+                        %>
+
+
+                </div>
+
                 <div class="field">
                     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
                         <%= f.password_field :current_password, autocomplete: "off" %>
@@ -67,6 +76,7 @@
                 <div class="actions">
                     <%= f.submit "Update" %>
                 </div>
-                <% end %>
 
-                    <%= link_to "Back", :back %>
+
+                <%= link_to "Back", :back %>
+                    <% end %>
