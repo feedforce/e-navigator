@@ -1,11 +1,13 @@
 <h2>Current interview date</h2>
-<div>ここに現在の面談日時を載せる</div>
+<div>
+  <%= check_current_interview(get_current_interview(@user)) %>
+</div>
 <hr>
 <div>
   <p>面談日程を変更する場合は以下から選択してください。</p>
 <% @interviews.each do |interview| %>
   <div class="interview-list">
-    <%= link_to interview.interview_date.strftime('%Y年%m月%d日 %H時%M分'), "#", class: "btn btn-success" %>
+    <%= link_to interview.interview_date.strftime('%Y年%m月%d日 %H時%M分'), "#", class: "btn btn-success" unless interview.status == "accepted" %>
   </div>
 <% end %>
 </div>
