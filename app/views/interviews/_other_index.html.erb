@@ -7,7 +7,8 @@
   <p>面談日程を変更する場合は以下から選択してください。</p>
 <% @interviews.each do |interview| %>
   <div class="interview-list">
-    <%= link_to interview.interview_date.strftime('%Y年%m月%d日 %H時%M分'), "#", class: "btn btn-success" unless interview.status == "accepted" %>
+    <% date = date_format(interview) %>
+    <%= link_to "#{date}", setup_user_interview_path(@user, interview), class: "btn btn-success" unless interview.status == "accepted" %>
   </div>
 <% end %>
 </div>
