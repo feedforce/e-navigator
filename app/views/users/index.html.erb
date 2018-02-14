@@ -1,0 +1,28 @@
+<h1>User list</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Age</th>
+      <th scope="col">Sex</th>
+      <th scope="col"> School</th>
+      <th scope="col">Interview Date</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= calc_age(user) if user.birthday %></td>
+      <td><%= user.sex %></td>
+      <td><%= user.school %></td>
+      <td><%= date_format(get_current_interview(user)) %></td>
+      <td><%= link_to "Interview list", user_interviews_path(user), class: "btn btn-primary" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,39 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* error messages */
+
+.error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+/* form date */
+.bootstrap_date_select {
+  display: inline-block;
+  width: auto;
+}
+
+.bootstrap_select {
+  width: auto;
+}
+
+/* tables */
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+/* interview list */
+.interview-list {
+  margin: 10px 0;
+}

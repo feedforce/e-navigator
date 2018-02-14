@@ -1,0 +1,14 @@
+<h2>Current interview date</h2>
+<div>
+  <%= check_current_interview(get_current_interview(@user)) %>
+</div>
+<hr>
+<div>
+  <p>面談日程を変更する場合は以下から選択してください。</p>
+<% @interviews.each do |interview| %>
+  <div class="interview-list">
+    <% date = date_format(interview) %>
+    <%= link_to "#{date}", setup_user_interview_path(@user, interview), method: :patch, data: { confirm: "面談を#{date}に設定しますか？" }, class: "btn btn-success" unless interview.status == "accepted" %>
+  </div>
+<% end %>
+</div>

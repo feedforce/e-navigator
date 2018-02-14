@@ -1,0 +1,11 @@
+<% if @user.name.present? %>
+  <h1><%= @user.name %>'s interview list</h1>
+<% else %>
+  <h1><%= @user.email %>'s interview list</h1>
+<% end %>
+
+<% if current_user == @user %>
+  <%= render 'interviews/self_index' %>
+<% else %>
+  <%= render 'interviews/other_index' %>
+<% end %>
