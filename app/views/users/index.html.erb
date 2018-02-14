@@ -20,7 +20,7 @@
       <td><%= calc_age(user) if user.birthday %></td>
       <td><%= user.sex %></td>
       <td><%= user.school %></td>
-      <td>ここに面談日程</td>
+      <td><%= date_format(get_current_interview(user)) %></td>
       <td><%= link_to "Interview list", user_interviews_path(user), class: "btn btn-primary" %></td>
     </tr>
   <% end %>
