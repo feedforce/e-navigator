@@ -1,2 +1,7 @@
 <h1>My page</h1>
-<p>ようこそ、<%= current_user.username %>さん</p>
+<p>ようこそ</p>
+<% if current_user.username == nil then %>
+<p>プロフィール変更から、名前を登録してください。</p>
+<% else %>
+<%= current_user.username %>さん
+<% end %>
