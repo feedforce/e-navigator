@@ -84,7 +84,7 @@ gemは何を使っても大丈夫ですが、ここの部分はメインの機�
 ### 前半終了！
 ここまでできたら前半は完了です！
 
-**レビューと今後のアドバイスをしますので、PRを作り、Herokuに途中までのアプリケーションをデプロイしてLINE等で教えてください！**
+**レビューと今後のアドバイスをしますので、プルリクエストを作り、Herokuに途中までのアプリケーションをデプロイしてLINE等で教えてください！**
 
 Herokuにデプロイする際のアプリ名は`e-navigator-{あなたのGithubのID}`としてください。例えばGithubのIDが`feedforce`であれば、以下のようになります。
 
@@ -92,11 +92,11 @@ Herokuにデプロイする際のアプリ名は`e-navigator-{あなたのGithub
 $ heroku create e-navigator-feedforce
 ```
 
-また、fork した際の Pull Request の作り方が分からない場合は、下記のQiita記事が参考になると思います。
+また、fork した際のプルリクエストの作り方が分からない場合は、下記のQiita記事が参考になると思います。
 
 - [【GitHub】Pull Requestの手順](https://qiita.com/Commander-Aipa/items/d61d21988a36a4d0e58b)
 
-Pull Requestを作る際には、以下の画像を参考にして Base Repository を自分のGithubアカウントのmasterに切り替えてください。
+プルリクエストを作る際には、以下の画像を参考にして Base Repository を自分のGithubアカウントのmasterに切り替えてください。
 
 ![base_repository](https://github.com/feedforce/e-navigator/wiki/images/base_repository.jpeg)
 
