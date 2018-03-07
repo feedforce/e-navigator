@@ -4,4 +4,10 @@
 <p>プロフィール変更から、名前を登録してください。</p>
 <% else %>
 <%= current_user.username %>さん
+<h3>ユーザ情報</h3>
+<p>ユーザ名：<%= current_user.username %>さん</p>
+<p>生年月日：<%= current_user.birthday.strftime('%Y年 %m月 %d日') %></p>
+<p>年齢：<%= (Date.today.strftime("%Y%m%d").to_i - current_user.birthday.strftime("%Y%m%d").to_i) /10000 %>歳</p>
+<p>性別：<%= current_user.sex %></p>
+<p>学校・企業名：<%= current_user.company %></p>
 <% end %>
