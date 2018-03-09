@@ -1,7 +1,9 @@
 .header
   %ul.menu-list
-    %li.menu e-Navigator
-    %li.menu プロフィール
+    =link_to root_path do
+      %li.menu e-Navigator
+    = link_to new_profile_path do
+      %li.menu プロフィール
     %li.menu 自分の面接一覧
     %li.menu メール
     %li.menu ログアウト
