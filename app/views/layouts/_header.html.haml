@@ -6,4 +6,5 @@
       %li.menu プロフィール
     %li.menu 自分の面接一覧
     %li.menu メール
-    %li.menu ログアウト
+    = link_to destroy_user_session_path, method: :delete do
+      %li.menu ログアウト
