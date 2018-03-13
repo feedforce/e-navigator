@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20180309083045) do
     t.integer "birth_day"
     t.string "sex"
     t.string "school"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
