@@ -10,11 +10,9 @@
 
   <body>
     <%= link_to 'Top', root_path, method: :get%>
-    <%= link_to 'Profile', edit_user_registration_path, method: :get%>
     <% if user_signed_in? %>
+      <%= link_to 'Profile', edit_user_registration_path, method: :get%>
       <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% else %>
-      <%= link_to 'Sign in', new_user_session_path, method: :get%>
     <% end %>
     <%= yield %>
   </body>
