@@ -15,7 +15,7 @@
 
   <div class="field">
     <%= f.label :birthday %><br />
-    <%= f.text_field :birthday, autofocus: true, autocomplete: "birthday" %>
+    <%= f.date_select :birthday, :use_month_numbers => true,:start_year => 1900%>
   </div>
 
   <div class="field">
