@@ -1,0 +1,10 @@
+.header
+  %ul.menu-list
+    =link_to root_path do
+      %li.menu e-Navigator
+    = link_to new_profile_path do
+      %li.menu プロフィール
+    %li.menu 自分の面接一覧
+    %li.menu メール
+    = link_to destroy_user_session_path, method: :delete do
+      %li.menu ログアウト
