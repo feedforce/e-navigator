@@ -195,16 +195,9 @@ $ heroku create e-navigator-feedforce
 
 ### Herokuにデプロイする
 いよいよHerokuに登録したアプリケーションをデプロイしましょう。
-masterブランチの場合は以下のようにします。
 
 ```
 $ git push heroku master
-```
-
-masterブランチ以外をデプロイしたい場合は以下のようにしてデプロイしてください。
-
-```
-$ git push heroku ブランチ名:master
 ```
 
 正しくデプロイできたか確認してみましょう。
