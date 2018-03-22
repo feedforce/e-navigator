@@ -1,0 +1,18 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+  <%= f.text_field :name, autocomplete: "off" %>
+  <%= f.date_field :birthday, autocomplete: "off" %>
+  <%= f.text_field :school, autocomplete: "off" %>
+  <%= f.password_field :password, autocomplete: "off" %>
+  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <%= f.password_field :current_password, autocomplete: "off" %>
+  <%= f.submit "Update" %>
+<% end %>
+
+<%= link_to "Back", :back %>
