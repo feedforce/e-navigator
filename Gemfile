@@ -14,6 +14,10 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 # Use Bootstrap
 gem 'bootstrap', '~> 4.0.0'
+# Use Bootstrap form
+gem "bootstrap_form",
+    git: "https://github.com/bootstrap-ruby/bootstrap_form.git",
+    branch: "master"
 # Use jquery for rails
 gem 'jquery-rails'
 # Use SCSS for stylesheets
