@@ -9,6 +9,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="main-container" class="container">
+      <header>
+        <nav>
+          <% if user_signed_in? %>
+            <strong><%= link_to current_user.name, users_show_path %></strong>
+            <%= link_to 'Profile', edit_user_registration_path %>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to 'Sign up', new_user_registration_path %>
+            <%= link_to 'Login', new_user_session_path %>
+          <% end %>
+        </nav>
+      </header>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>

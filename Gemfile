@@ -12,6 +12,14 @@ gem 'rails', '~> 5.1.4'
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+# Use Bootstrap
+gem 'bootstrap', '~> 4.0.0'
+# Use Bootstrap form
+gem "bootstrap_form",
+    git: "https://github.com/bootstrap-ruby/bootstrap_form.git",
+    branch: "master"
+# Use jquery for rails
+gem 'jquery-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -23,6 +31,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+# Use Device for Authentication
+gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
