@@ -6,7 +6,7 @@
 以下は事前にインストールしてあるものとします。
 これらのインストールに関しては基本的に質問を受け付けません。
 
-- ruby (version 2.5.0)
+- ruby (version 2.5.1)
 - Bundler
 - PostgreSQL
 
