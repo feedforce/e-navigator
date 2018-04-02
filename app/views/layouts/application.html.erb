@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ENavigator</title>
+    <title>e-Navigator_石田隼人</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+		<% if user_signed_in? %>
+		<p><%= link_to "プロフィール編集", edit_user_registration_path %></p>
+		<p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+		<% else %>
+		<p><%= link_to "新規登録", new_user_registration_path %></p>
+		<p><%= link_to "ログイン", new_user_session_path %></p>
+		<% end %>
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
