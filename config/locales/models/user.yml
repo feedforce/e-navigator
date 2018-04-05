@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: '氏名'
+        email: 'Email'
+        birthdate: '年齢'
+        gender: '性別'
+        school: '学校名'
+  users:
+    gender:
+      male: '男性'
+      female: '女性'
