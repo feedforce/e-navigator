@@ -3,3 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// Users-Form
+.bootstrap-date {
+  display: inline-block;
+  width: auto;
+}
+
+.bootstrap-gender {
+  width: auto;
+}
+
+.btn {
+  margin: 10px 0 ;
+}
+
+label {
+  font-size: 16px;
+  padding: 5px;
+}
