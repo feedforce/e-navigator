@@ -10,14 +10,12 @@
     <%= f.text_field :name, class: 'form-control' %>
 
     <%= f.label :birthdate %></br>
-    <%= f.date_select :birthdate,
-                  {start_year: 1988,
-                  end_year:   2000,
-                  default:    Date.new(2000, 1, 1)},
-                  {class: 'form-control bootstrap-date'} %></br>
+    <%= f.date_select :birthdate, {start_year: 1988, end_year: 2000,
+                        default: Date.new(2000, 1, 1)},
+                       { class: 'form-control bootstrap-date'} %></br>
 
     <%= f.label :gender %>
-    <%= f.select :gender, User.genders.map{|k, v| [t("users.gender.#{k}"), k]},
+    <%= f.select :gender, User.genders.map{|k, _| [t("users.gender.#{k}"), k]},
                     {}, {class: 'form-control bootstrap-gender'} %>
 
     <%= f.label :school %>

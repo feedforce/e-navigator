@@ -19,7 +19,7 @@ gem 'jquery-rails'
 # bootstrap
 gem 'bootstrap-sass'
 # devise
-gem 'devise', '~> 4.4', '>= 4.4.3'
+gem 'devise'
 # devise for bootstrap
 gem 'devise-bootstrap-views'
 # Use Uglifier as compressor for JavaScript assets
