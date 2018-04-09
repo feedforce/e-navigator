@@ -1,0 +1,19 @@
+<header class="navbar navbar-fixed-top">
+  <div class="nav-container col-xs-10 col-xs-offset-1">
+    <%= link_to "E-Navigator", root_path, class: 'navbar-brand' %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li><%= link_to "プロフィール", edit_user_path(current_user) %></li>
+          <li><%= link_to "自分の面接一覧", "#" %></li>
+          <li><%= link_to "メール", "#" %></li>
+          <li class="divider"></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: 'delete' %></li>
+        <% else %>
+          <li><%= link_to '新規登録', new_user_registration_path %></li>
+          <li><%= link_to 'ログイン', new_user_session_path  %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
