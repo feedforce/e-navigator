@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'interviews/index'
+
+  get 'interviews/show'
+
+  get 'interviews/new'
+
+  get 'interviews/create'
+
+  get 'interviews/edit'
+
+  get 'interviews/update'
+
+  get 'interviews/destroy'
+
   devise_for :users, controllers: {
   registrations: "users/registrations",
   sessions: "users/sessions",
