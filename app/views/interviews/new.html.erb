@@ -1,5 +1,6 @@
 <h1>新規面接作成</h1>
 <%= form_for @interview, url: user_interviews_path do |f| %>
+  <%= render 'layouts/error_messages', object: f.object %>
   <%= f.label :schedule %></br>
   <%= f.datetime_select :schedule, { default: Time.current }, { class: 'form-control bootstrap-date' } %><br>
   <%= f.submit "送信", class: 'btn btn-primary' %>

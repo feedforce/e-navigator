@@ -1,4 +1,5 @@
 class InterviewsController < ApplicationController
+  before_action :correct_user, only: [:edit, :destroy, :update]
 
   def index
     @user = User.find(params[:user_id])
@@ -15,30 +16,39 @@ class InterviewsController < ApplicationController
 
   def create
     @interview = current_user.interviews.build(interview_params)
-    if Time.current > @interview.schedule
-      flash[:danger] = '未来の時間を指定してください'
-      redirect_to new_user_interview_path
-    elsif @interview.save
+    if @interview.save
       flash[:info] = "面接日程を作成しました"
       redirect_to user_interview_path(id: @interview)
+    else
+      render :new
     end
+    # if Time.current > @interview.schedule
+    #   flash[:danger] = '未来の時間を指定してください'
+    #   redirect_to new_user_interview_path
+    # elsif @interview.save
+    #   flash[:info] = "面接日程を作成しました"
+    #   redirect_to user_interview_path(id: @interview)
+    # end
   end
 
   def edit
   end
 
   def update
+    if @interview.update_attributes(interview_params)
+      flash[:success] = "面接時間を更新しました"
+      redirect_to user_interview_path(id: @interview)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @interview.destroy
+    flash[:info] = "削除されました"
+    redirect_to user_interviews_path
   end
 
-  def time_now(time)
-    if Time.now < time
-      flash[:danger] = '未来の時間を指定してください'
-      render :new
-    end
-  end
 
 
   private
@@ -48,6 +58,8 @@ class InterviewsController < ApplicationController
   end
 
   def correct_user
+    @interview = current_user.interviews.find_by(id: params[:id])
+    redirect_to root_url if @interview.nil?
   end
 
 end
