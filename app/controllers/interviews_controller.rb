@@ -15,7 +15,7 @@ class InterviewsController < ApplicationController
 
   def create
     @interview = current_user.interviews.build(interview_params)
-    if Time.now < @interview.schedule
+    if Time.now > @interview.schedule
       flash[:danger] = '未来の時間を指定してください'
       redirect_to new_user_interview_path
     elsif @interview.save

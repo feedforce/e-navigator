@@ -12,8 +12,8 @@
     <tbody>
       <% @interviews.each do |interview| %>
       <tr>
-        <td><div class="text-center"><%= interview.schedule %></div></td>
-        <td><div class="text-center"><%= interview.availability %></div></td>
+        <td><div class="text-center"><%= simple_time(interview.schedule) %></div></td>
+        <td><div class="text-center"><%= t("interviews.availability.#{interview.availability}") %></div></td>
         <td><%= link_to "編集", edit_user_interview_path(id: interview), class: "btn btn-secondary" %></td>
         <td><%= link_to "削除", user_interview_path(id: interview), method: 'delete', class: "btn btn-danger", data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
