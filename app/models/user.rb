@@ -8,6 +8,7 @@ class User < ApplicationRecord
     male: 1,
     female: 2
   }
+  has_many :microposts, dependent: :destroy
 
   # パスワード入力なしでの更新を許可する
   def update_without_current_password(params, *options)
