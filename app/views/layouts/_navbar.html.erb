@@ -5,7 +5,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to "プロフィール", edit_user_path(current_user) %></li>
-          <li><%= link_to "自分の面接一覧", "#" %></li>
+          <li><%= link_to "自分の面接一覧", user_interviews_path(current_user) %></li>
           <li><%= link_to "メール", "#" %></li>
           <li class="divider"></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: 'delete' %></li>

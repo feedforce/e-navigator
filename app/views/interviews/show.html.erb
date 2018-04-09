@@ -1,2 +1,5 @@
-<h1>Interviews#show</h1>
-<p>Find me in app/views/interviews/show.html.erb</p>
+<p><strong>開始時間: </strong><%= @interview.schedule %></p>
+<h3>承認状態</h3>
+<p><strong>承認状態: </strong><%= @interview.availability %></p>
+
+<%= link_to "面接一覧へ", user_interviews_path, class: 'btn btn-primary' %>

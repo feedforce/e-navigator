@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- 
+
  body {
    padding: 60px;
  }
@@ -21,4 +21,9 @@
  h1 {
    font-size: 30px;
    font-weight: bold;
+ }
+
+ .bootstrap-date {
+   display: inline-block;
+   width: auto;
  }
