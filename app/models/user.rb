@@ -8,7 +8,6 @@ class User < ApplicationRecord
     male: 1,
     female: 2
   }
-  validates :email, presence: true, uniqueness: true
 
   # パスワード入力なしでの更新を許可する
   def update_without_current_password(params, *options)
