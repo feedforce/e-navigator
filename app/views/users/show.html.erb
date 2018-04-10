@@ -1,7 +1,7 @@
 <% if @user.name == nil %>
-<h2><%= "新規ユーザーさんのプロフィール" %></h2>
+  <h2>新規ユーザーさんのプロフィール</h2>
 <% else %>
-<h2><%= @user.name %>さんのプロフィール</h2>
+  <h2><%= @user.name %>さんのプロフィール</h2>
 <% end %>
 <ul>
   <li>
@@ -14,7 +14,11 @@
   </li>
   <li>
     <td>年齢：</td>
-    <td><%= @user.age %>歳</td><br>
+    <% if @user.age == nil %>
+      <td>-歳</td><br>
+    <% else %>
+      <td><%= @user.age %>歳</td><br>
+    <% end %>
   </li>
   <li>
     <td>学校：</td>

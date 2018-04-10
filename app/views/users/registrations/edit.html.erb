@@ -23,7 +23,7 @@
 			f.date_select(
 			:birthday,
 			use_month_numbers: true,
-			start_year: 1988,
+			start_year: (Time.now.year - 30),
 			end_year: (Time.now.year - 18),
 			date_separator: '%s'),
 			'年', '月') + '日' %>

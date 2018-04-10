@@ -1,2 +1,15 @@
-<h1>Interviews#index</h1>
-<p>Find me in app/views/interviews/index.html.erb</p>
+<h2><%= @user.name %>さんの面接一覧</h2>
+<table>
+  <tr>
+    <th>面接日時</th>
+    <th>承認状態</th>
+  </tr>
+  <% @interviews.each do |interview| %>
+  <tr>
+    <td><%= interview.datetime.strftime("%Y年%m月%d日 %H時%M分") %></td>
+    <td><%= interview.status %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to "戻る", :back %>
