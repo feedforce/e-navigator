@@ -3,13 +3,16 @@
   <tr>
     <th>面接日時</th>
     <th>承認状態</th>
+    <th>削除</th>
   </tr>
   <% @interviews.each do |interview| %>
   <tr>
-    <td><%= interview.datetime.strftime("%Y年%m月%d日 %H時%M分") %></td>
+    <td><%= link_to interview.datetime.strftime("%Y年%m月%d日 %H時%M分"), edit_user_interview_path(@user, interview) %></td>
     <td><%= interview.status %></td>
+    <td><%= link_to "削除", user_interview_path(@user, interview), method: :delete, data: { confirm: "削除します。宜しいですか?" } %></td>
   </tr>
   <% end %>
 </table>
 
-<%= link_to "戻る", :back %>
+<br><%= link_to "新規面接登録", new_user_interview_path(@user.id) %><br>
+<br><%= link_to "戻る", :back %><br>

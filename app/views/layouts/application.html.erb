@@ -9,8 +9,10 @@
 
   <body>
 		<% if user_signed_in? %>
+			<p><%= link_to "トップ", user_path(@user) %></p>
 			<p><%= link_to "プロフィール編集", edit_user_registration_path %></p>
 			<p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+			<p><%= link_to "面接一覧", user_interviews_path(@user) %></p>
 
 		<% else %>
 			<p><%= link_to "新規登録", new_user_registration_path %></p>

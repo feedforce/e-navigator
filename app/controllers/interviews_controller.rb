@@ -8,6 +8,7 @@ class InterviewsController < ApplicationController
   end
 
   def new
+    @user = User.find_by(id: params[:user_id])
     @interview = Interview.new
   end
 
