@@ -4,9 +4,6 @@ class InterviewsController < ApplicationController
     @interviews = @user.interviews.all
   end
 
-  def show
-  end
-
   def new
     @user = User.find_by(id: params[:user_id])
     @interview = Interview.new
@@ -19,7 +16,7 @@ class InterviewsController < ApplicationController
       flash[:success] = "面接日時を登録しました"
       redirect_to user_interviews_path
     else
-      render "interviews/edit"
+      render :new
     end
   end
 
@@ -34,7 +31,7 @@ class InterviewsController < ApplicationController
     if @interview.update(interview_params)
       redirect_to user_interviews_path
     else
-      render "interviews/edit"
+      render :edit
     end
   end
 

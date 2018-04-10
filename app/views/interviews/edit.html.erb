@@ -1,7 +1,14 @@
 <h2>面接日程変更</h2>
-
 <%= form_for @interview, url: user_interview_path do |f| %>
-
+  <% if @interview.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger" role="alert">
+      <ul>
+      <% @interview.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="field">
     <%= f.label :面接日時 %><br />
 		<%== sprintf(
@@ -14,10 +21,8 @@
 			date_separator: '%s'),
 			'年', '月') + '日' %>
   </div>
-
   <div class="actions">
     <%= f.submit "変更" %>
   </div>
 <% end %>
-
 <%= link_to "戻る", :back %>
