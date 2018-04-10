@@ -8,7 +8,11 @@
   <% @interviews.each do |interview| %>
   <tr>
     <td><%= link_to interview.datetime.strftime("%Y年%m月%d日 %H時%M分"), edit_user_interview_path(@user, interview) %></td>
-    <td><%= interview.status %></td>
+    <% if interview.status == nil %>
+      <td>保留</td>
+    <% else %>
+      <td><%= interview.status %></td>
+    <% end %>
     <td><%= link_to "削除", user_interview_path(@user, interview), method: :delete, data: { confirm: "削除します。宜しいですか?" } %></td>
   </tr>
   <% end %>

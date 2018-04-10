@@ -4,7 +4,6 @@ class Interview < ApplicationRecord
   validates :user_id, presence: true
   validate :datetime_cannot_be_in_the_past
   enum status: {
-    suspended: 0,
     approved: 1,
     declined: 2
   }

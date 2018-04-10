@@ -5,7 +5,6 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :trackable, :validatable
   validate :birthday_cannot_be_in_the_future
   enum sex: {
-    unselected: 0,
     male: 1,
     female: 2
   }
