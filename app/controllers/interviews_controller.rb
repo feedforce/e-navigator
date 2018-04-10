@@ -22,13 +22,6 @@ class InterviewsController < ApplicationController
     else
       render :new
     end
-    # if Time.current > @interview.schedule
-    #   flash[:danger] = '未来の時間を指定してください'
-    #   redirect_to new_user_interview_path
-    # elsif @interview.save
-    #   flash[:info] = "面接日程を作成しました"
-    #   redirect_to user_interview_path(id: @interview)
-    # end
   end
 
   def edit
