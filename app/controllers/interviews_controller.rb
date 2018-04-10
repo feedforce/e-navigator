@@ -41,9 +41,9 @@ class InterviewsController < ApplicationController
     @interview.destroy
     redirect_to user_interviews_path
   end
-  
+
   private
-  
+
     def interview_params
       params.require(:interview).permit(:datetime)
     end
