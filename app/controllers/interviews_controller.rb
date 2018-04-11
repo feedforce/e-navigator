@@ -1,5 +1,5 @@
 class InterviewsController < ApplicationController
-  before_action :ensure_correct_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
     @user = User.find_by(id: params[:user_id])
