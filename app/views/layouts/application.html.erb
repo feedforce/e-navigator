@@ -12,7 +12,7 @@
 			<p><%= link_to "トップ", users_path %></p>
 			<p><%= link_to "プロフィール編集", edit_user_registration_path %></p>
 			<p><%= link_to "#{current_user.name}さんの面接一覧", user_interviews_path(current_user.id) %></p>
-			<p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+			<p><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトします。宜しいですか?" } %></p>
 		<% else %>
 			<p><%= link_to "新規登録", new_user_registration_path %></p>
 			<p><%= link_to "ログイン", new_user_session_path %></p>
