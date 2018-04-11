@@ -3,7 +3,7 @@
   <%= render 'layouts/error_messages', object: f.object %>
 
   <%= f.label :schedule %></br>
-  <%= f.datetime_select :schedule, { default: @interview.schedule }, {class: 'form-control bootstrap-date'} %>
+  <%= f.datetime_select :schedule, { default: @interview.schedule }, { class: 'form-control bootstrap-date' } %>
 
   <%= f.submit "送信", class: 'btn btn-primary' %>
 <% end %>

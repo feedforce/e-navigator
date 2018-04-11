@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   devise_for :users, only: [:sign_in, :sign_out, :session, :registerations]
   as :user do
     get '/users/sign_up', to: 'devise/registrations#new', as: :new_user_registration
