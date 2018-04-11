@@ -1,6 +1,5 @@
 class Interview < ApplicationRecord
   belongs_to :user
-  default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validate :datetime_cannot_be_in_the_past
   enum status: {
