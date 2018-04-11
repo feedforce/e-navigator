@@ -1,4 +1,6 @@
 class InterviewsController < ApplicationController
+  before_action :ensure_correct_user, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @user = User.find_by(id: params[:user_id])
     @interviews = @user.interviews
@@ -41,6 +43,14 @@ class InterviewsController < ApplicationController
     @interview.destroy
     redirect_to user_interviews_path
   end
+
+	def ensure_correct_user
+		@interview = Interview.find_by(id: params[:id])
+		if @interview.user_id != current_user.id
+			flash[:notice] = "他のユーザーの面接日時の編集及び削除は許可されていません"
+			redirect_to users_path
+		end
+	end
 
   private
 
