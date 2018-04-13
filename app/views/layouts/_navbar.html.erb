@@ -1,19 +1,21 @@
-<header class="navbar navbar-fixed-top">
-  <div class="nav-container col-xs-10 col-xs-offset-1">
-    <%= link_to "E-Navigator", root_path, class: 'navbar-brand' %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <li><%= link_to "プロフィール", edit_user_path(current_user) %></li>
-          <li><%= link_to "自分の面接一覧", user_interviews_path(current_user) %></li>
-          <li><%= link_to "メール", "#" %></li>
-          <li class="divider"></li>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: 'delete' %></li>
-        <% else %>
-          <li><%= link_to '新規登録', new_user_registration_path %></li>
-          <li><%= link_to 'ログイン', new_user_session_path  %></li>
-        <% end %>
-      </ul>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to "E-Navigator", root_path, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item"><%= link_to "プロフィール", edit_user_path(current_user), class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to "自分の面接一覧", user_interviews_path(current_user), class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to "メール", '#', class: 'nav-link' %></li>
+        <li class="divide, class: 'nav-link'r"></li>
+        <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+      <% else %>
+        <li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to 'ログイン', new_user_session_path , class: 'nav-link' %></li>
+      <% end %>
+    </ul>
   </div>
-</header>
+</nav>

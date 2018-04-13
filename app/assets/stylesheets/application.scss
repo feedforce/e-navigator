@@ -13,19 +13,40 @@
 
  @import "bootstrap";
 
- body {
-   padding: 60px;
+ .container {
+   margin: 40px;
  }
 
- h1 {
-   font-size: 30px;
-   font-weight: bold;
+
+ .navbar {
+   padding-left: 40px;
  }
 
+
+ // Users-Form
  .bootstrap-date {
    display: inline-block;
    width: auto;
  }
- .btn {
-   margin: 10px 0 ;
+
+ .bootstrap-gender {
+   width: auto;
  }
+
+ .btn {
+   margin: 0px;
+ }
+
+label {
+  font-size: 16px;
+ }
+
+select {
+  margin-bottom: 10px;
+}
+input {
+  margin-bottom: 10px;
+}
+.button_to {
+  margin: 10px;
+}
