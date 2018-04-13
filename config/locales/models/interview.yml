@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    attributes:
+      interview:
+        schedule: '面接時間'
+  interviews:
+    availability:
+      hold: '保留'
+      approval: '承認'
+      rejected: '却下'

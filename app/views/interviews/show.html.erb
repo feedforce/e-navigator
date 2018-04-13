@@ -1,0 +1,4 @@
+<p><strong>開始時間: </strong><%= simple_time(@interview.schedule) %></p>
+<p><strong>承認状態: </strong><%= t("interviews.availability.#{@interview.availability}") %></p>
+
+<%= link_to "面接一覧へ", user_interviews_path, class: 'btn btn-primary' %>

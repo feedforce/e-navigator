@@ -9,11 +9,10 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
  */
- 
+
+ @import "bootstrap";
+
  body {
    padding: 60px;
  }
@@ -21,4 +20,12 @@
  h1 {
    font-size: 30px;
    font-weight: bold;
+ }
+
+ .bootstrap-date {
+   display: inline-block;
+   width: auto;
+ }
+ .btn {
+   margin: 10px 0 ;
  }

@@ -17,7 +17,7 @@ gem 'sass-rails', '~> 5.0'
 # jquery
 gem 'jquery-rails'
 # bootstrap
-gem 'bootstrap-sass'
+gem 'bootstrap'
 # devise
 gem 'devise'
 # devise for bootstrap
