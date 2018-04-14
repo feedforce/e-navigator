@@ -11,6 +11,7 @@
     <th>削除</th>
     <% end %>
   </tr>
+
   <% @interviews.each do |interview| %>
   <tr>
     <td>
@@ -35,7 +36,9 @@
   </tr>
   <% end %>
 </table>
+
 <% if current_user.id == @user.id %>
 <br><%= link_to "新規面接登録", new_user_interview_path(@user) %><br>
 <% end %>
-<br><%= link_to "戻る", :back %><br>
+
+<%= link_to "戻る", :back %>

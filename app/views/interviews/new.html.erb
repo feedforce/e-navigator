@@ -9,20 +9,23 @@
       </ul>
     </div>
   <% end %>
+
   <div class="field">
     <%= f.label :面接日時 %><br />
-		<%== sprintf(
-			f.datetime_select(
-			:datetime,
-			use_month_numbers: true,
-			start_year: Time.now.year,
-			end_year: Time.now.year,
+    <%== sprintf(
+      f.datetime_select(
+      :datetime,
+      use_month_numbers: true,
+      start_year: Time.now.year,
+      end_year: Time.now.year,
       minute_step: 30,
-			date_separator: '%s'),
-			'年', '月') + '日' %>
+      date_separator: '%s'),
+      '年', '月') + '日' %>
   </div>
+
   <div class="actions">
     <%= f.submit "新規面接登録" %>
   </div>
 <% end %>
+
 <%= link_to "戻る", :back %>
