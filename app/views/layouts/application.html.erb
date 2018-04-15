@@ -8,9 +8,9 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <%= render 'layouts/navbar' %>
-  <%= render 'layouts/flash' %>
   <body>
     <div class="container">
+      <%= render 'layouts/flash' %>
       <%= yield %>
     </div>
   </body>
