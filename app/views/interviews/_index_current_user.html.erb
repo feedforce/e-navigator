@@ -1,0 +1,33 @@
+<div class="table-responsive">
+  <table class="table table-bordered table-hover table-responsive">
+    <thead>
+      <tr>
+        <th>面接開始時間</th>
+        <th>承認状態</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @interviews.each do |interview| %>
+      <% result, disabled = interview.interview_availability %>
+      <tr>
+        <td><div class="text-center"><%= simple_time(interview.schedule) %></div></td>
+        <td><div class="text-center"><%= result %></div></td>
+        <td><%= link_to "編集", edit_user_interview_path(id: interview), class: "btn btn-secondary #{disabled}" %></td>
+        <td><%= link_to "削除", user_interview_path(id: interview), method: 'delete', class: "btn btn-danger #{disabled}", data: { confirm: '本当に削除しますか？' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <div class="col-sm-10">
+    <!-- 申請フォーム -->
+    <%= link_to '申請', '#', class: 'btn btn-success' %>
+  </div>
+
+  <div class="col-sm-2">
+    <%= link_to "新規面接作成", new_user_interview_path, class: 'btn btn-primary' %>
+  </div>
+</div>

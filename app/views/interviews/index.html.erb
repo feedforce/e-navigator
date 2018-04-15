@@ -1,29 +1,6 @@
 <h1><%= @user.name? ? @user.name : @user.email %>さんの面接一覧</h1>
-<div class="table-responsive">
-  <table class="table table-bordered table-hover table-responsive">
-    <thead>
-      <tr>
-        <th>面接開始時間</th>
-        <th>承認状態</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @interviews.each do |interview| %>
-      <tr>
-        <td><div class="text-center"><%= simple_time(interview.schedule) %></div></td>
-        <td><div class="text-center"><%= t("interviews.availability.#{interview.availability}") %></div></td>
-        <td><%= link_to "編集", edit_user_interview_path(id: interview), class: "btn btn-secondary" %></td>
-        <td><%= link_to "削除", user_interview_path(id: interview), method: 'delete', class: "btn btn-danger", data: { confirm: '本当に削除しますか？' } %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-<!-- 申請フォーム(未実装) -->
-<div class="">
-  <%= link_to '申請', '#', class: 'btn btn-primary' %>
-</div></br>
-
-<%= link_to "新規面接作成", new_user_interview_path, class: 'btn btn-primary' %>
+<% if @user == current_user %>
+  <%= render 'index_current_user' %>
+<% else %>
+  <%= render 'index_not_current_user' %>
+<% end %>
