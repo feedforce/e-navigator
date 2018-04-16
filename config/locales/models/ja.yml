@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      interviews: 面接日程
     attributes:
       user:
         name: ユーザーネーム
@@ -15,3 +16,8 @@ ja:
         school: 学校名
         created_at: 登録日時
         updated_at: 更新日時
+    attributes:
+      interview:
+        user_id: ユーザーID
+        datetime: 面接日時
+        status: 承認状態

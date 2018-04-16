@@ -1,23 +1,27 @@
 <% if @user.name == nil %>
-<h2><%= "新規ユーザーさんのプロフィール" %></h2>
+  <h2>新規ユーザーさんのプロフィール</h2>
 <% else %>
-<h2><%= @user.name %>さんのプロフィール</h2>
+  <h2><%= @user.name %>さんのプロフィール</h2>
 <% end %>
 <ul>
   <li>
     <td>メールアドレス：</td>
-  <td><%= @user.email %></td><br>
+  <td><%= @user.email %></td>
   </li>
   <li>
     <td>性別：</td>
-    <td><%= @user.sex_i18n %></td><br>
+    <td><%= @user.sex_i18n %></td>
   </li>
   <li>
     <td>年齢：</td>
-    <td><%= @user.age %>歳</td><br>
+    <% if @user.birthday == nil %>
+      <td></td><br>
+    <% else %>
+      <td><%= @user.age %>歳</td>
+    <% end %>
   </li>
   <li>
     <td>学校：</td>
-    <td><%= @user.school %></td><br>
+    <td><%= @user.school %></td>
   </li>
 </ul>

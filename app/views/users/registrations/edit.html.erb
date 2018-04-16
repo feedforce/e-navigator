@@ -1,50 +1,48 @@
 <h2>プロフィール編集</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-	<%= devise_error_messages! %>
+  <%= devise_error_messages! %>
 
-	<div class="field">
-		<%= f.label :メールアドレス %><br />
-		<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-	</div>
+  <div class="field">
+    <%= f.label :メールアドレス %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
 
-	<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-		<div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-	<% end %>
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+  <div class="field">
+    <%= f.label :氏名 %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
 
-	<div class="field">
-		<%= f.label :氏名 %><br />
-		<%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-	</div>	
+  <div class="field">
+    <%= f.label :生年月日 %><br />
+    <%== sprintf(
+      f.date_select(
+      :birthday,
+      use_month_numbers: true,
+      start_year: (Time.now.year - 30),
+      end_year: (Time.now.year - 18),
+      date_separator: '%s'),
+      '年', '月') + '日' %>
+  </div>
 
-	<div class="field">
-		<%= f.label :生年月日 %><br />
-		<%== sprintf(
-			f.date_select(
-			:birthday,
-			use_month_numbers: true,
-			start_year: 1988,
-			end_year: (Time.now.year - 18),
-			date_separator: '%s'),
-			'年', '月') + '日' %>
-	</div>
+  <div class="field">
+    <%= f.label :性別 %><br />
+    <%= f.label :男性 %>
+    <%= f.radio_button :sex, :male %>
+    <%= f.label :女性 %>
+    <%= f.radio_button :sex, :female %>
+  </div>
 
-	<div class="field">
-		<%= f.label :性別 %><br />
-		<%= f.label :男性 %>
-		<%= f.radio_button :sex, :male %>
-		<%= f.label :女性 %>
-		<%= f.radio_button :sex, :female %>
-	</div>
+  <div class="field">
+    <%= f.label :学校 %><br />
+    <%= f.text_field :school, autofocus: true, autocomplete: "school" %>
+  </div>
 
-	<div class="field">
-		<%= f.label :学校 %><br />
-		<%= f.text_field :school, autofocus: true, autocomplete: "school" %>
-	</div>	
-
-	<div class="actions">
-		<%= f.submit "更新" %>
-	</div>
+  <div class="actions">
+    <%= f.submit "更新" %>
+  </div>
 <% end %>
 
 <%= link_to "戻る", :back %>
