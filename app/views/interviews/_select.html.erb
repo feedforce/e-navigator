@@ -1,0 +1,23 @@
+<% unless @user.interviews.where(status: 1).empty? %>
+  <h3>確定面接日時：<%= @user.interviews.find_by(status: 1).datetime.strftime("%Y年%m月%d日 %H時%M分") %></h3>
+<% end %>
+<h4>面接日程を変更する場合は以下から選んでください。</h4>
+<table>
+  <tr>
+    <th>面接日時</th>
+  </tr>
+  <% @interviews.each do |interview| %>
+  <tr>
+    <td>
+      <%= link_to interview.datetime.strftime("%Y年%m月%d日 %H時%M分"),
+          approve_user_interview_path(@user, interview),
+          method: :post,
+          data: { confirm: "#{interview.datetime.strftime("%Y年%m月%d日 %H時%M分")}を面接日時に確定します。宜しいですか?" }
+      %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<% if current_user.id == @user.id %>
+  <br><%= link_to "新規面接登録", new_user_interview_path(@user) %><br>
+<% end %>
