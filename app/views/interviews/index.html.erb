@@ -1,8 +1,4 @@
-<% if @user.name.nil? %>
-  <h2>新規ユーザーさんの面接一覧</h2>
-<% else %>
-  <h2><%= @user.name %>さんの面接一覧</h2>
-<% end %>
+<h2><%= @user.name %>さんの面接一覧</h2>
 <% unless current_user.id == @user.id %>
   <%= render 'select' %>
 <% else %>
@@ -20,21 +16,17 @@
     <% @interviews.each do |interview| %>
     <tr>
       <td>
-      <% if current_user.id == @user.id && interview.status.nil? %>
+      <% if current_user.id == @user.id && interview.status == "suspended" %>
         <%= link_to interview.datetime.strftime("%Y年%m月%d日 %H時%M分"), edit_user_interview_path(@user, interview) %>
       <% else %>
         <%= interview.datetime.strftime("%Y年%m月%d日 %H時%M分") %>
       <% end %>
       </td>
       <td>
-      <% if interview.status == nil %>
-        保留
-      <% else %>
       <%= interview.status_i18n %>
-      <% end %>
       </td>
       <td>
-      <% if current_user.id == @user.id && interview.status.nil? %>
+      <% if current_user.id == @user.id && interview.status == "suspended" %>
         <%= link_to "削除", user_interview_path(@user, interview), method: :delete, data: { confirm: "削除します。宜しいですか?" } %>
       <% end %>
       </td>
