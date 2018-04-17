@@ -6,7 +6,6 @@
     <th>年齢</th>
     <th>性別</th>
     <th>学校</th>
-    <th>面接日時</th>
     <th>面接一覧</th>
   </tr>
   <% @users.each do |user| %>
@@ -16,8 +15,7 @@
     <td><%= user.age %></td>
     <td><%= user.sex_i18n %></td>
     <td><%= user.school %></td>
-    <td>面接日時</td>
-    <td><%= link_to "面接日時", user_interviews_path(user.id) %></td>
+    <td><%= link_to "面接一覧", user_interviews_path(user.id) %></td>
   </tr>
   <% end %>
 </table>
