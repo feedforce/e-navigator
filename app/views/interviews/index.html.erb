@@ -3,42 +3,46 @@
 <% else %>
   <h2><%= @user.name %>さんの面接一覧</h2>
 <% end %>
-<table>
-  <tr>
-    <th>面接日時</th>
-    <th>承認状態</th>
-    <% if current_user.id == @user.id %>
-    <th>削除</th>
-    <% end %>
-  </tr>
-
-  <% @interviews.each do |interview| %>
-  <tr>
-    <td>
-    <% if current_user.id == @user.id %>
-      <%= link_to interview.datetime.strftime("%Y年%m月%d日 %H時%M分"), edit_user_interview_path(@user, interview) %>
-    <% else %>
-      <%= interview.datetime.strftime("%Y年%m月%d日 %H時%M分") %>
-    <% end %>
-    </td>
-    <td>
-    <% if interview.status == nil %>
-      保留
-    <% else %>
-    <%= interview.status %>
-    <% end %>
-    </td>
-    <td>
-    <% if current_user.id == @user.id %>
-      <%= link_to "削除", user_interview_path(@user, interview), method: :delete, data: { confirm: "削除します。宜しいですか?" } %>
-    <% end %>
-    </td>
-  </tr>
+<% unless current_user.id == @user.id %>
+  <%= render 'select' %>
+<% else %>
+  <% unless @user.interviews.where(status: 1).empty? %>
+    <h3>確定面接日時：<%= @user.interviews.find_by(status: 1).datetime.strftime("%Y年%m月%d日 %H時%M分") %></h3>
   <% end %>
-</table>
-
-<% if current_user.id == @user.id %>
-<br><%= link_to "新規面接登録", new_user_interview_path(@user) %><br>
+  <table>
+    <tr>
+      <th>面接日時</th>
+      <th>承認状態</th>
+      <% if current_user.id == @user.id %>
+      <th>削除</th>
+      <% end %>
+    </tr>
+    <% @interviews.each do |interview| %>
+    <tr>
+      <td>
+      <% if current_user.id == @user.id && interview.status.nil? %>
+        <%= link_to interview.datetime.strftime("%Y年%m月%d日 %H時%M分"), edit_user_interview_path(@user, interview) %>
+      <% else %>
+        <%= interview.datetime.strftime("%Y年%m月%d日 %H時%M分") %>
+      <% end %>
+      </td>
+      <td>
+      <% if interview.status == nil %>
+        保留
+      <% else %>
+      <%= interview.status_i18n %>
+      <% end %>
+      </td>
+      <td>
+      <% if current_user.id == @user.id && interview.status.nil? %>
+        <%= link_to "削除", user_interview_path(@user, interview), method: :delete, data: { confirm: "削除します。宜しいですか?" } %>
+      <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  <% if current_user.id == @user.id %>
+    <br><%= link_to "新規面接登録", new_user_interview_path(@user) %><br>
+  <% end %>
 <% end %>
-
 <%= link_to "戻る", :back %>
