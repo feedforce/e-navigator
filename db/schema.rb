@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409193304) do
+ActiveRecord::Schema.define(version: 20180417193220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "interviews", force: :cascade do |t|
     t.datetime "datetime"
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -42,9 +42,9 @@ ActiveRecord::Schema.define(version: 20180409193304) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
+    t.string "name", default: "新規ユーザー"
     t.date "birthday"
-    t.integer "sex"
+    t.integer "sex", default: 0
     t.string "school"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
