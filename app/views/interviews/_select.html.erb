@@ -1,5 +1,5 @@
-<% unless @user.interviews.where(status: 1).empty? %>
-  <h3>確定面接日時：<%= @user.interviews.find_by(status: 1).datetime.strftime("%Y年%m月%d日 %H時%M分") %></h3>
+<% unless @approved_interview.nil? %>
+  <h3>確定面接日時：<%= @approved_interview.datetime.strftime("%Y年%m月%d日 %H時%M分") %></h3>
 <% end %>
 <h4>面接日程を変更する場合は以下から選んでください。</h4>
 <table>
