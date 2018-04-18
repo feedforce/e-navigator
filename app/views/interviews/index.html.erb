@@ -2,8 +2,8 @@
 <% unless current_user.id == @user.id %>
   <%= render 'select' %>
 <% else %>
-  <% unless @user.interviews.where(status: 1).empty? %>
-    <h3>確定面接日時：<%= @user.interviews.find_by(status: 1).datetime.strftime("%Y年%m月%d日 %H時%M分") %></h3>
+  <% unless @approved_interview.nil? %>
+    <h3>確定面接日時：<%= @approved_interview.datetime.strftime("%Y年%m月%d日 %H時%M分") %></h3>
   <% end %>
   <table>
     <tr>
@@ -16,7 +16,7 @@
     <% @interviews.each do |interview| %>
     <tr>
       <td>
-      <% if current_user.id == @user.id && interview.status == "suspended" %>
+      <% if current_user.id == @user.id && interview.suspended? %>
         <%= link_to interview.datetime.strftime("%Y年%m月%d日 %H時%M分"), edit_user_interview_path(@user, interview) %>
       <% else %>
         <%= interview.datetime.strftime("%Y年%m月%d日 %H時%M分") %>
@@ -26,7 +26,7 @@
       <%= interview.status_i18n %>
       </td>
       <td>
-      <% if current_user.id == @user.id && interview.status == "suspended" %>
+      <% if current_user.id == @user.id && interview.suspended? %>
         <%= link_to "削除", user_interview_path(@user, interview), method: :delete, data: { confirm: "削除します。宜しいですか?" } %>
       <% end %>
       </td>
