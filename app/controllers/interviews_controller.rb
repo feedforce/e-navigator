@@ -35,7 +35,7 @@ class InterviewsController < ApplicationController
 
   # PATCH /users/:user_id/interviews/:id
   def update
-    unless current_user?(@interview.user.id)
+    unless current_user?(@interview.user_id)
       flash[:notice] = "他のユーザーの面接日時の変更は許可されていません"
       redirect_to users_path
     else
@@ -79,6 +79,6 @@ class InterviewsController < ApplicationController
     end
 
     def current_user?(id)
-      id == current_user
+      current_user.id == id
     end
 end
