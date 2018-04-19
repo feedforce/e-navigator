@@ -17,7 +17,7 @@ class InterviewsController < ApplicationController
   def create
     @interview = current_user.interviews.build(interview_params)
     if @interview.save
-      flash[:info] = "面接日程を作成しました"
+      flash[:info] = '面接日程を作成しました'
       redirect_to user_interview_path(id: @interview)
     else
       render :new
@@ -44,7 +44,7 @@ class InterviewsController < ApplicationController
 
   def destroy
     @interview.destroy
-    flash[:info] = "削除されました"
+    flash[:info] = '削除しました'
     redirect_to user_interviews_path
   end
 

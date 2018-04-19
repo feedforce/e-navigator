@@ -11,10 +11,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by(id: params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "プロフィールが更新されました"
+      flash[:success] = 'プロフィールが更新されました'
       redirect_to edit_user_path(@user)
     else
-      flash[:dander] = "正しく更新されませんでした"
+      flash[:dander] = '正しく更新されませんでした'
       render @user
     end
   end
