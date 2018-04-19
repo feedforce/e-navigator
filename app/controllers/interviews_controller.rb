@@ -55,15 +55,21 @@ class InterviewsController < ApplicationController
 
   # POST /users/:user_id/interviews/:id/approve
   def approve
-    @interview.approved!
-    # 以下、承認した日時以外を否認状態にする
-    interviews = Interview.where(user_id: @interview.user_id).where.not(id: @interview.id)
-    interviews.each do |interview|
-      interview.declined!
+    if @interview.datetime < DateTime.now
+      flash[:notice] = "過去の日時を承認することは出来ません"
+      redirect_to user_interviews_path
+    else
+      @interview.approved!
+      # 以下、承認した日時以外を否認状態にする
+      interviews = Interview.where(user_id: @interview.user_id).where.not(id: @interview.id)
+      interviews.each do |interview|
+        interview.declined!
+        rescue ActiveRecord::RecordInvalid
+      end
+      NotificationMailer.notification_approved_interview(@interview).deliver
+      flash[:notice] = "面接日時を承認しました"
+      redirect_to user_interviews_path
     end
-    NotificationMailer.notification_approved_interview(@interview).deliver
-    flash[:notice] = "面接日時を承認しました"
-    redirect_to user_interviews_path
   end
 
   private

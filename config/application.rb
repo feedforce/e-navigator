@@ -35,8 +35,8 @@ module ENavigator
     
     Bundler.require(*Rails.groups)
     Dotenv::Railtie.load
-    p ENV['KEY1'] # 環境変数を読み込んで表示
-    p ENV['KEY2'] # 環境変数を読み込んで表示
+    p ENV['MAILER_USER_ID'] # 環境変数を読み込んで表示
+    p ENV['MAILER_PASSWORD'] # 環境変数を読み込んで表示
     config.action_mailer.default_url_options = { host: 'example.com' }
   end
 end
