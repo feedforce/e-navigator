@@ -7,8 +7,7 @@ class User < ApplicationRecord
 
   # 年齢の判別
   def age
-    date_format = "%Y%m%d"
-    (Time.current.strftime(date_format).to_i - self.birthdate.strftime(date_format).to_i) / 10000
+    (Time.current.try(:strftime, "%Y%m%d").to_i - self.birthdate.try(:strftime, "%Y%m%d").to_i) / 10000
   end
 
 end

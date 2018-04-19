@@ -14,17 +14,17 @@
     </thead>
     <tbody>
       <% @users.each do |user| %>
-      <% date = user.interviews.find_by(availability: 'approval') %>
-      <tr>
-        <td><div class="text-center"><%= user.name %></div></td>
-        <td><div class="text-center"><%= user.email %></div></td>
-        <td><div class="text-center"><%= user.age %></div></td>
-        <td><div class="text-center"><%= t("users.gender.#{user.gender}") %></div></td>
-        <td><div class="text-center"><%= user.school %></div></td>
-        <td><div class="text-center"><%= date.nil? ? 'まだ確定されていません' : simple_time(date.schedule) %></div></td>
-        <td><%= link_to "面接一覧", user_interviews_path(user), class: 'btn btn-primary' %></td>
-      </tr>
-      <% end %>
+        <% date = user.interviews.find_by(availability: 'approval') %>
+        <tr>
+          <td><div class="text-center"><%= user.name %></div></td>
+          <td><div class="text-center"><%= user.email %></div></td>
+          <td><div class="text-center"><%= user.birthdate? ? user.age : "" %></div></td>
+          <td><div class="text-center"><%= t("users.gender.#{user.gender}") %></div></td>
+          <td><div class="text-center"><%= user.school %></div></td>
+          <td><div class="text-center"><%= date.nil? ? 'まだ確定されていません' : simple_time(date.schedule) %></div></td>
+          <td><%= link_to "面接一覧", user_interviews_path(user), class: 'btn btn-primary' %></td>
+        </tr>
+        <% end %>
     </tbody>
   </table>
 </div>

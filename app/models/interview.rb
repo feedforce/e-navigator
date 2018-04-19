@@ -5,7 +5,7 @@ class Interview < ApplicationRecord
   validate :check_datetime
 
   def check_datetime
-    errors.add(:schedule, "は現在よりも未来の時間を指定してください") if Time.now > self.schedule
+    errors.add(:schedule, "は現在よりも未来の時間を指定してください") if Time.current > self.schedule
   end
 
   def interview_availability

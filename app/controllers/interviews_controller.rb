@@ -28,16 +28,14 @@ class InterviewsController < ApplicationController
   end
 
   def update
-    if params[:interview][:availability] && @interview.update_attributes(interview_params)
-      @interviews = @user.interviews.where.not(id: params[:id])
-      @interviews.each do |interview|
-        interview.availability = 'rejected'
-        interview.save
+    if @interview.update(interview_params)
+      if params[:interview][:availability]
+        @interviews = @user.interviews.where.not(id: params[:id])
+        @interviews.update_all(availability: Interview.availabilities[:rejected])
+        flash[:success] = '面接日程が確定しました'
+        return redirect_to user_interviews_path
       end
-      flash[:success] = '面接日程が確定しました'
-      redirect_to user_interviews_path
-    elsif @interview.update(interview_params)
-      flash[:success] = "面接時間を更新しました"
+      flash[:success] = '面接時間を更新しました'
       redirect_to user_interview_path(id: @interview)
     else
       render :edit
