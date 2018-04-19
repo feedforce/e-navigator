@@ -1,5 +1,5 @@
 <h2>面接日程変更</h2>
-<%= form_for @interview, url: {action: :create} do |f| %>
+<%= form_for @interview, url: {action: :update} do |f| %>
 <%= render 'form', f: f %>
 <div class="actions">
   <%= f.submit "変更" %>
