@@ -1,8 +1,9 @@
 <h2>新規面接登録</h2>
-<%= form_for @interview, url: user_interviews_path do |f| %>
+<%= form_for @interview, url: {action: :create} do |f| %>
 <%= render 'form', f: f %>
 <div class="actions">
   <%= f.submit "新規面接登録" %>
 </div>
 <% end %>
+<br>
 <%= link_to "戻る", :back %>
