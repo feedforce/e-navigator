@@ -7,8 +7,8 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-  <%= render 'layouts/navbar' %>
   <body>
+    <%= render 'layouts/navbar' %>
     <div class="container">
       <%= render 'layouts/flash' %>
       <%= yield %>
