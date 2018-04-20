@@ -9,12 +9,9 @@ class NotificationMailer < ApplicationMailer
     end
   end
 
-  def notification_approved_interview(interview)
+  def notification_approved_interview(approver, interview)
     @interview = interview
-    users = User.where.not(id: @interview.user_id)
-    users.each do |user|
-    @approver = user
-    mail(to: @interview.user.email, cc: user.email, subject: "面接日時が確定しました")
-    end
+    @approver = approver
+    mail(to: @interview.user.email, cc: approver.email, subject: "面接日時が確定しました")
   end
 end
