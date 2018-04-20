@@ -27,8 +27,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'enum_help'
-# .env から環境変数を読み込み
-gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
