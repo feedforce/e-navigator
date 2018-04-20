@@ -86,7 +86,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # ActionMailer
-  config.action_mailer.default_url_options = { host: 'example.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'e-navigator-hayato-ishida.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     user_name: ENV['MAILER_USER_ID'],
