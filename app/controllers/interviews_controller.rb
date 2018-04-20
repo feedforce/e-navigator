@@ -66,7 +66,8 @@ class InterviewsController < ApplicationController
         interview.declined!
         rescue ActiveRecord::RecordInvalid
       end
-      NotificationMailer.notification_approved_interview(@interview).deliver
+      @approver = current_user
+      NotificationMailer.notification_approved_interview(@approver, @interview).deliver
       flash[:notice] = "面接日時を承認しました"
       redirect_to user_interviews_path
     end
