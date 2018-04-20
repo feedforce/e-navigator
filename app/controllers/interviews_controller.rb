@@ -1,11 +1,12 @@
 class InterviewsController < ApplicationController
-  before_action :set_user, only: [:index, :new, :create]
+  before_action :set_user, only: [:index, :new, :create, :select_approver]
   before_action :set_interview, only: [:edit, :update, :destroy, :approve]
 
   # GET /users/:user_id/interviews
   def index
     @interviews = @user.interviews.order(datetime: 'asc')
     @approved_interview = @interviews.find_by(status: 1)
+    @approver = User.new
   end
 
   # GET /users/:user_id/interviews/new
@@ -21,7 +22,6 @@ class InterviewsController < ApplicationController
     else
       @interview = @user.interviews.new(interview_params)
       if @interview.save
-        NotificationMailer.notification_new_interview(@interview).deliver
         flash[:notice] = "面接日時を登録しました"
         redirect_to user_interviews_path
       else
@@ -74,6 +74,10 @@ class InterviewsController < ApplicationController
   end
 
   def select_approver
+    @approver = User.find_by(approver_params)
+    NotificationMailer.notification_new_interview(@user, @approver).deliver
+    flash[:notice] = "面接日時を申請しました"
+    redirect_to user_interviews_path
   end
 
   private
@@ -88,6 +92,10 @@ class InterviewsController < ApplicationController
 
     def interview_params
       params.require(:interview).permit(:datetime)
+    end
+    
+    def approver_params
+      params.require(:user).permit(:email)
     end
 
     def current_user?(id)
