@@ -33,8 +33,19 @@
     </tr>
     <% end %>
   </table>
+  <br>
+  <div class="field">
+    <%= form_for @approver, url: {action: :select_approver} do |f| %>
+      <%= f.label :申請先選択 %>
+      <br>
+      <%= f.collection_select :email, User.where.not(id: current_user.id), :email, :email %>
+      <br>
+      <%= f.submit :申請 %>
+    <% end %>
+  </div>
   <% if current_user.id == @user.id %>
-    <br><%= link_to "新規面接登録", new_user_interview_path(@user) %><br>
+    <br>
+    <%= link_to "新規面接登録", new_user_interview_path(@user) %><br>
   <% end %>
 <% end %>
 <br>
