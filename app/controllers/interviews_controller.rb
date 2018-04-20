@@ -73,6 +73,9 @@ class InterviewsController < ApplicationController
     end
   end
 
+  def select_approver
+  end
+
   private
 
     def set_user
