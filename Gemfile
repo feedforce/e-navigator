@@ -29,6 +29,7 @@ gem 'devise'
 gem 'enum_help'
 # .env から環境変数を読み込み
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'sendgrid-ruby'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
