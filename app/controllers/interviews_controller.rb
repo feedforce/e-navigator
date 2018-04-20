@@ -21,7 +21,7 @@ class InterviewsController < ApplicationController
     else
       @interview = @user.interviews.new(interview_params)
       if @interview.save
-    NotificationMailer.notification_new_interview(@interview).deliver
+        NotificationMailer.notification_new_interview(@interview).deliver
         flash[:notice] = "面接日時を登録しました"
         redirect_to user_interviews_path
       else
