@@ -32,11 +32,5 @@ module ENavigator
 		config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     
     config.time_zone = 'Tokyo'
-    
-    Bundler.require(*Rails.groups)
-    Dotenv::Railtie.load
-    p ENV['MAILER_USER_ID'] # 環境変数を読み込んで表示
-    p ENV['MAILER_PASSWORD'] # 環境変数を読み込んで表示
-    config.action_mailer.default_url_options = { host: 'example.com' }
   end
 end
