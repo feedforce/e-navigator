@@ -12,6 +12,9 @@ Rails.application.routes.draw do
       member do
         post 'approve'
       end
+      collection do
+        post 'select_approver'
+      end
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
