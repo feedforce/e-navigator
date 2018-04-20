@@ -9,6 +9,6 @@ class NotificationMailer < ApplicationMailer
   def notification_approved_interview(approver, interview)
     @interview = interview
     @approver = approver
-    mail(to: @interview.user.email, cc: approver.email, subject: "面接日時が確定しました")
+    mail(to: interview.user.email, cc: approver.email, subject: "面接日時が確定しました")
   end
 end
