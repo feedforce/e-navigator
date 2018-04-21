@@ -53,6 +53,14 @@ class InterviewsController < ApplicationController
     redirect_to user_interviews_path
   end
 
+  # POST /users/:user_id/interviews/select_approver
+  def select_approver
+    @approver = User.find_by(approver_params)
+    NotificationMailer.notification_new_interview(@user, @approver).deliver
+    flash[:notice] = "面接日時を申請しました"
+    redirect_to user_interviews_path
+  end
+
   # POST /users/:user_id/interviews/:id/approve
   def approve
     if @interview.datetime < DateTime.now
@@ -71,13 +79,6 @@ class InterviewsController < ApplicationController
       flash[:notice] = "面接日時を承認しました"
       redirect_to user_interviews_path
     end
-  end
-
-  def select_approver
-    @approver = User.find_by(approver_params)
-    NotificationMailer.notification_new_interview(@user, @approver).deliver
-    flash[:notice] = "面接日時を申請しました"
-    redirect_to user_interviews_path
   end
 
   private
