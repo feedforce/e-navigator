@@ -35,12 +35,14 @@
   </table>
   <br>
   <div class="field">
-    <%= form_for @approver, url: {action: :select_approver} do |f| %>
-      <%= f.label :申請先選択 %>
+    <%= form_tag(action: :select_approver, method: :post) do %>
+      <%= label_tag :申請先選択 %>
       <br>
-      <%= f.collection_select :email, User.where.not(id: current_user.id), :email, :email %>
+      <% @users.each do |user| %>
+        <%= select_tag :email, options_for_select([user.email]) %>
+      <% end %>
       <br>
-      <%= f.submit :申請 %>
+      <%= submit_tag :申請 %>
     <% end %>
   </div>
   <% if current_user.id == @user.id %>
