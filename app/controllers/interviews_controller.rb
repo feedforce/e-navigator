@@ -6,7 +6,8 @@ class InterviewsController < ApplicationController
   def index
     @interviews = @user.interviews.order(datetime: 'asc')
     @approved_interview = @interviews.find_by(status: 1)
-    @approver = User.new
+    # form_tag用に他ユーザー情報を代入します
+    @users = User.where.not(id: current_user.id)
   end
 
   # GET /users/:user_id/interviews/new
@@ -56,7 +57,8 @@ class InterviewsController < ApplicationController
   # POST /users/:user_id/interviews/select_approver
   def select_approver
     @approver = User.find_by(approver_params)
-    NotificationMailer.notification_new_interview(@user, @approver).deliver
+    # Mailerの名前を変更しました
+    InterviewReminderMailer.new_interview(@user, @approver).deliver
     flash[:notice] = "面接日時を申請しました"
     redirect_to user_interviews_path
   end
@@ -75,7 +77,8 @@ class InterviewsController < ApplicationController
         rescue ActiveRecord::RecordInvalid
       end
       @approver = current_user
-      NotificationMailer.notification_approved_interview(@approver, @interview).deliver
+      # Mailerの名前を変更しました
+      InterviewReminderMailer.approved_interview(@approver, @interview).deliver
       flash[:notice] = "面接日時を承認しました"
       redirect_to user_interviews_path
     end
@@ -95,8 +98,9 @@ class InterviewsController < ApplicationController
       params.require(:interview).permit(:datetime)
     end
     
+    # form_tagに変えたので、.require(:user)を削除しました
     def approver_params
-      params.require(:user).permit(:email)
+      params.permit(:email)
     end
 
     def current_user?(id)
