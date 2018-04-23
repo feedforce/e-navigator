@@ -1,0 +1,15 @@
+  <p>下記の通り、面接日時が確定しました。ご確認下さい。</p>
+<br>
+<hr>
+  <p>面接日時：<%= @interview.datetime.strftime("%Y年%m月%d日 %H時%M分") %></p>
+  <p>応募者：<%= @interview.user.name %>さん</p>
+  <p>承認者：<%= @approver.name %></p>
+  <p>下記URLから面接日時の承認を宜しくお願い致します。</p>
+<br>
+<hr>
+  <p><%= user_interviews_url(@interview.user) %></p>
+<hr>
+  <p>場所は、株式会社フィードフォースで行います。</p>
+  <p>今後の連絡は担当人事の方から再度連絡させて頂きます。</p>
+<br>
+  <p>宜しくお願い致します。</p>
