@@ -58,7 +58,7 @@ class InterviewsController < ApplicationController
   def select_approver
     @approver = User.find_by(approver_params)
     # Mailerの名前を変更しました
-    InterviewReminderMailer.new_interview(@user, @approver).deliver
+    InterviewsMailer.apply(@user, @approver).deliver
     flash[:notice] = "面接日時を申請しました"
     redirect_to user_interviews_path
   end
@@ -78,7 +78,7 @@ class InterviewsController < ApplicationController
       end
       @approver = current_user
       # Mailerの名前を変更しました
-      InterviewReminderMailer.approved_interview(@approver, @interview).deliver
+      InterviewsMailer.approve(@approver, @interview).deliver
       flash[:notice] = "面接日時を承認しました"
       redirect_to user_interviews_path
     end
