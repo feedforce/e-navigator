@@ -5,6 +5,6 @@
 面接日程を変更する場合は以下から選んでください。<br>
 <% @interviews.each do |interview| %>
   <%= button_to simple_time(interview.schedule), user_interview_path(id: interview),
-                  method: 'patch', params: {interview: {availability: 'approval'}},
-                  class: 'btn btn-secondary', data: {confirm: "#{simple_time(interview.schedule)}でよろしいですか？"} %>
+                  method: 'patch', params: { interview: { availability: 'approval' }},
+                  class: 'btn btn-secondary', data: { confirm: "#{simple_time(interview.schedule)}でよろしいですか？" } %>
 <% end %>
