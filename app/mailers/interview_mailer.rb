@@ -1,4 +1,4 @@
-class InterviewsMailer < ApplicationMailer
+class InterviewMailer < ApplicationMailer
   helper ApplicationHelper
 
   # メソッド名を変更しました
