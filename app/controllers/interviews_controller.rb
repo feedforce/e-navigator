@@ -1,13 +1,13 @@
 class InterviewsController < ApplicationController
-  before_action :correct_user, only: [:edit, :destroy, :update]
+  before_action :params_user_interview, only: [:show, :edit, :update, :destroy]
 
   def index
     @user = User.find(params[:user_id])
+    @users = User.where.not(id: current_user)
     @interviews = @user.interviews.all
   end
 
   def show
-    @interview = current_user.interviews.find(params[:id])
   end
 
   def new
@@ -17,7 +17,7 @@ class InterviewsController < ApplicationController
   def create
     @interview = current_user.interviews.build(interview_params)
     if @interview.save
-      flash[:info] = "面接日程を作成しました"
+      flash[:info] = '面接日程を作成しました'
       redirect_to user_interview_path(id: @interview)
     else
       render :new
@@ -29,7 +29,13 @@ class InterviewsController < ApplicationController
 
   def update
     if @interview.update(interview_params)
-      flash[:success] = "面接時間を更新しました"
+      if params[:interview][:availability]
+        @interviews = @user.interviews.where.not(id: params[:id])
+        @interviews.update_all(availability: Interview.availabilities[:rejected])
+        flash[:success] = '面接日程が確定しました'
+        return redirect_to user_interviews_path
+      end
+      flash[:success] = '面接時間を更新しました'
       redirect_to user_interview_path(id: @interview)
     else
       render :edit
@@ -38,19 +44,18 @@ class InterviewsController < ApplicationController
 
   def destroy
     @interview.destroy
-    flash[:info] = "削除されました"
+    flash[:info] = '削除しました'
     redirect_to user_interviews_path
   end
 
   private
 
+  def params_user_interview
+    @user = User.find(params[:user_id])
+    @interview  = @user.interviews.find_by(id: params[:id])
+  end
+
   def interview_params
-    params.require(:interview).permit(:schedule)
+    params.require(:interview).permit(:schedule, :availability)
   end
-
-  def correct_user
-    @interview = current_user.interviews.find_by(id: params[:id])
-    redirect_to root_url if @interview.nil?
-  end
-
 end
