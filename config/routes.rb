@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit, :update] do
     resources :interviews
   end
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
   root to: 'users#index'
 end
