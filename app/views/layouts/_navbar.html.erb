@@ -9,7 +9,7 @@
       <% if user_signed_in? %>
         <li class="nav-item"><%= link_to "プロフィール", edit_user_path(current_user), class: 'nav-link' %></li>
         <li class="nav-item"><%= link_to "自分の面接一覧", user_interviews_path(current_user), class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to "メール", '#', class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to "メール", letter_opener_web_path, class: 'nav-link' %></li>
         <li class="divide, class: 'nav-link'r"></li>
         <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
       <% else %>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get '/users/sign_up', to: 'devise/registrations#new', as: :new_user_registration
     post '/users', to: 'devise/registrations#create', as: :user_registration
   end
+  patch 'users/:user_id/sendmail_request', to: 'interviews#sendmail_request', as: 'sendmail_request'
   resources :users, only: [:index, :edit, :update] do
     resources :interviews
   end

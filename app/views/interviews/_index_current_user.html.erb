@@ -22,11 +22,7 @@
   </table>
 </div>
 <div class="row">
-  <div class="col-sm-10">
-    <!-- 申請フォーム -->
-    <%= link_to '申請', '#', class: 'btn btn-success' %>
-  </div>
-
+  <%= render 'sendmail_request' %>
   <div class="col-sm-2">
     <%= link_to "新規面接作成", new_user_interview_path, class: 'btn btn-primary' %>
   </div>
