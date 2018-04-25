@@ -31,7 +31,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_caching = false
   # devise Settings
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3001 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # mailer Settings
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
