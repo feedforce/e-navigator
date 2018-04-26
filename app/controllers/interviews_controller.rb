@@ -1,4 +1,5 @@
 class InterviewsController < ApplicationController
+  include ApplicationHelper
   before_action :params_user_interview, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -32,6 +33,7 @@ class InterviewsController < ApplicationController
       if params[:interview][:availability]
         @interviews = @user.interviews.where.not(id: params[:id])
         @interviews.update_all(availability: Interview.availabilities[:rejected])
+        InterviewMailer.approval_mail(@user, current_user, simple_time(@interview.schedule)).deliver
         flash[:success] = '面接日程が確定しました'
         return redirect_to user_interviews_path
       end

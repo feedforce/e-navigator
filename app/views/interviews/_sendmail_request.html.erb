@@ -1,6 +1,6 @@
 <div class="col-sm-10">
   <%= form_for @user, url: sendmail_request_path(user_id: current_user) do |f| %>
-    <%= f.select :email, @users.map { |user| [user.email]}, {}, { class: 'form-control bootstrap-date' } %>
+    <%= f.select :email, @users.map { |user| [user.email] }, {}, { class: 'form-control bootstrap-date' } %>
     <%= f.submit '申請', class: 'btn btn-success' %>
   <% end %>
 </div>
