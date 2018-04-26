@@ -14,6 +14,18 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# jquery
+gem 'jquery-rails'
+# bootstrap
+gem 'bootstrap'
+# devise
+gem 'devise'
+# devise for bootstrap
+gem 'devise-bootstrap-views'
+# letter_opener_web
+gem 'letter_opener_web'
+# .env から環境変数を読み込み
+gem 'dotenv-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes

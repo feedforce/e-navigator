@@ -9,7 +9,48 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
  */
+
+ @import "bootstrap";
+
+ .container {
+   margin: 40px;
+ }
+
+
+ .navbar {
+   padding-left: 40px;
+ }
+
+ // Users-Form
+ .bootstrap-date {
+   display: inline-block;
+   width: auto;
+ }
+
+ .bootstrap-gender {
+   width: auto;
+ }
+
+ .btn {
+   margin: 0px;
+ }
+
+label {
+  font-size: 16px;
+ }
+
+select {
+  margin-bottom: 10px;
+}
+input {
+  margin-bottom: 10px;
+}
+.button_to {
+  margin: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+}

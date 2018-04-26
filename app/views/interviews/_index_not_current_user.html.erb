@@ -1,0 +1,10 @@
+<h3>現在の面接日程</h3>
+<% date = @user.interviews.find_by(availability: 'approval') %>
+<strong><%= date.nil? ? 'まだ設定されていません' : "#{simple_time(date.schedule)}に設定さています" %></strong><br>
+<hr>
+面接日程を変更する場合は以下から選んでください。<br>
+<% @interviews.each do |interview| %>
+  <%= button_to simple_time(interview.schedule), user_interview_path(id: interview),
+                  method: 'patch', params: { interview: { availability: 'approval' }},
+                  class: 'btn btn-secondary', data: { confirm: "#{simple_time(interview.schedule)}でよろしいですか？" } %>
+<% end %>
