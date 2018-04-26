@@ -3,6 +3,7 @@ class InterviewMailer < ApplicationMailer
 
   def sendmail_confirm(user, send_user)
     @user = user
+    @url = user_interviews_url(user_id: @user)
     mail to: send_user.email, subject: '面接希望日が決まりました'
   end
 
