@@ -1,0 +1,30 @@
+  <div class="login-wrapper">
+    <div class="login-contents">
+    <div class="text-form">
+      <h1>ユーザー一覧</h1>
+      <table>
+        <tr>
+          <td>名前</td>
+          <td>Email</td>
+          <td>年齢</td>
+          <td>性別</td>
+          <td>所属</td>
+          <td>面接日時</td>
+          <td></td>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.age %></td>
+          <td><%= user.sex %></td>
+          <td><%= user.belonging %></td>
+          <td><%= user.meetingdate %></td>
+          <td></td>
+        </tr>
+        <% end %>
+    </div>
+    </div>
+
+
+  </div>

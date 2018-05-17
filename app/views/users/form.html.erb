@@ -1,0 +1,31 @@
+
+  <div class="login-wrapper">
+    <div class="login-contents">
+    <div class="text-form">
+    <% if @error_message %>
+      <div class="error_message">
+        <%= @error_message %>
+      </div>
+    <% end %>
+
+      <%= form_tag("/users/login") do %>
+      <h1>ログイン</h1>
+      <div class="user form-data">
+      <h2>アドレス</h2>
+      <input type="text" name="email">
+      </div>
+      <div class="password form-data">
+      <h2>パスワード</h2>
+      <input type="password" name="password">
+      </div>
+
+      <div class ="submit">
+      <input class="submit_button" type="submit" name="submit" value="ログイン">
+      </div>
+      <% end %>
+
+      <a class="user-register" href="user_register">ユーザー登録</a>
+    </div>
+    </div>
+
+  </div>

@@ -1,0 +1,136 @@
+
+body {
+  background-color: #ffe082;
+  width:100%;
+  height: 100%;
+  margin:0;
+}
+
+#header ul{
+  list-style: none;
+  margin:auto;
+}
+.header-container{
+  width:90%;
+  height:100%;
+  margin:auto;
+}
+
+@media screen and (max-width:768px){
+  body{
+    font-size:11px;
+      }
+#header{
+  width: 100%;
+  height:100px;
+  background-color: #9fa8da;
+  margin: 0;
+  text-align: right;
+}
+}
+
+@media screen and (min-width:768px){
+  #header{
+    width: 100%;
+    height:40px;
+    background-color: #9fa8da;
+    margin: 0;
+  }
+  #header li{
+    margin-right:30px;
+    float:left;
+  }
+  .header-left{
+    text-align:left;
+    padding:5px;
+    display: inline-block;
+  }
+}
+
+
+
+.login-wrapper{
+  width: 95%;
+  margin: auto;
+}
+.login-contents{
+width: 80%;
+margin:auto;
+}
+
+.text-form{
+  width:80%;
+  margin:auto;
+}
+
+.form-data input{
+  width:100%;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.form-data select{
+  height: 40px;
+  border-radius: 5px;
+}
+
+h2{
+  margin-bottom: -5px;
+}
+
+.user,.password{
+  padding-top: 15px;
+}
+
+.password span{
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.submit_button{
+  margin-top:10px;
+  padding:10px 20px;
+  background-color:#2979ff;
+  border-style: none;
+  border-radius: 5px;
+  color:#ffff;
+  opacity: 0.8;
+  transition:0.3s;
+}
+.submit_button:hover{
+  opacity: 1;
+}
+
+.user-register,.login-form{
+  display:block;
+  margin-top:50px;
+}
+
+.error_message{
+  color:rgb(255,121,41)
+}
+
+.flash {
+  padding: 10px 0;
+  color: #ffff;
+  background-color:#2979ff;
+  text-align: center;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+}
+
+
+table{
+  border-collapse:collapse;
+  width:100%;
+}
+td{
+  border:solid 2.5px;
+  border-color: rgba(41,121,255,0.6);
+  width:15%;
+  text-align: center;
+
+}
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/

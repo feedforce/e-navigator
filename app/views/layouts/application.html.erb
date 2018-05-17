@@ -2,13 +2,46 @@
 <html>
   <head>
     <title>ENavigator</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
+  <div id="header">
+    <div class="header-container">
+      <ul class="header-left">
+      <% if @current_user %>
+      <li>
+        <%= link_to("e-Navigator", "/users/#{session[:user_id]}/usertable") %>
+      </li>
+      <li>
+        <%= link_to("プロフィール", "/users/#{session[:user_id]}/profile") %>
+      </li>
+      <li>自分の面接一覧</li>
+      <li>メール</li>
+      <li>
+        <%= link_to("ログアウト", "/logout", {method: :post}) %>
+      </li>
+      <% else %>
+      <li>
+        <%= link_to("e-Navigator", "https://e-navigator.herokuapp.com/users") %>
+      </li>
+      <% end %>
+    </ul>
+
+    </div>
+  </div>
+
+
   <body>
+
+    <% if flash[:notice] %>
+    <div class="flash">
+      <%= flash[:notice] %>
+    </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

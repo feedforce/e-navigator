@@ -1,0 +1,41 @@
+  <div class="login-wrapper">
+    <div class="login-contents">
+    <div class="text-form">
+      <% if @error_message %>
+      <div class="error_message">
+        <%= @error_message %>
+      </div>
+      <% end %>
+      <%if @user %>
+      <% @user.errors.full_messages.each do |message| %>
+        <div class="error_message">
+          <%= message %>
+        </div>
+      <% end %>
+      <% end %>
+
+      <%= form_tag("/users/regist") do %>
+      <h1>ユーザー登録</h1>
+      <div class="user form-data">
+      <h2>Ｅメール</h2>
+      <input type="text" name="email">
+      </div>
+      <div class="password form-data">
+      <h2>パスワード<span>(6文字以上で入力してください)</span></h2>
+      <input type="password" name="password">
+      </div>
+      <div class="password form-data">
+      <h2>パスワード(確認用)</h2>
+      <input type="password" name="password_confirmation">
+      </div>
+
+      <div class ="submit">
+      <input class="submit_button" type="submit" name="submit" value="ログイン">
+      </div>
+      <% end %>
+      <a class="login-form" href="form">ログイン画面へ</a>
+    </div>
+    </div>
+
+
+  </div>

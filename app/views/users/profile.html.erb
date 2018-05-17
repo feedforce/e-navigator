@@ -1,0 +1,118 @@
+  <div class="login-wrapper">
+    <div class="login-contents">
+    <div class="text-form">
+      <% if @current_user.id == @user.id %>
+      <%if @user %>
+      <% @user.errors.full_messages.each do |message| %>
+        <div class="error_message">
+          <%= message %>
+        </div>
+      <% end %>
+      <% end %>
+
+
+      <h1>プロフィールページ</h1>
+      <div class="user form-data">
+      <%= form_tag("/users/#{session[:user_id]}/profile") do %>
+      <h2>Email</h2>
+      <input type="text" name="email">
+      </div>
+      <div class="name form-data">
+      <h2>名前</h2>
+      <input type="text" name="name">
+      </div>
+      <div class="ymd form-data">
+      <h2>年齢</h2>
+      <select name="year">
+
+        <option value="1988">1988</option>
+        <option value="1989">1989</option>
+        <option value="1990">1990</option>
+        <option value="1991">1991</option>
+        <option value="1992">1992</option>
+        <option value="1993">1993</option>
+        <option value="1994">1994</option>
+        <option value="1995">1995</option>
+        <option value="1996">1996</option>
+        <option value="1997">1997</option>
+        <option value="1998">1998</option>
+        <option value="1999">1999</option>
+        <option value="2000">2000</option>
+      </select>　年
+      <select name="month">
+
+        <option value="01">1</option>
+        <option value="02">2</option>
+        <option value="03">3</option>
+        <option value="04">4</option>
+        <option value="05">5</option>
+        <option value="06">6</option>
+        <option value="07">7</option>
+        <option value="08">8</option>
+        <option value="09">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>　月
+      <select name="day">
+
+        <option value="01">1</option>
+        <option value="02">2</option>
+        <option value="03">3</option>
+        <option value="04">4</option>
+        <option value="05">5</option>
+        <option value="06">6</option>
+        <option value="07">7</option>
+        <option value="08">8</option>
+        <option value="09">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>　日
+      </div>
+
+      <div class="sex form-data">
+      <h2>性別</h2>
+      <select name="sex">
+        <option value="男性">男性</option>
+        <option value="女性">女性</option>
+      </select>
+      </div>
+
+      <div class="belonging form-data">
+      <h2>所属</h2>
+      <input type="text" name="belonging">
+      </div>
+
+      <div class ="submit">
+      <input class="submit_button" type="submit" name="regist" value="登録する">
+      </div>
+      <% end %>
+      <% else %>
+      他ユーザーで編集する場合はログアウト後、再度ログインしてください
+      <% end %>
+
+    </div>
+    </div>
+
+
+  </div>
