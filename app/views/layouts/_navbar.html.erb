@@ -1,16 +1,13 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">e-Navigator</a>
+      <%= link_to 'e-Navigator', root_path, class: 'navbar-brand'%>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbars">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item mr-2 <%= current_page?(root_path) ? "active" : "" %>">
-            <%= link_to 'ホーム', root_path, class: 'nav-link'%>
-          </li>
           <% if logged_in? %>
           <li class="nav-item mr-2 <%= current_page?(controller: 'users', action: 'index') ? "active" : "" %>">
             <%= link_to 'ユーザー一覧', users_path, class: 'nav-link'%>
