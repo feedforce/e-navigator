@@ -13,7 +13,7 @@ class MasterController < ApplicationController
   def _model_() eval(name_singularize.camelize);end
 
   def index
-    objects = _model_.alive_records
+    objects = _model_.alive_records.page(params[:page]).per(10)
     object_name = name_pluralize
     instance_set(object_name, objects)
   end

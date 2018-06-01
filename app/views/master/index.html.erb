@@ -12,6 +12,7 @@
       <%= render "body"%>
     </tbody>
   </table>
+  <div class="py-3"><%= paginate instance_variable_get("@#{controller_name}") %></div>
 
   <p><a href="#top">このページの先頭へ戻る</a></p>
 </div>
