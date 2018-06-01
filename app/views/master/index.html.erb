@@ -1,0 +1,17 @@
+<% model = eval(controller_name.singularize.camelize)%>
+<div class="mt-5">
+  <h2><%= model.model_name.human %>一覧</h2>
+
+  <table class="table mt-3">
+    <thead>
+    <tr>
+      <%= render "header"%>
+    </tr>
+    </thead>
+    <tbody>
+      <%= render "body"%>
+    </tbody>
+  </table>
+
+  <p><a href="#top">このページの先頭へ戻る</a></p>
+</div>

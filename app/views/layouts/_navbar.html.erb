@@ -8,14 +8,17 @@
 
       <div class="collapse navbar-collapse" id="navbars">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">ホーム <span class="sr-only">(current)</span></a>
+          <li class="nav-item mr-2 active">
+            <%= link_to 'ホーム', root_path, class: 'nav-link'%>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">新規登録</a>
+          <li class="nav-item mr-2 ">
+            <%= link_to '新規登録', signup_path, class: 'nav-link'%>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mr-2 ">
             <a class="nav-link" href="#">ログイン</a>
+          </li>
+          <li class="nav-item mr-2 ">
+            <%= link_to 'ユーザー一覧', users_path, class: 'nav-link'%>
           </li>
         </ul>
       </div>

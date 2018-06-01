@@ -1,0 +1,26 @@
+ja:
+  activerecord:
+    models:
+      user: "ユーザー"
+    attributes:
+      default: &default
+        id: ID
+        name: 氏名
+        email: メールアドレス
+        email_confirmation: メールアドレス（確認用）
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+      user:
+        <<: *default
+        sex: 性別
+        birthday: 誕生日
+        school: 学校
+  activemodel:
+    attributes:
+      default: &default
+
+  enums:
+    user:
+      sex:
+        male: 男性
+        female: 女性

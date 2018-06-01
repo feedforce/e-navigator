@@ -29,6 +29,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (5.1.6)
       activesupport (= 5.1.6)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (5.1.6)
       activemodel (= 5.1.6)
       activesupport (= 5.1.6)
@@ -58,6 +62,14 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    draper (3.0.1)
+      actionpack (~> 5.0)
+      activemodel (~> 5.0)
+      activemodel-serializers-xml (~> 1.0)
+      activesupport (~> 5.0)
+      request_store (~> 1.0)
+    enum_help (0.0.17)
+      activesupport (>= 3.0.0)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23)
@@ -134,6 +146,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    request_store (1.4.1)
+      rack (>= 1.4)
     ruby_dep (1.5.0)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
@@ -182,6 +196,8 @@ DEPENDENCIES
   bootstrap (~> 4.1.1)
   byebug
   coffee-rails (~> 4.2)
+  draper
+  enum_help
   jbuilder (~> 2.5)
   jquery-rails
   kaminari

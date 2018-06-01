@@ -52,3 +52,9 @@ gem 'jquery-rails'
 
 # kaminari
 gem 'kaminari'
+
+# Draper
+gem 'draper'
+
+# enum
+gem 'enum_help'

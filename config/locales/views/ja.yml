@@ -1,0 +1,34 @@
+ja:
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      next: "次 &rsaquo;"
+      previous: "&lsaquo; 前"
+      truncate: "&hellip;"
+    admin:
+      no_access_right:
+        title: "権限なし"
+      default: &default
+        index:  "一覧"
+        show:   "閲覧"
+        new:    "新規作成"
+        create: "新規作成"
+        edit:   "編集"
+        update: "編集"
+        destroy: "削除"
+        search: "検索"
+        title: "タイトル"
+      example:
+        title: "例"
+        actions:
+          <<: *default
+          edit: "例"
+      admin_users:
+        title: "管理ユーザー管理"
+        actions:
+          <<: *default
+      system_configs:
+        title: "その他システム設定"
+        actions:
+          <<: *default

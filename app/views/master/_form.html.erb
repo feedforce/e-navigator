@@ -1,0 +1,29 @@
+<%
+  object_name     = controller_name.singularize
+  object          = instance_variable_get("@#{object_name}")
+  decorator_model = eval("#{controller_name.singularize}".camelize + "Decorator")
+%>
+
+<%= form_for [object], html: {class: "form-horizontal"} do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+  <div class="section txtBlock">
+
+    <h4 class=panelHead><%= object.class.model_name.human %></h4>
+    <div class="panelBody">
+      <table class="formTable">
+
+        <% decorator_model.form_objects(f).each do |form_object|%>
+          <tr>
+            <th class="required"> <%= f.label form_object[:label] %></th>
+            <td>
+              <%= form_object[:input] %>
+            </td>
+          </tr>
+        <%end%>
+      </table>
+    </div>
+  </div>
+  <div class="formBtnArea">
+    <%= f.submit class: "btn btnXL arrowNext btnPrimary",onclick: "$.winPause().open();"%>
+  </div>
+<% end %>
