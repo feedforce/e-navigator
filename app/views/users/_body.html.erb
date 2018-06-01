@@ -1,0 +1,15 @@
+<% instance_variable_get("@#{controller_name}").each do |object| %>
+  <% decorate_object = object.decorate %>
+  <tr>
+    <% decorate_object.class.body_objects.each do |body_object|%>
+      <td><%= eval("decorate_object.#{body_object}")%></td>
+    <%end%>
+    <% if object.id == current_user.id %>
+      <td><%= link_to t("views.admin.default.edit"),     __send__("edit_#{controller_name.singularize}_path",object) ,{class: "btn btn-outline-primary btn-sm"} %></td>
+      <td><%= link_to t("views.admin.default.destroy"), __send__("#{controller_name.singularize}_path",object), method: :delete, data: { confirm: t("messages.destroy_confirm") },class: "btn btn-outline-danger btn-sm" %></td>
+    <% else %>
+      <td></td>
+      <td></td>
+    <% end %>
+  </tr>
+<%end%>

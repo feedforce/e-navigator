@@ -1,0 +1,21 @@
+<div class="row mt-5">
+  <div class="col-md-6 offset-md-3">
+
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <div class="form-group">
+        <%= f.label :email, (User.human_attribute_name :email) %>
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, (User.human_attribute_name :password) %>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+
+      <%= f.submit 'ログイン', class: 'btn btn-primary btn-block' %>
+    <% end %>
+
+    <p class="link">アカウントがない場合..<%= link_to '新規作成する', signup_path %></p>
+  </div>
+</div>

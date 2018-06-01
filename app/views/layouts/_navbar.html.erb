@@ -11,15 +11,21 @@
           <li class="nav-item mr-2 active">
             <%= link_to 'ホーム', root_path, class: 'nav-link'%>
           </li>
+          <% if logged_in? %>
+          <li class="nav-item mr-2 ">
+            <%= link_to 'ユーザー一覧', users_path, class: 'nav-link'%>
+          </li>
+          <li class="nav-item mr-2 ">
+            <%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' %>
+          </li>
+          <% else %>
           <li class="nav-item mr-2 ">
             <%= link_to '新規登録', signup_path, class: 'nav-link'%>
           </li>
           <li class="nav-item mr-2 ">
-            <a class="nav-link" href="#">ログイン</a>
+            <%= link_to 'ログイン', login_path, class: 'nav-link'%>
           </li>
-          <li class="nav-item mr-2 ">
-            <%= link_to 'ユーザー一覧', users_path, class: 'nav-link'%>
-          </li>
+          <% end %>
         </ul>
       </div>
     </div>
