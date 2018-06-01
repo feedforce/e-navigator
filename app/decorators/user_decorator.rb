@@ -20,6 +20,7 @@ class UserDecorator < BaseDecorator
           model.human_attribute_name(:name),
           model.human_attribute_name(:sex),
           model.human_attribute_name(:birthday),
+          model.human_attribute_name(:school),
           model.human_attribute_name(:email),
       ]
     end
@@ -30,7 +31,8 @@ class UserDecorator < BaseDecorator
           "name",
           "sex_i18n",
           "birthday_human",
-          "email"
+          "school",
+          "email",
       ]
     end
 
