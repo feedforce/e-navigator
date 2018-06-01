@@ -8,21 +8,21 @@
 
       <div class="collapse navbar-collapse" id="navbars">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item mr-2 active">
+          <li class="nav-item mr-2 <%= current_page?(root_path) ? "active" : "" %>">
             <%= link_to 'ホーム', root_path, class: 'nav-link'%>
           </li>
           <% if logged_in? %>
-          <li class="nav-item mr-2 ">
+          <li class="nav-item mr-2 <%= current_page?(controller: 'users', action: 'index') ? "active" : "" %>">
             <%= link_to 'ユーザー一覧', users_path, class: 'nav-link'%>
           </li>
-          <li class="nav-item mr-2 ">
+          <li class="nav-item mr-2">
             <%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' %>
           </li>
           <% else %>
-          <li class="nav-item mr-2 ">
+          <li class="nav-item mr-2 <%= current_page?(controller: 'users', action: 'new') ? "active" : "" %>">
             <%= link_to '新規登録', signup_path, class: 'nav-link'%>
           </li>
-          <li class="nav-item mr-2 ">
+          <li class="nav-item mr-2 <%= current_page?(controller: 'sessions', action: 'new') ? "active" : "" %>">
             <%= link_to 'ログイン', login_path, class: 'nav-link'%>
           </li>
           <% end %>
