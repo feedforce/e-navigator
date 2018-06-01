@@ -1,0 +1,21 @@
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+      <% if logged_in? %>
+        <li class="nav-item">
+          <%= link_to 'ユーザー一覧', users_path,
+                      class: "nav-link #{ current_page?(controller: 'users', action: 'index') ? 'active' : ''}" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to '新規登録', signup_path,
+                      class: "nav-link #{ current_page?(controller: 'users', action: 'new') ? 'active' : ''}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'ログイン', login_path,
+                      class: "nav-link #{ current_page?(controller: 'sessions', action: 'new') ? 'active' : ''}" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

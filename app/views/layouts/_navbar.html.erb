@@ -1,30 +1,10 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <%= link_to 'e-Navigator', root_path, class: 'navbar-brand'%>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbars">
-        <ul class="navbar-nav mr-auto">
-          <% if logged_in? %>
-          <li class="nav-item mr-2 <%= current_page?(controller: 'users', action: 'index') ? "active" : "" %>">
-            <%= link_to 'ユーザー一覧', users_path, class: 'nav-link'%>
-          </li>
-          <li class="nav-item mr-2">
-            <%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' %>
-          </li>
-          <% else %>
-          <li class="nav-item mr-2 <%= current_page?(controller: 'users', action: 'new') ? "active" : "" %>">
-            <%= link_to '新規登録', signup_path, class: 'nav-link'%>
-          </li>
-          <li class="nav-item mr-2 <%= current_page?(controller: 'sessions', action: 'new') ? "active" : "" %>">
-            <%= link_to 'ログイン', login_path, class: 'nav-link'%>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <%= link_to 'e-Navigator', root_path, class: 'navbar-brand col-sm-3 col-md-2 mr-0'%>
+  <% if logged_in? %>
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' %>
+      </li>
+    </ul>
+    <% end %>
+</nav>
