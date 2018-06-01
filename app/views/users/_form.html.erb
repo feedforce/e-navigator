@@ -1,0 +1,59 @@
+<%
+  object_name     = controller_name.singularize
+  object          = instance_variable_get("@#{object_name}")
+  decorate_object = object.decorate
+
+%>
+
+<div class="row mt-5">
+  <div class="col-md-8 offset-md-2">
+    <%= form_for [object] do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+
+      <div class="form-group pb-2">
+        <%= f.label :name, class:'font-weight-bold' %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group pb-2">
+        <%= f.label :sex, class:'font-weight-bold' %>
+        <%= f.select(:sex, @user.class.sex_choices) %>
+        <%#= f.select(:sex, User.sexes.keys) %>
+      </div>
+
+      <div class="form-group pb-2">
+        <%= f.label :birthday, class:'font-weight-bold' %>
+        <%
+          today = Date.today.year - decorate_object.class.bd_count
+        %>
+        <%= f.date_select(:birthday,
+                          {include_blank: true,:use_month_numbers => true,
+                           :start_year => today, :end_year => Time.now.year+5},
+            )
+        %>
+      </div>
+
+      <div class="form-group pb-2">
+        <%= f.label :school, class:'font-weight-bold' %>
+        <%= f.text_field :school, class: 'form-control' %>
+      </div>
+
+      <div class="form-group pb-2">
+        <%= f.label :email, class:'font-weight-bold' %>
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+
+      <div class="form-group pb-2">
+        <%= f.label :password, class:'font-weight-bold' %>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+
+      <div class="form-group pb-2">
+        <%= f.label :password_confirmation, class:'font-weight-bold' %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </div>
+
+      <%= f.submit class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>
