@@ -13,6 +13,12 @@ class ApplicationRecord < ActiveRecord::Base
   end
 
   class << self
+    def permit_params
+      column_names+ [
+          :_destroy
+      ]
+    end
+
     def _unavailable_() 0; end
     def _available_()   1; end
 

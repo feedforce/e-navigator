@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   class << self
     def permit_params
-      column_names + [
+      super + [
           :password,
           :password_confirmation,
       ]
