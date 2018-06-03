@@ -33,6 +33,9 @@ class MasterController < ApplicationController
   def create
     obj = instance_set(name_singularize,_model_.new(__send__("#{name_singularize}_params")))
     if obj.save
+      if obj.class == User
+        log_in(obj)
+      end
       flash[:success] = "登録いたしました"
       redirect_to __send__("#{name_pluralize}_path")
     else
@@ -43,6 +46,8 @@ class MasterController < ApplicationController
 
   def update
     obj = instance_set(name_singularize,_model_.find_by({id: params[:id]}))
+    p "================"
+    p obj.class == User
     if obj.update_attributes(__send__("#{name_singularize}_params"))
       flash[:success] = "更新いたしました"
       redirect_to __send__("#{name_pluralize}_path",obj)
@@ -54,8 +59,15 @@ class MasterController < ApplicationController
 
   def destroy
     obj = instance_set(name_singularize,_model_.find_by({id: params[:id]}))
-    flash[:success] = "削除いたしました"
-    obj.all_destroy
-    redirect_to __send__("#{name_pluralize}_path")
+    if obj.class == User
+      session[:user_id] = nil
+      flash[:success] = "削除いたしました"
+      obj.all_destroy
+      redirect_to root_url
+    else
+      flash[:success] = "削除いたしました"
+      obj.all_destroy
+      redirect_to __send__("#{name_pluralize}_path")
+    end
   end
 end
