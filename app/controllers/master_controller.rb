@@ -46,8 +46,6 @@ class MasterController < ApplicationController
 
   def update
     obj = instance_set(name_singularize,_model_.find_by({id: params[:id]}))
-    p "================"
-    p obj.class == User
     if obj.update_attributes(__send__("#{name_singularize}_params"))
       flash[:success] = "更新いたしました"
       redirect_to __send__("#{name_pluralize}_path",obj)

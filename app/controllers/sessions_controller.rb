@@ -23,7 +23,7 @@ class SessionsController < MasterController
   private
 
     def login(email, password)
-      @user = User.find_by(email: email)
+      @user = User.alive_records.find_by(email: email)
       if @user && @user.authenticate(password)
         session[:user_id] = @user.id
         return true
