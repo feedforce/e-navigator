@@ -25,10 +25,12 @@
         <%
           today = Date.today.year - decorate_object.class.bd_count
         %>
-        <%= f.date_select(:birthday,
-                          {include_blank: true,:use_month_numbers => true,
-                           :start_year => today, :end_year => Time.now.year+5},
-            )
+        <%= f.date_select(:birthday, {
+                              use_month_numbers: true,
+                              start_year: today,
+                              end_year: Time.now.year,
+                              default:    Date.new(1990, 1, 1)
+        })
         %>
       </div>
 
