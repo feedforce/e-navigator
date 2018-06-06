@@ -1,4 +1,4 @@
-class UserDecorator < BaseDecorator
+class UserDecorator < Draper::Decorator
   delegate_all
 
   def birthday_human

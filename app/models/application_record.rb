@@ -4,7 +4,7 @@ class ApplicationRecord < ActiveRecord::Base
   def soft_delete
     self.available  = self.class._unavailable_ if respond_to?(:available)
     self.deleted    = self.class._deleted_ if respond_to?(:deleted)
-    self.deleted_at =  Time.now if respond_to?(:deleted_at)
+    self.deleted_at = Time.now if respond_to?(:deleted_at)
     save(validate: false)
   end
 
@@ -14,9 +14,7 @@ class ApplicationRecord < ActiveRecord::Base
 
   class << self
     def permit_params
-      column_names+ [
-          :_destroy
-      ]
+      column_names
     end
 
     def _unavailable_() 0; end

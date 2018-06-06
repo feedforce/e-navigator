@@ -6,11 +6,5 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
-  [
-      :users
-  ].each do |sym|
-    resources sym do
-
-    end
-  end
+  resources :users, only: [:index, :create, :edit, :update, :destroy]
 end

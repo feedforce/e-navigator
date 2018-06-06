@@ -1,9 +1,0 @@
-<% decorator_model = eval("#{controller_name.singularize}".camelize + "Decorator") %>
-
-<tr>
-  <% decorator_model.header_objects.each do |header_object|%>
-    <th scope="col"><%= header_object%></th>
-  <%end%>
-  <th scope="col"></th>
-  <th scope="col"></th>
-</tr>

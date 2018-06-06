@@ -1,7 +1,0 @@
-<%
-  object_name = controller_name.singularize
-  object      = instance_variable_get("@#{object_name}")
-%>
-<div id="form">
-  <%= render 'form', locals: {object_name => object} %>
-</div>
