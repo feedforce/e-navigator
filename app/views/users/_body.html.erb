@@ -1,15 +1,10 @@
 <% @users.each do |object| %>
   <% decorate_object = object.decorate %>
+  <% unless object.id == current_user.id %>
   <tr>
     <% decorate_object.class.body_objects.each do |body_object|%>
       <td><%= eval("decorate_object.#{body_object}")%></td>
     <%end%>
-    <% if object.id == current_user.id %>
-      <td><%= link_to t("views.default.edit"), edit_user_path(object) ,{class: "btn btn-outline-primary btn-sm"} %></td>
-      <td><%= link_to t("views.default.destroy"), object, method: :delete, data: { confirm: t("messages.destroy_confirm") },class: "btn btn-outline-danger btn-sm" %></td>
-    <% else %>
-      <td></td>
-      <td></td>
-    <% end %>
   </tr>
+  <% end %>
 <%end%>
