@@ -13,9 +13,9 @@
         <%= f.password_field :password, class: 'form-control' %>
       </div>
 
-      <%= f.submit 'ログイン', class: 'btn btn-primary btn-block' %>
+      <%= f.submit t("views.session.login"), class: 'btn btn-primary btn-block' %>
     <% end %>
 
-    <p class="link">アカウントがない場合..<%= link_to '新規作成する', signup_path %></p>
+    <p class="link">アカウントがない場合..<%= link_to t("views.default.new"), signup_path %></p>
   </div>
 </div>

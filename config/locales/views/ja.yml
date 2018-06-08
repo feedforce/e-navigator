@@ -16,3 +16,10 @@ ja:
       destroy: "削除"
       search: "検索"
       title: "タイトル"
+    user:
+      index: "他ユーザー一覧"
+      mypage: "マイページ"
+    session:
+      signup: "新規登録"
+      login: "ログイン"
+      logout: "ログアウト"

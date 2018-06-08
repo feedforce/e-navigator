@@ -6,8 +6,8 @@
       <p>ようこそ、 <%= current_user.name %>さん</p>
     <% else %>
       <p>
-        <%= link_to '新規登録', signup_path, class: 'btn btn-primary btn-lg mr-2', role: 'button' %>
-        <%= link_to 'ログイン', login_path, class: 'btn btn-success btn-lg mr-2', role: 'button' %>
+        <%= link_to t("views.session.signup"), signup_path, class: 'btn btn-primary btn-lg mr-2', role: 'button' %>
+        <%= link_to t("views.session.login"), login_path, class: 'btn btn-success btn-lg mr-2', role: 'button' %>
       </p>
     <% end %>
   </div>

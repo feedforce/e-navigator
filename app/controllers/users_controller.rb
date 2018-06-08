@@ -55,7 +55,7 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       unless @user == current_user
-        flash[:danger] = '他のユーザー情報は変更できません。'
+        flash[:danger] = "他のユーザー情報は変更できません。"
         redirect_to root_url
       end
     end

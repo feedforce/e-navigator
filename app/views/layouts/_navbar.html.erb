@@ -3,7 +3,7 @@
   <% if logged_in? %>
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
-        <%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' %>
+        <%= link_to t("views.session.logout"), logout_path, method: :delete, class: 'nav-link' %>
       </li>
     </ul>
     <% end %>
