@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    if @user.save(context: :check_email)
       log_in(@user)
       flash[:success] = "登録いたしました"
       redirect_to users_path
@@ -27,7 +27,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
+    @user.attributes = user_params
+
+    if @user.save(context: :check_email)
       flash[:success] = "更新いたしました"
       redirect_to users_path
     else

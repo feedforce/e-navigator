@@ -8,8 +8,17 @@ class User < ApplicationRecord
   validates :sex, presence: true
   validates :school, presence: true, length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 },
-                   format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
-                   uniqueness: { case_sensitive: false }
+                   format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+  validate :check_email, on: :check_email
+
+  def check_email
+    if User.select(:id).where.not(id: self.id.to_i).where(email: self.email, deleted: 0).present? &&
+        self.email.present?
+
+      self.errors.add(:email,"はすでに利用されているため登録できません。")
+    end
+  end
+
   has_secure_password
 
   class << self
