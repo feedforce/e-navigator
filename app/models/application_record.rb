@@ -2,8 +2,8 @@ class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
   def soft_delete
-    self.available  = self.class._unavailable_ if respond_to?(:available)
-    self.deleted    = self.class._deleted_ if respond_to?(:deleted)
+    self.available  = self.class.unavailable if respond_to?(:available)
+    self.deleted    = self.class.deleted if respond_to?(:deleted)
     self.deleted_at = Time.now if respond_to?(:deleted_at)
     save(validate: false)
   end
@@ -17,14 +17,14 @@ class ApplicationRecord < ActiveRecord::Base
       column_names
     end
 
-    def _unavailable_() 0; end
-    def _available_()   1; end
+    def unavailable() 0; end
+    def available()   1; end
 
-    def _alive_()     0; end
-    def _deleted_()   1; end
+    def alive()     0; end
+    def deleted()   1; end
 
     def alive_records
-      where(deleted: _alive_)
+      where(deleted: alive)
     end
   end
 end
