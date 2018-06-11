@@ -13,18 +13,15 @@ class ApplicationRecord < ActiveRecord::Base
   end
 
   class << self
+    ALIVE = 0
+    DELETED = 1
+
     def permit_params
       column_names
     end
 
-    def unavailable() 0; end
-    def available()   1; end
-
-    def alive()     0; end
-    def deleted()   1; end
-
     def alive_records
-      where(deleted: alive)
+      where(deleted: ALIVE)
     end
   end
 end
