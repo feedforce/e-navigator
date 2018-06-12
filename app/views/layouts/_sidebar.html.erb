@@ -1,0 +1,25 @@
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+      <% if logged_in? %>
+        <li class="nav-item">
+          <%= link_to current_user.name, edit_user_path(current_user),
+                      class: "nav-link #{ current_page?(controller: 'users', action: 'edit', id: current_user.id) ? 'active' : ''}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t("views.user.index"), users_path,
+                      class: "nav-link #{ current_page?(controller: 'users', action: 'index') ? 'active' : ''}" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to t("views.session.signup"), signup_path,
+                      class: "nav-link #{ current_page?(controller: 'users', action: 'new') ? 'active' : ''}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t("views.session.login"), login_path,
+                      class: "nav-link #{ current_page?(controller: 'sessions', action: 'new') ? 'active' : ''}" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

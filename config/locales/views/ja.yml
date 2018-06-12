@@ -1,0 +1,25 @@
+ja:
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      next: "次 &rsaquo;"
+      previous: "&lsaquo; 前"
+      truncate: "&hellip;"
+    default:
+      index:  "一覧"
+      show:   "閲覧"
+      new:    "新規作成"
+      create: "新規作成"
+      edit:   "編集"
+      update: "編集"
+      destroy: "削除"
+      search: "検索"
+      title: "タイトル"
+    user:
+      index: "他ユーザー一覧"
+      mypage: "マイページ"
+    session:
+      signup: "新規登録"
+      login: "ログイン"
+      logout: "ログアウト"

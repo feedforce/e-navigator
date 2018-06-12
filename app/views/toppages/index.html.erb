@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">e-Navigator</h1>
+    <p>e-Navigatorは面談日程調整アプリケーションです。</p>
+    <% if logged_in? %>
+      <p>ようこそ、 <%= current_user.name %>さん</p>
+    <% else %>
+      <p>
+        <%= link_to t("views.session.signup"), signup_path, class: 'btn btn-primary btn-lg mr-2', role: 'button' %>
+        <%= link_to t("views.session.login"), login_path, class: 'btn btn-success btn-lg mr-2', role: 'button' %>
+      </p>
+    <% end %>
+  </div>
+</div>
