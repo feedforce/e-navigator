@@ -1,7 +1,8 @@
 ja:
   activerecord:
     models:
-      user: "ユーザー"
+      user: "アカウント作成"
+      interview: "面談日作成"
     attributes:
       default: &default
         id: ID
@@ -17,8 +18,7 @@ ja:
         school: 学校
       interview:
         <<: *default
-        start_date: 開始日時
-        end_date: 終了日時
+        start_date: 日時
         status: ステータス
   activemodel:
     attributes:
