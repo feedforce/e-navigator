@@ -15,6 +15,11 @@ ja:
         sex: 性別
         birthday: 誕生日
         school: 学校
+      interview:
+        <<: *default
+        start_date: 開始日時
+        end_date: 終了日時
+        status: ステータス
   activemodel:
     attributes:
       default: &default
@@ -24,3 +29,8 @@ ja:
       sex:
         male: 男性
         female: 女性
+    interview:
+      status:
+        withhold: 保留
+        reject: 却下
+        approval: 承認

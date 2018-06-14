@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :interviews
+  
   enum sex: { male: 0, female: 1}
 
   before_save { self.email.downcase! }

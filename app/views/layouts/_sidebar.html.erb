@@ -3,8 +3,16 @@
     <ul class="nav flex-column">
       <% if logged_in? %>
         <li class="nav-item">
-          <%= link_to current_user.name, edit_user_path(current_user),
+          <%= link_to t("views.user.mypage"), edit_user_path(current_user),
                       class: "nav-link #{ current_page?(controller: 'users', action: 'edit', id: current_user.id) ? 'active' : ''}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t("views.interview.new"), new_user_interview_path(user_id: current_user.id),
+                      class: "nav-link #{ current_page?(controller: 'interviews', action: 'new', user_id: current_user.id) ? 'active' : ''}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t("views.interview.index"), user_interviews_path(user_id: current_user.id),
+                      class: "nav-link #{ current_page?(controller: 'interviews', action: 'index', user_id: current_user.id) ? 'active' : ''}" %>
         </li>
         <li class="nav-item">
           <%= link_to t("views.user.index"), users_path,

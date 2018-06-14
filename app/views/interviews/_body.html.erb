@@ -1,0 +1,10 @@
+<% @interviews.each do |object| %>
+  <% decorate_object = object.decorate %>
+  <tr>
+    <% decorate_object.class.body_objects.each do |body_object|%>
+      <td><%= eval("decorate_object.#{body_object}")%></td>
+    <%end%>
+    <td><%= link_to t("views.default.edit"), edit_user_interview_path(id: object.id) ,{class: "btn btn-outline-primary btn-sm"} %></td>
+    <td><%= link_to t("views.default.destroy"), user_interview_path(id: object.id), method: :delete, data: { confirm: t("messages.destroy_confirm") },class: "btn btn-outline-danger btn-sm" %></td>
+  </tr>
+<%end%>

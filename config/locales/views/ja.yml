@@ -23,3 +23,6 @@ ja:
       signup: "新規登録"
       login: "ログイン"
       logout: "ログアウト"
+    interview:
+      index: "あなたの面談日一覧"
+      new: "面談日作成"

@@ -1,0 +1,21 @@
+<div id="top">
+  <h2><%= t("views.interview.index") %></h2>
+
+  <% if @interviews.any? %>
+    <table class="table mt-3">
+      <thead>
+      <tr>
+        <%= render "header"%>
+      </tr>
+      </thead>
+      <tbody>
+      <%= render "body"%>
+      </tbody>
+    </table>
+    <div class="py-3"><%= paginate @interviews %></div>
+  <% else %>
+    <p class="mt-3">面談日はまだ作成されていません。</p>
+  <% end %>
+
+  <p><a href="#top">このページの先頭へ戻る</a></p>
+</div>
