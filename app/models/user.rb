@@ -24,13 +24,6 @@ class User < ApplicationRecord
   has_secure_password
 
   class << self
-    def permit_params
-      super + [
-          :password,
-          :password_confirmation,
-      ]
-    end
-
     def sex_male()  {name: "男性",id: "male"} ;end
     def sex_female()    {name: "女性",id: "female"} ;end
     def sex_choices
