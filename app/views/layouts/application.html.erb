@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ENavigator</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>e-Navigator</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +13,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/navbar' %>
+
+    <div class="container-fluid">
+      <div class="row">
+        <%= render 'layouts/sidebar' %>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <%= render 'layouts/flash_messages' %>
+            <%= yield %>
+          </div>
+        </main>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,10 @@
+<% @users.each do |object| %>
+  <% decorate_object = object.decorate %>
+  <% unless object.id == current_user.id %>
+  <tr>
+    <% decorate_object.class.body_objects.each do |body_object|%>
+      <td><%= eval("decorate_object.#{body_object}")%></td>
+    <%end%>
+  </tr>
+  <% end %>
+<%end%>

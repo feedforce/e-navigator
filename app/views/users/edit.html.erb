@@ -1,0 +1,9 @@
+<div id="form">
+  <%= render 'form' %>
+
+  <div class="row mt-3">
+    <div class="col-md-6 offset-md-3">
+      <%= link_to t("views.default.destroy"), @user, method: :delete, data: { confirm: t("messages.destroy_confirm") },class: "btn btn-danger btn-block" %>
+    </div>
+  </div>
+</div>

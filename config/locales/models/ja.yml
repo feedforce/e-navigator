@@ -1,0 +1,36 @@
+ja:
+  activerecord:
+    models:
+      user: "アカウント作成"
+      interview: "面談日作成"
+    attributes:
+      default: &default
+        id: ID
+        name: 氏名
+        email: メールアドレス
+        email_confirmation: メールアドレス（確認用）
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+      user:
+        <<: *default
+        sex: 性別
+        birthday: 誕生日
+        school: 学校
+      interview:
+        <<: *default
+        start_date: 日時
+        status: ステータス
+  activemodel:
+    attributes:
+      default: &default
+
+  enums:
+    user:
+      sex:
+        male: 男性
+        female: 女性
+    interview:
+      status:
+        withhold: 保留
+        reject: 却下
+        approval: 承認

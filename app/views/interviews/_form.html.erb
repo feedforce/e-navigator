@@ -1,0 +1,20 @@
+<%
+  object_name     = controller_name.singularize
+  object          = instance_variable_get("@#{object_name}")
+%>
+
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <%= form_for [@user, @interview] do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+
+      <h4><%= object.class.model_name.human %></h4>
+      <div class="form-group pb-2">
+        <%= f.label :start_date, class:'font-weight-bold' %>
+        <%= f.datetime_select :start_date, class: 'form-control' %>
+      </div>
+
+      <%= f.submit class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>
