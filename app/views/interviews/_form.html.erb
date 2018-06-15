@@ -5,7 +5,7 @@
 
 <div class="row">
   <div class="col-md-4 offset-md-4">
-    <%= form_for [object], url: {action: 'create'} do |f| %>
+    <%= form_for [@user, @interview] do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
 
       <h4><%= object.class.model_name.human %></h4>
@@ -14,7 +14,6 @@
         <%= f.datetime_select :start_date, class: 'form-control' %>
       </div>
 
-      <%= f.hidden_field :user_id, value: params[:user_id] %>
       <%= f.submit class: 'btn btn-primary btn-block' %>
     <% end %>
   </div>
