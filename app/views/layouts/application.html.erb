@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ENavigator</title>
+    <title>面談日程調整</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,7 +12,7 @@
     <header>
       <nav>
         <% if user_signed_in? %>
-          <%= link_to 'プロフィール変更', edit_user_registration_path %>
+          <%= link_to 'プロフィール編集', edit_user_registration_path %>
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
         <% else %>
           <%= link_to 'ユーザー登録', new_user_registration_path %>
