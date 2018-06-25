@@ -1,4 +1,4 @@
-<h2>プロフィール編集</h2>
+<h2>プロフィール</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -32,7 +32,7 @@
   </div>
 
   <div>
-    <button type="submit" class="btn btn-success">更新する</button>
+    <button type="submit" class="btn btn-outline-success">更新する</button>
   </div>
 </form>
 <% end %>
