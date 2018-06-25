@@ -2,8 +2,8 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-
-  <div class="field">
+<form class="container">
+  <div class="form-group">
     <%= f.label :メールアドレス %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -12,44 +12,27 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+  <div class="form-group">
+    <%= f.label :名前 %><br />
+    <%= f.text_field :name, autofocus: true %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div><%= f.label :名前 %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
-
-  <div><%= f.label :年齢 %><br />
+  <div class="form-group">
+    <%= f.label :年齢 %><br />
     <%= f.date_select :age, {:use_month_numbers => true} %>
   </div>
 
-  <div><%= f.label :性別 %><br />
+  <div class="form-group">
+    <%= f.label :性別 %><br />
     <%= f.select :gender, [["男性"], ["女性"]] %>
   </div>
 
-  <div><%= f.label :学校名 %><br />
-    <%= f.text_field :school, autofocus: true, autocomplete: "school" %>
+  <div class="form-group"><%= f.label :学校名 %><br />
+    <%= f.text_field :school, autofocus: true %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "登録する" %>
+  <div>
+    <button type="submit" class="btn btn-success">更新する</button>
   </div>
+</form>
 <% end %>
-
-<%= link_to "戻る", :back %>
