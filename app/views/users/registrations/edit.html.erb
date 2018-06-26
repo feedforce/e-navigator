@@ -1,0 +1,40 @@
+<div class="container">
+<h2>プロフィール</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+<form class="container">
+  <div class="form-group">
+    <%= f.label :メールアドレス %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :size => 50 %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :名前 %><br />
+    <%= f.text_field :name, autofocus: true, :size => 50 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :年齢 %><br />
+    <%= f.date_select :age, {:use_month_numbers => true, :start_year => 1985, :end_year => 2000} %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :性別 %><br />
+    <%= f.select :gender, [["男性", 1], ["女性", 2]] %>
+  </div>
+
+  <div class="form-group"><%= f.label :学校名 %><br />
+    <%= f.text_field :school, autofocus: true, :size => 50 %>
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-outline-success">更新する</button>
+  </div>
+</form>
+<% end %>
+</div>
