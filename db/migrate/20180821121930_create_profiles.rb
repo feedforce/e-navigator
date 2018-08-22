@@ -6,7 +6,7 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.integer :b_y
       t.integer :b_m
       t.integer :b_d
-      t.integer :gender
+      t.integer :gender, default: 0, null: false
       t.string :school_name
 
       t.timestamps
