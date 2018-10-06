@@ -10,14 +10,28 @@
 
   <body>
   <header>
-    <nav>
-      <%= link_to "e-Navigator", root_path %>
-      <% if user_signed_in? %>
-        <%= link_to "プロフィール", "#" %>
-        <%= link_to "自分の面接一覧", "#" %>
-        <%= link_to "メール", "#" %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <% end %>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">e-Navigator</a>
+        </div>
+        <% if user_signed_in? %>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><%= link_to "プロフィール", edit_user_registration_path %></li>
+              <li><%= link_to "自分の面接一覧", "#" %></li>
+              <li><%= link_to "メール", "#" %></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        <% end %>
+      </div>
     </nav>
   </header>
     <p class="notice"><%= notice %></p>
