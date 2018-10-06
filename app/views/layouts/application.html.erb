@@ -9,9 +9,8 @@
   </head>
 
   <body>
-  <header>
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
+    <header>
+      <nav class="navbar navbar-default">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -21,21 +20,22 @@
           </button>
           <a class="navbar-brand" href="/">e-Navigator</a>
         </div>
-        <% if user_signed_in? %>
-          <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="collapse navbar-collapse">
+          <% if user_signed_in? %>
             <ul class="nav navbar-nav">
               <li><%= link_to "プロフィール", edit_user_registration_path %></li>
               <li><%= link_to "自分の面接一覧", "#" %></li>
               <li><%= link_to "メール", "#" %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             </ul>
-          </div><!--/.nav-collapse -->
-        <% end %>
-      </div>
-    </nav>
-  </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+          <% end %>
+        </div><!--/.nav-collapse -->
+      </nav>
+    </header>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>
