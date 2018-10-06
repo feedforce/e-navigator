@@ -1,0 +1,27 @@
+<h1>ユーザー一覧</h1>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>Email</th>
+      <th>年齢</th>
+      <th>性別</th>
+      <th>学校名</th>
+      <th>面接日時</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <% @users.each do |user| %>
+    <tbody>
+      <tr>
+        <td><div class="text-center"><%= user.name %></div></td>
+        <td><div class="text-center"><%= user.email %></div></td>
+        <td><div class="text-center"><%= user.age %></div></td>
+        <td><div class="text-center"><%= user.gender %></div></td>
+        <td><div class="text-center"><%= user.school %></div></td>
+        <td><div class="text-center"><%=  %></div></td>
+        <td><div class="text-center"></div></td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>
