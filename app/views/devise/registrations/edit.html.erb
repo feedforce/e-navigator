@@ -1,43 +1,69 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>プロフィールページ</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, class: "form-control" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+  <div class="form-group">
+    <%= f.label :name, "名前" %><br />
+    <%= f.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="form-group">
+    <%= f.label :birthday, "生年月日" %><br />
+    <%= raw sprintf(
+                f.date_select(
+                    :birthday,
+                    {
+                        use_month_numbers: true,
+                        date_separator:    '%s',
+                        start_year: 1988,
+                        end_year: (Time.now.year - 18)
+                    },
+                    { class: "form-control bootstrap-date" }),
+    "年 ", "月 ") + "日"%>
   </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  <div class="form-group">
+    <%= f.label :gender, "性別" %><br />
+    <%= f.select :gender, User.genders.keys.to_a, {}, { class: "form-control bootstrap-date" } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :school, "学校名" %><br />
+    <%= f.text_field :school, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password, "パスワード" %> <i>(パスワードを変更しない場合は空欄のままにしてください。)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation, "パスワード(再入力)" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :current_password, "現在のパスワード" %> <i>(変更するためにはパスワードが必要です。)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "更新", class: "btn btn-primary" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>退会</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>退会してユーザー情報を削除しますか？ <%= button_to "退会する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "戻る", :back %>
