@@ -1,2 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.bootstrap-selector {
+  display: inline-block;
+  width: auto;
+}

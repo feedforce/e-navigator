@@ -28,13 +28,13 @@
                         start_year: 1988,
                         end_year: (Time.now.year - 18)
                     },
-                    { class: "form-control bootstrap-date" }),
+                    { class: "form-control bootstrap-selector" }),
     "年 ", "月 ") + "日"%>
   </div>
 
   <div class="form-group">
     <%= f.label :gender, "性別" %><br />
-    <%= f.select :gender, User.genders.keys.to_a, {}, { class: "form-control bootstrap-date" } %>
+    <%= f.select :gender, User.genders.keys.to_a, {}, { class: "form-control bootstrap-selector" } %>
   </div>
 
   <div class="form-group">
