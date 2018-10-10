@@ -2,10 +2,6 @@ class SessionsController < ApplicationController
 
   def new
   end
-  
-  def log_in(user)
-    session[:user_id] = user.id
-  end
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
@@ -19,5 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    log_out
+    redirect_to root_url
   end
 end
