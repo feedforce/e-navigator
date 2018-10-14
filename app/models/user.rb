@@ -7,6 +7,6 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil:true
-  enum gender: { Male: 0, Female: 1 ,Secret:2}
+  enum gender: { Male: 0, Female: 1 }
   validates :school, length: { maximum: 50 }
 end

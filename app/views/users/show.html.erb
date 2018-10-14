@@ -1,1 +1,21 @@
-<%= @user.name %>, <%= @user.email %>
+  <table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Date of Birth</th>
+      <th>Gender</th>
+      <th>School</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><div class="text-center"><%= @user.name %></div></td>
+        <td><div class="text-center"><%= @user.email %></div></td>
+        <td><div class="text-center"><%= @user.birthday %></div></td>
+        <td><div class="text-center"><%= @user.gender %></div></td>
+        <td><div class="text-center"><%= @user.school %></div></td>
+      </tr>
+  </tbody>
+</table>
