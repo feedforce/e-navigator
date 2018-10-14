@@ -12,8 +12,15 @@
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
       
+      <%= f.label :date_of_birth%>
+      <%= f.date_select(
+          :birthday,
+          start_year: 1930,
+          end_year:   (Time.now.year - 18),
+          class: 'form-control') %>
+      
       <%= f.label :gender %>
-      <%= f.select :gender,User.genders.keys.to_a, class: 'form-control' %>
+      <%= f.select :gender, User.genders.keys.map { |w| [w.humanize, w] },class: 'form-control' %>
       
       <%= f.label :school %>
       <%= f.text_field :school, class: 'form-control' %>
