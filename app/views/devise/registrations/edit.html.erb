@@ -4,6 +4,11 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -29,6 +34,22 @@
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sex %><br>
+    <%= f.select :sex, User.sexes.keys.to_a, {} %>
+  </div>
+
+  <div class="birth-date-field">
+    <%= f.label :生年月日 %><br>
+    <%= f.date_select(:birthday, start_year: 1930,
+                end_year: (Time.now.year), default: Date.new(1989, 1, 1), date_separator: '/') %>
+  </div>
+
+  <div>
+    <%= f.label :schoolname %><br />
+    <%= f.text_field :schoolname, autofocus: true, autocomplete: "username" %>
   </div>
 
   <div class="actions">
