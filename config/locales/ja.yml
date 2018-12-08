@@ -215,4 +215,4 @@ ja:
       sex:
         male: 男性
         female: 女性
-        sex_unknown:
+        sex_not_known: ""

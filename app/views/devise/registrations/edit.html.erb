@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= f.label :性別 %><br>
-    <%= f.select :sex, User.sexes.keys.to_a, {} %>
+    <%= f.select :sex, User.sexes.keys.map{|k| [I18n.t("enums.user.sex.#{k}"),k]} %>
   </div>
 
   <div class="birth-date-field">
