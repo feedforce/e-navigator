@@ -210,3 +210,9 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  enums:
+    user:
+      sex:
+        male: 男性
+        female: 女性
+        sex_unknown:
