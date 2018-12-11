@@ -1,17 +1,22 @@
 <div class="">
+  <% @user.errors.full_messages.each do |message| %>
+          <div class="">
+            <%= message %>
+          </div>
+        <% end %>
   <%= form_tag("/users/create") do %>
   <ul>
     <li>aa</li>
     <p>name</p>
-    <input type="text" name="name" value="">
+    <input type="text" name="name" value="<%= @user.name %>">
     <p>age</p>
-    <input type="text" name="age" value="">
+    <input type="text" name="age" value="<%= @user.age %>">
     <p>sex</p>
-    <input type="text" name="sex" value="">
+    <input type="text" name="sex" value="<%= @user.sex%>">
     <p>school_name</p>
-    <input type="text" name="school_name" value="">
+    <input type="text" name="school_name" value="<%= @user.school_name%>">
     <p>email</p>
-    <input type="text" name="email" value="">
+    <input type="text" name="email" value="<%= @user.email %>">
     <p>password</p>
     <input type="password" name="password" value="">
     <input type="submit" name="" value="登録する">

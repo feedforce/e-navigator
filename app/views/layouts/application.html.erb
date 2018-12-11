@@ -3,13 +3,16 @@
   <head>
     <title>Submit</title>
     <%= csrf_meta_tags %>
-  
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="">
+      
+    </div>
     <ul>
       <% if session[:user_id] %>
       <li><%= "現在ログインしているユーザーは#{session[:user_id]}" %></li>
