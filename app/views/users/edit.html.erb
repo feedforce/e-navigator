@@ -1,0 +1,18 @@
+<div class="">
+  <%= form_tag("/users/#{@user.id}/update") %>
+<ul>
+  <p>name</p>
+  <input type="text" name="name" value="<%= @user.name %>">
+  <p>生年月日(例：1995/05/05)</p>
+  <input type="text" name="age" value="<%= @user.age %>">
+  <p>性別</p>
+  <input type="text" name="sex" value="<%= @user.sex %>">
+  <p>school_name</p>
+  <input type="text" name="school_name" value="<%= @user.school_name %>">
+  <p>メールアドレス</p>
+  <input type="text" name="email" value="<%= @user.email %>">
+  <input type="submit" name="" value="登録する">
+</ul>
+
+
+</div>

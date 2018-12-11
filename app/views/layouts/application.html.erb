@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ENavigator</title>
+    <title>Submit</title>
     <%= csrf_meta_tags %>
+  
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <ul>
+      <% if session[:user_id] %>
+      <li><%= "現在ログインしているユーザーは#{session[:user_id]}" %></li>
+    <li>e-Navigator</li>
+    <li>プロフィール</li>
+    <li>自分の面接一覧</li>
+    <li>メール</li>
+    <li><%=link_to("ログイン", "/login") %></li>
+    <li><%= link_to("新規登録", "/new") %></li>
+    <li><%= link_to("ログアウト", "/users/#{session[:user_id]}/logout") %></li>
+    <li><%= link_to("編集", "/users/edit") %></li>
+    <% else %>
+    <li><%=link_to("ログイン", "/login") %></li>
+    <li><%= link_to("新規登録", "/new") %></li>
+    <% end %>
+    </ul>
     <%= yield %>
   </body>
 </html>

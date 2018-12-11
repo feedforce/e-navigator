@@ -1,0 +1,9 @@
+2018-12-11 17:00:20.382 JST [1471] LOG:  listening on IPv6 address "::1", port 5432
+2018-12-11 17:00:20.382 JST [1471] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-12-11 17:00:20.384 JST [1471] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-12-11 17:00:20.410 JST [1472] LOG:  database system was shut down at 2018-12-11 16:59:21 JST
+2018-12-11 17:00:20.421 JST [1471] LOG:  database system is ready to accept connections
+2018-12-11 17:02:49.645 JST [1515] FATAL:  database "e-navigator_development" does not exist
+2018-12-11 17:04:31.073 JST [1563] FATAL:  database "e-navigator_development" does not exist
+2018-12-11 17:05:35.237 JST [1600] FATAL:  database "e-navigator_development" does not exist
+2018-12-11 17:07:37.343 JST [1620] FATAL:  database "e-navigator_development" does not exist
