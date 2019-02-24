@@ -9,6 +9,22 @@
   </head>
 
   <body>
+    
+    <header>
+            <nav>
+                <% if user_signed_in? %>
+                <strong><%= link_to 'UserTop', homes_show_path %></strong>
+                <%= link_to 'EditProfile', edit_user_registration_path %>
+                <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+            　　<% else %>
+                <%= link_to 'SignUp', new_user_registration_path %>
+                <%= link_to 'Login', new_user_session_path %>
+                <% end %>
+            </nav>
+    </header>
+    
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
