@@ -44,9 +44,3 @@
    color: #f88;
    text-decoration: underline;
  }
-
- /* メニューバーのリンク（現在のページ） */
- nav.menubar span {
-   color: #ff8;
-   font-weight: bold;
- }
