@@ -13,3 +13,40 @@
  *= require_tree .
  *= require_self
  */
+
+
+ /* メニューバー */
+ nav.menubar {
+   padding: 2px;
+   background-color: #000;
+   color: #ccc;
+   font-size: 80%;
+   padding: 8px 16px;
+ }
+
+ nav.menubar ul li:not(:last-child):after {
+   color: #ccc;
+   content: " | ";
+   margin: 0 2px;
+ }
+
+ /* メニューバーのリンク */
+ nav.menubar a { text-decoration: none; }
+
+ /* メニューバーのリンク（未訪問） */
+ nav.menubar a:link { color: #ccc; }
+
+ /* メニューバーのリンク（訪問済） */
+ nav.menubar a:visited { color: #ccc; }
+
+ /* メニューバーのリンク（マウスを合わせたとき） */
+ nav.menubar a:hover {
+   color: #f88;
+   text-decoration: underline;
+ }
+
+ /* メニューバーのリンク（現在のページ） */
+ nav.menubar span {
+   color: #ff8;
+   font-weight: bold;
+ }

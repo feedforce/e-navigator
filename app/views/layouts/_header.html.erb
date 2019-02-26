@@ -1,0 +1,7 @@
+<% if user_signed_in?	%>
+  <nav class="menubar">
+    <%= link_to "e-Navigator", root_path %>
+    <%= link_to "プロフィール編集", edit_user_path(current_user) %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: '本当によろしいですか?' } %>
+  </nav>
+<% end %>

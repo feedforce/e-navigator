@@ -1,0 +1,29 @@
+<% @page_title = "ユーザー情報" %>
+<h2><%= @page_title %></h2>
+
+<% if @users.present? %>
+  <table class="list">
+    <thead>
+      <tr>
+        <th>氏名</th>
+        <th>e-mail</th>
+        <th>生年月日</th>
+        <th>性別</th>
+        <th>大学名</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td style="text-align: center"><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.birthday %></td>
+          <td><%= user.sex %></td>
+          <td><%= user.school %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>会員情報がありません。</p>
+<% end %>

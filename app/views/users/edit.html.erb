@@ -1,0 +1,32 @@
+<% @page_title = "プロフィール編集" %>
+<h2><%= @page_title %></h2>
+
+<%= form_for(@user) do |f| %>
+  <div class="field">
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name %>
+  </div>
+
+    <div class="field">
+    <%= f.label :email, "メール" %>
+    <%= f.email_field :email, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday, "生年月日" %>
+    <%= f.date_select :birthday, user_month_numbers: true, start_year: 1988, end_year: 2000, include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sex, "性別" %>
+    <%= f.select :sex, User.sexes.keys %>
+  </div>
+
+  <div class="field">
+    <%= f.label :school, "学校名" %>
+    <%= f.text_field :school %>
+  </div>
+  <div class="actions">
+    <%= f.submit "登録" %>
+  </div>
+<% end %>
