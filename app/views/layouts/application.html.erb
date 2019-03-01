@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ENavigator</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>InterviewScheduler</title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
   <body>
-    <%= yield %>
-  </body>
+        <header>
+            <nav>
+                <strong><%= link_to "e-Navigator", index_path %></strong>
+                <% if user_signed_in? %>
+                <%= link_to 'プロフィール', profile_edit_path(current_user.id) %>
+                <%= link_to '自分の面接一覧' %>
+                <%= link_to 'メール' %>
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+            <% else %>
+                <%= link_to 'サインアップ', new_user_registration_path %>
+                <%= link_to 'ログイン', new_user_session_path %>
+                <% end %>
+            </nav>
+        </header>
+
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+        <%= yield %>
+    </body>
 </html>

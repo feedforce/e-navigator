@@ -1,0 +1,37 @@
+<%= form_for current_user, url: {action: 'profile_update'} do |f| %>
+ 
+ <h1>プロフィールページ</h1>
+ 
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :名前 %><br />
+    <%= f.text_field :username %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :年齢 %><br />
+    <%= f.date_select(
+        :birthdate,
+        start_year: 1989,
+        end_year: (Time.now.year - 18),
+        default: Date.new(1989, 1, 1)) %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :性別 %><br />
+    <%= f.select :gender, User.genders_i18n.keys.map {|k| [User.genders_i18n[k], k]} %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :学校名 %><br />
+    <%= f.text_field :school %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>

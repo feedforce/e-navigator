@@ -1,0 +1,39 @@
+<% if user_signed_in? %>
+<h1>ユーザー一覧</h1>
+ <div class="profile_list">
+   <table>
+     <theader>
+       <tr>
+         <th>名前</th><th>Email</th><th>年齢</th><th>性別</th><th>学校名</th><th>面接日時</th>
+       </tr>
+     </theader>
+     <tbody>
+       <% @users.each do |user| %>
+         <tr>
+           <td>
+             <%= user.username %>
+           </td>
+           <td>
+             <%= user.email %>
+           </td>
+           <td>
+             <% if user.birthdate.present? %>
+             <%= (Date.today.strftime('%Y%m%d').to_i - user.birthdate.strftime('%Y%m%d').to_i) / 10000%>
+             <% else %>
+             <% nil %>
+             <% end %>
+           </td>
+           <td>
+             <%= user.gender %>
+           </td>
+           <td>
+             <%= user.school%>
+           </td>
+         </tr>
+       <% end %>
+     </tbody>
+   </table>
+</div>
+<% else %>
+<p>トップページです。</p>
+<% end %>
