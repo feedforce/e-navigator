@@ -14,8 +14,8 @@ html
         - if user_signed_in?
           li.nav-item= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link'
     .container
-      p.notice
-        = notice
-      p.alert
-        = alert
+      - if flash.notice.present?
+        .alert.alert-success= flash.notice
+      - if flash.alert.present?
+        .alert.alert-success= flash.alert
       = yield
