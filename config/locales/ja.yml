@@ -11,12 +11,20 @@ ja:
       user:
         name: 名前
         email: メールアドレス
+        birth_date: 年齢
+        sex: 性別
+        school: 学校名
         admin: 管理者権限
         password: パスワード
         password_confirmation: パスワード（確認）
         created_at: 登録日時
         updated_at: 更新日時
         remember_me: ログインを記憶する
+  enums:
+    user:
+      sex:
+        woman: 女性
+        man: 男性
   date:
     abbr_day_names:
     - 日

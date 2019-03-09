@@ -52,3 +52,5 @@ gem 'html2slim'
 gem 'bootstrap'
 
 gem 'devise'
+
+gem 'enum_help'
