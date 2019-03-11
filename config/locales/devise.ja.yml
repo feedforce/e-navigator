@@ -1,66 +1,57 @@
 ja:
-  errors:
-    messages:
-      not_found: "は見つかりませんでした"
-#      not_found: "not found"
-      already_confirmed: "は既に登録済みです"
-#      already_confirmed: "was already confirmed"
-      not_locked: "は凍結されていません"
-#      not_locked: "was not locked"
-
   devise:
-    failure:
-      already_authenticated: '既にログインしています。'
-#      already_authenticated: "You are already signed in."
-      unauthenticated: 'ログインしてください。'
-#      unauthenticated: 'You need to sign in or sign up before continuing.'
-      unconfirmed: '本登録を行ってください。'
-#      unconfirmed: 'You have to confirm your account before continuing.'
-      locked: 'あなたのアカウントは凍結されています。'
-#      locked: 'Your account is locked.'
-      invalid: 'メールアドレスかパスワードが違います。'
-#      invalid: 'Invalid email or password.'
-      invalid_token: '認証キーが不正です。'
-#      invalid_token: 'Invalid authentication token.'
-      timeout: 'セッションがタイムアウトしました。もう一度ログインしてください。'
-#      timeout: 'Your session expired, please sign in again to continue.'
-      inactive: 'アカウントがアクティベートされていません。'
-#      inactive: 'Your account was not activated yet.'
-    sessions:
-      signed_in: 'ログインしました。'
-#      signed_in: 'Signed in successfully.'
-      signed_out: 'ログアウトしました。'
-#      signed_out: 'Signed out successfully.'
-    passwords:
-      send_instructions: 'パスワードのリセット方法を数分以内にメールでご連絡します。'
-#      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
-      updated: 'パスワードを変更しました。'
-#      updated: 'Your password was changed successfully. You are now signed in.'
     confirmations:
-      send_instructions: '登録方法を数分以内にメールでご連絡します。'
-#      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
-      confirmed: 'アカウントを登録しました。'
-#      confirmed: 'Your account was successfully confirmed. You are now signed in.'
-    registrations:
-      signed_up: 'アカウント登録を受け付けました。確認のメールをお送りします。'
-#      signed_up: 'You have signed up successfully. If enabled, a confirmation was sent to your e-mail.'
-      updated: 'アカウントを更新しました。'
-#      updated: 'You updated your account successfully.'
-      destroyed: 'アカウントを削除しました。またのご利用をお待ちしております。'
-#      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
-    unlocks:
-      send_instructions: 'アカウントの凍結解除方法を数分以内にメールでご連絡します。'
-#      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
-      unlocked: 'アカウントを凍結解除しました。'
-#      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+      confirmed: "アカウントが確認されました。ログインしています。"
+      send_instructions: "アカウントの確認方法を数分以内にメールでご連絡します。"
+      send_paranoid_instructions: "ご登録のメールアドレスが保存されている場合、アカウントの確認方法をメールでご連絡します。"
+    failure:
+      already_authenticated: "既にログインしています。"
+      inactive: "Your account is not activated yet."
+      invalid: "Invalid email or password."
+      locked: "アカウントがロックされています。"
+      last_attempt: "あなたのアカウントがロックされる前に、もう1つの試みを持っています。"
+      not_found_in_database: "メールアドレスまたはパスワードが無効です。"
+      timeout: "一定時間が経過したため、再度ログインが必要です"
+      unauthenticated: "ログインまたは登録が必要です。"
+      unconfirmed: "本登録を行ってください。"
     mailer:
       confirmation_instructions:
-        subject: 'アカウントの登録方法'
-#        subject: 'Confirmation instructions'
+        subject: "アカウントの登録方法"
       reset_password_instructions:
-        subject: 'パスワードの再設定'
-#        subject: 'Reset password instructions'
+        subject: "パスワードの再設定"
       unlock_instructions:
-        subject: 'アカウントの凍結解除'
-#        subject: 'Unlock Instructions'
-
+        subject: "アカウントのロック解除"
+    omniauth_callbacks:
+      failure: "%{kind} から承認されませんでした。理由：%{reason}"
+      success: "%{kind} から承認されました。"
+    passwords:
+      no_token: "このページにアクセスする事が出来ません。正しいURLでアクセスしている事を確認して下さい。"
+      send_instructions: "パスワードのリセット方法を数分以内にメールでご連絡します。"
+      send_paranoid_instructions: ""
+      updated: "パスワードを変更しました。"
+      updated_not_active: "パスワードを変更しました。"
+    registrations:
+      destroyed: "アカウントを削除しました。またのご利用をお待ちしております。"
+      signed_up: "アカウント登録を受け付けました。"
+      signed_up_but_inactive: "アカウントは登録されていますが、アクティブになっていないため利用できません。"
+      signed_up_but_locked: "アカウントは登録されていますが、ロックされているため利用できません。"
+      signed_up_but_unconfirmed: "確認メールを登録したメールアドレス宛に送信しました。リンクを開いてアカウントを有効にして下さい。"
+      update_needs_confirmation: "アカウント情報が更新されました。更新の確認メールを新しいメールアドレス宛に送信しましたので、リンクを開いて更新を有効にして下さい。"
+      updated: "アカウントが更新されました。"
+    sessions:
+      signed_in: "ログインしました。"
+      signed_out: "ログアウトしました。"
+    unlocks:
+      send_instructions: "アカウントのロックを解除する方法を数分以内にメールでご連絡します。"
+      send_paranoid_instructions: "アカウントが存在する場合、ロックを解除する方法をメールでご連絡します。"
+      unlocked: "アカウントのロックが解除されました。ログインしています。"
+  errors:
+    messages:
+      already_confirmed: "は既に登録済みです。ログインしてください"
+      confirmation_period_expired: "%{period}以内に確認する必要がありますので、新しくリクエストしてください。"
+      expired: "有効期限切れです。新規登録してください。"
+      not_found: "は見つかりませんでした。"
+      not_locked: "ロックされていません。"
+      not_saved:
+        one: "エラーにより、この %{resource} を保存できません："
+        other: "%{count} 個のエラーにより、この %{resource} を保存できません："
