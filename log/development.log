@@ -1805,3 +1805,40 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for 160.13.117.47 at 2019-03-13 16:19:14 +0000
+Cannot render console from 160.13.117.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (49.3ms)
+Completed 200 OK in 75ms (Views: 68.5ms | ActiveRecord: 4.4ms)
+
+
+Started DELETE "/users/sign_out" for 160.13.117.47 at 2019-03-13 16:19:17 +0000
+Cannot render console from 160.13.117.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HLjf5ReA1+B50KzUNklsnoMmxqNl2O6XuO2tO6BbioJRKQakkIYwu55xe/Gsc/PLokvATTiU8g6h4k3lp3PDIg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://691263ccfb76469796bf00f7ecc78e4a.vfs.cloud9.ap-southeast-1.amazonaws.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 160.13.117.47 at 2019-03-13 16:19:17 +0000
+Cannot render console from 160.13.117.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 160.13.117.47 at 2019-03-13 16:19:19 +0000
+Cannot render console from 160.13.117.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
