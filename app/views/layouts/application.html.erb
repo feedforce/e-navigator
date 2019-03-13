@@ -9,6 +9,22 @@
   </head>
 
   <body>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
+    <h1>Rails Practice</h1>
+    
+    <% if current_user %>
+      <%= link_to "登録内容の変更", edit_user_registration_path %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: "delete" %>
+    <% else%>
+      <%= link_to "ユーザー登録", new_user_registration_path %>
+      <%= link_to "ログイン", new_user_session_path %>
+    <% end%>
+
+<br>
     <%= yield %>
   </body>
 </html>

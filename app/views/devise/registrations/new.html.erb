@@ -1,0 +1,50 @@
+<h2>新規登録</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <h3>名前</h3> <br />
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <h3>性別</h3><br>
+    
+    <%= f.radio_button(:gender, 0) %>　男性
+    <%= f.radio_button(:gender, 1) %>　女性
+  </div>
+  
+  <div class="field">
+    <h3>誕生日</h3><br>
+    <%= f.date_select :birth , :use_month_numbers => true , :start_year => 1950, :end_year => 2019 %>
+  </div>
+  
+  <div class="field">
+    <h3>学校名</h3><br>
+    <%= f.text_field :school %>
+  </div>
+
+  <div class="field">
+    <h3>メールアドレス</h3><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <h3>パスワード</h3>
+    <small>パスワードは6文字以上入力してください</small>
+    <br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <h3>確認のため、もう一度パスワードを入力してください</h3><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "登録" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

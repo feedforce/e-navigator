@@ -1,0 +1,14 @@
+<h1>登録情報ホーム</h1>
+<% if current_user %>
+<strong>メールアドレス：<%= current_user.email %></strong>.<br>
+<strong>名前：<%= current_user.name %></strong>.<br>
+<strong>生年月日：<%= current_user.birth.strftime("%Y年%m月%d日") %></strong>.<br>
+<strong>性別：
+  <%= gender_check(current_user.gender) %>
+</strong>.<br>
+<strong>学校名：<%= current_user.school %></strong>.<br>
+
+<% else%>
+<br>
+<h3>ログインをしてください</h3>
+<% end%>

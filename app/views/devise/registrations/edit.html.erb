@@ -1,0 +1,52 @@
+<h2>登録内容の編集</h2>
+<hr>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+   <h3>メールアドレス</h3>
+    <%= f.email_field :email, autofocus: true ,autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+  
+    <div class="field">
+    <h3>名前</h3> 
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <h3>性別</h3>
+    <%= f.radio_button(:gender, 0) %>　男性
+    <%= f.radio_button(:gender, 1) %>　女性
+  </div>
+  
+  <div class="field">
+    <h3>誕生日</h3>
+    <%= f.date_select :birth , :use_month_numbers => true , :start_year => 1950, :end_year => 2019 %>
+  </div>
+  
+  <div class="field">
+    <h3>学校名</h3>
+    <%= f.text_field :school %>
+  </div>
+
+  <div class="field">
+    <h3>現在のパスワード</h3> <i>登録した内容変更をするために、現在のパスワードが必要です</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+  <br>
+
+  <div class="actions">
+    <%= f.submit "変更" %>
+  </div>
+<% end %>
+
+<hr>
+<h3>アカウントの削除</h3>
+
+<p>以下のボタンをクリックすると、このアカウントを削除します。 <%= button_to "削除", registration_path(resource_name), data: { confirm: "本当に削除しますか?" }, method: :delete %></p>
+
+<%= link_to "戻る", :back %>
