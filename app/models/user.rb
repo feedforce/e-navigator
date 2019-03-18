@@ -7,4 +7,6 @@ class User < ApplicationRecord
   validates :name, length: {maximum: 30}
   validates :school, length: {maximum: 50}
   enum sex: { woman: 0, man: 1 }
+
+  has_many :interviews
 end
