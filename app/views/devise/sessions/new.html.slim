@@ -1,0 +1,18 @@
+h2
+  | ログイン
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .field
+    = f.label :email
+    br
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+  .field
+    = f.label :password
+    br
+    = f.password_field :password, autocomplete: "current-password", class: 'form-control'
+  - if devise_mapping.rememberable?
+    .field
+      = f.check_box :remember_me
+      = f.label :remember_me
+  .actions
+    = f.submit "ログイン", class: 'btn btn-success'
+= render "devise/shared/links"

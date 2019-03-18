@@ -1,0 +1,25 @@
+h2
+  | プロフィールページ
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :email
+    br
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+    = f.label :name
+    br
+    = f.text_field :name, autofocus: true, class: 'form-control'
+    = f.label :birth_date
+    br
+    = f.date_select :birth_date, {start_year: 1989, end_year: 2001}, autofocus: true, class: 'form-control bootstrap-date-ajust'
+    br
+    = f.label :sex
+    br
+    = f.select :sex, User.sexes_i18n.keys.map {|k| [User.sexes_i18n[k], k]}, {}, autofocus: true, class: 'form-control bootstrap-sex-ajust'
+    = f.label :school
+    br
+    = f.text_field :school, autofocus: true, class: 'form-control'
+    br
+  .actions
+    = f.submit "登録する", class: 'btn btn-success'
+

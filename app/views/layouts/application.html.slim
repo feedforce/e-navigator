@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title
+      | ENavigator
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  body
+    .app-title.navbar.navbar-expand-md.navbar-light.bg-light
+      .navbar-brand e-Navigator
+
+      ul.navbar-nav.ml-auto
+        - if user_signed_in?
+          li.nav-item= link_to 'プロフィール', edit_user_registration_path, class: 'nav-link'
+          li.nav-item= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link'
+    .container
+      - if flash.notice.present?
+        .alert.alert-success= flash.notice
+      - if flash.alert.present?
+        .alert.alert-success= flash.alert
+      = yield
