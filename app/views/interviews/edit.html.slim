@@ -1,8 +1,3 @@
 h1 面接編集
 
-=form_with model: @interview, url: [@user, @interview] , local: true do |f|
-  .form-group
-    = f.label :start_datetime
-    br
-    = f.datetime_select :start_datetime, {}, class: 'form-control', id: 'interview_start_time'
-  = f.submit nil, class: 'btn btn-primary'
+=render partial: 'form', locals: { interview: @interview, user: @user }

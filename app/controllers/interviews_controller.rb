@@ -1,5 +1,5 @@
 class InterviewsController < ApplicationController
-  before_action :correct_user, only: [destroy]
+  before_action :correct_user, only: [:destroy]
 
   def index
     @user = User.find(params[:user_id])
@@ -37,8 +37,8 @@ class InterviewsController < ApplicationController
 
   def destroy
     #interview = Interview.find(params[:id])
-    interview.destroy
-    redirect_to user_interviews_path(user_id: interview.user.id), notice: "面接日程を削除しました。"
+    @interview.destroy
+    redirect_to user_interviews_path(user_id: @interview.user.id), notice: "面接日程を削除しました。"
   end
 
   private
