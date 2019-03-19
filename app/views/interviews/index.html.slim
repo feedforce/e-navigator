@@ -7,13 +7,15 @@ table.table.table-hover
       th= Interview.human_attribute_name(:start_datetime)
       th= Interview.human_attribute_name(:status)
       th
+      th
     tbody
       - @interviews.each do |interview|
         tr
           td= interview.start_datetime.to_s(:ja)
           td= interview.status_i18n
           td
-            = link_to '編集', edit_user_interview_path(id: interview.id), class: 'btn btn-default'
+            = link_to '編集', edit_user_interview_path(id: interview.id), class: 'btn btn-secondary'
+          td
             = link_to '削除', user_interview_path(id: interview.id), method: :delete, data: { confirm: "面接日程を削除します。よろしいですか？" }, class: 'btn btn-danger'
 
 
