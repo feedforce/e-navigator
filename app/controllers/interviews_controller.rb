@@ -17,16 +17,23 @@ class InterviewsController < ApplicationController
 
   def create
     @interview = current_user.interviews.build(interview_params)
-    @interview.save!
-    redirect_to user_interview_path(current_user, @interview), notice: "面接が作成されました。"
+    
+    if @interview.save
+      redirect_to user_interview_path(current_user, @interview), notice: "面接が作成されました。"
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-    @interview.update!(interview_params)
-    redirect_to user_interview_path(current_user.id, @interview), notice: "面接が更新されました。"
+    if @interview.update(interview_params)
+      redirect_to user_interview_path(current_user.id, @interview), notice: "面接が更新されました。"
+    else
+      render :edit
+    end
   end
 
   def destroy
