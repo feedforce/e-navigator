@@ -1,5 +1,5 @@
 class InterviewsController < ApplicationController
-  before_action :correct_user, only: [:edit,:update,:destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
     @user = User.find(params[:user_id])
@@ -18,7 +18,7 @@ class InterviewsController < ApplicationController
   def create
     @interview = current_user.interviews.build(interview_params)
     @interview.save!
-    redirect_to user_interview_path(user_id: current_user.id, id: @interview.id), notice: "面接が作成されました。"
+    redirect_to user_interview_path(current_user, @interview), notice: "面接が作成されました。"
   end
 
   def edit
@@ -26,12 +26,12 @@ class InterviewsController < ApplicationController
 
   def update
     @interview.update!(interview_params)
-    redirect_to user_interview_path(user_id: current_user.id, id: @interview.id), notice: "面接が更新されました。"
+    redirect_to user_interview_path(current_user.id, @interview), notice: "面接が更新されました。"
   end
 
   def destroy
     @interview.destroy
-    redirect_to user_interviews_path(user_id: @interview.user.id), notice: "面接日程を削除しました。"
+    redirect_to user_interviews_path(@interview.user), notice: "面接日程を削除しました。"
   end
 
   private
