@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+
   root to: 'users#index'
 
-  resources :users, only: [:index, :edit, :update]
+  resources :users, only: [:index, :edit, :update] do
+      resources :interviews
+  end
 
   devise_for :users, controllers: {
     registrations: 'users/registrations'

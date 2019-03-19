@@ -1,0 +1,20 @@
+h1 #{@user.name}さんの面接一覧
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th= Interview.human_attribute_name(:start_datetime)
+      th= Interview.human_attribute_name(:status)
+      th
+    tbody
+      - @interviews.each do |interview|
+        tr
+          td= interview.start_datetime.to_s(:ja)
+          td= interview.status_i18n
+          td
+            = link_to '編集', edit_user_interview_path(id: interview.id), class: 'btn btn-default'
+            = link_to '削除', user_interview_path(id: interview.id), method: :delete, data: { confirm: "面接日程を削除します。よろしいですか？" }, class: 'btn btn-danger'
+
+
+=link_to '新規面接作成', new_user_interview_path, class: 'btn btn-primary'

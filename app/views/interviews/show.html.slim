@@ -1,0 +1,3 @@
+p 開始時間: #{@interview.start_datetime.to_s(:ja)}
+p 承認状態: #{@interview.status_i18n}
+= link_to '面接一覧へ', user_interviews_path(user_id: @user.id), class: 'btn btn-primary'

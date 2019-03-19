@@ -20,11 +20,19 @@ ja:
         created_at: 登録日時
         updated_at: 更新日時
         remember_me: ログインを記憶する
+      interview:
+        start_datetime: 開始時間
+        status: 承認状態
   enums:
     user:
       sex:
         woman: 女性
         man: 男性
+    interview:
+      status:
+        reservation: 保留
+        rejection: 却下
+        approval: 承認
   date:
     abbr_day_names:
     - 日
