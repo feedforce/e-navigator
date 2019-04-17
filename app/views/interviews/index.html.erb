@@ -39,7 +39,7 @@
     <%= form_tag(action: :select_approver, method: :post) do %>
       <%= label_tag :申請先選択 %>
       <br>
-      <%= select_tag :email, options_for_select(@users.map{|user| [user.email]}) %>
+      <%= select_tag :email, options_for_select(@email) %>
       <br>
       <%= submit_tag :申請 %>
     <% end %>

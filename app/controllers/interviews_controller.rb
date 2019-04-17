@@ -7,7 +7,7 @@ class InterviewsController < ApplicationController
     @interviews = @user.interviews.order(datetime: 'asc')
     @approved_interview = @interviews.find_by(status: 1)
     # form_tag用に他ユーザー情報を代入します
-    @users = User.where.not(id: current_user.id)
+    @email = User.where.not(id: current_user.id).pluck(:email)
   end
 
   # GET /users/:user_id/interviews/new
@@ -97,7 +97,7 @@ class InterviewsController < ApplicationController
     def interview_params
       params.require(:interview).permit(:datetime)
     end
-    
+
     # form_tagに変えたので、.require(:user)を削除しました
     def approver_params
       params.permit(:email)
