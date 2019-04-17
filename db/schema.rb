@@ -12,13 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2018_04_17_193220) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "interviews", force: :cascade do |t|
     t.datetime "datetime"
     t.integer "status", default: 0
-    t.bigint "user_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id", "created_at"], name: "index_interviews_on_user_id_and_created_at"
@@ -34,8 +31,8 @@ ActiveRecord::Schema.define(version: 2018_04_17_193220) do
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
+    t.integer "current_sign_in_ip"
+    t.integer "last_sign_in_ip"
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -51,5 +48,4 @@ ActiveRecord::Schema.define(version: 2018_04_17_193220) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "interviews", "users"
 end
