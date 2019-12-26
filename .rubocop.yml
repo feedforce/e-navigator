@@ -5,6 +5,8 @@ Style/AsciiComments:
 # 一行に 120 文字まで書いても OK とする
 Metrics/LineLength:
   Max: 120
+  Exclude:
+    - 'config/initializers/devise.rb'
 
 # クラスをincludeする前にコメントしなくても良い
 Documentation:
