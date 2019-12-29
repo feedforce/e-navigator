@@ -18,3 +18,8 @@ Style/MixinUsage:
   Enabled: true
   Exclude:
     - 'bin/**/*'
+
+# マイグレーションファイルのメソッドの長さは除外
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'  

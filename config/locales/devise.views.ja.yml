@@ -7,8 +7,18 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+        school: "学校名"
+        birth: "生年月日"
+        name: "名前"
+        gender: "性別"
     models:
       user: "ユーザ"
+  enums:
+    user:
+      gender:
+        female: "女性"
+        male: "男性"
+        other: "その他"
   devise:
     confirmations:
       new:
