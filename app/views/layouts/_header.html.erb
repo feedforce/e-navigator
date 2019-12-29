@@ -1,0 +1,11 @@
+<header>
+  <%= link_to "e-Navigator", "#", class: "logo" %>
+  <%= link_to "ホーム", "#", class: "button" %>
+  <% if user_signed_in? %>
+    <%= link_to "プロフィール", "#", class: "button" %>
+    <%= link_to "面接一覧", "#", class: "button" %>
+    <%= link_to "ログアウト", logout_path, class: "button", method: :delete %>
+  <% else %>
+    <%= link_to "ログイン", logout_path, class: "button", method: :delete %>
+  <% end %>
+</header>
