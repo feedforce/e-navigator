@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>プロフィール編集</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -32,11 +32,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> (変更しない場合は入力不要です)<br />
+    <%= f.label :password %> (<%= @minimum_password_length %>文字以上/変更しない場合は入力不要)<br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> 文字以上</em>
+      <em></em>
     <% end %>
   </div>
 
@@ -46,7 +46,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> (プロフィールを変更するにはパスワードの入力が必要です)<br />
+    <%= f.label :current_password %> (プロフィールを変更時入力必須)<br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
@@ -58,5 +58,3 @@
 <h3>アカウント削除</h3>
 
 <%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "本当によろしいですか？" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
