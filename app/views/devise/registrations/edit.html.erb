@@ -4,27 +4,27 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :name, autofocus: true, value: current_user.name %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
+    <%= f.email_field :email, value: current_user.email, autocomplete: "email" %>
   </div>
 
   <div class="field">
     <%= f.label :birth %><br />
-    <%= f.date_select :birth, autocomplete: "birth" %>
+    <%= f.date_select :birth, start_year: 1950, value: current_user.birth %>
   </div>
 
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.select :gender, User.genders_i18n.invert %>
+    <%= f.select :gender, User.genders_i18n.invert, value: current_user.gender %>
   </div>
 
   <div class="field">
     <%= f.label :school %><br />
-    <%= f.text_field :school, autocomplete: "school" %>
+    <%= f.text_field :school, autocomplete: "school", value: current_user.school %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -42,12 +42,12 @@
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation %>
   </div>
 
   <div class="field">
     <%= f.label :current_password %> (プロフィールを変更時入力必須)<br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <%= f.password_field :current_password %>
   </div>
 
   <div class="actions">
