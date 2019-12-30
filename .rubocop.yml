@@ -22,4 +22,9 @@ Style/MixinUsage:
 # マイグレーションファイルのメソッドの長さは除外
 Metrics/MethodLength:
   Exclude:
-    - 'db/migrate/*'  
+    - 'db/migrate/*'
+
+# deviseコントローラの定義はネストで定義しなくてもOK
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'app/controllers/users/*'

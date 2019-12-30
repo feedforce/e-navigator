@@ -24,7 +24,7 @@
 
   <div class="field">
     <%= f.label :school %><br />
-    <%= f.text_field :school, autocomplete: "school", value: current_user.school %>
+    <%= f.text_field :school, value: current_user.school %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
