@@ -1,3 +1,15 @@
+# 自動生成されるファイルは基本的に除外する
+AllCops:
+  Exclude:
+    # Rails が書き出しているファイルなので無視
+    - 'vendor/**/*'
+    - 'db/schema.rb'
+    - 'bin/*'
+    - 'tmp/**/*'
+    # rspec が書き出しているファイルなので無視
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+
 # 日本語のコメントを OK とする
 Style/AsciiComments:
   Enabled: false
