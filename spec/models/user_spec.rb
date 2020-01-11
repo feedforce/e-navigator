@@ -15,19 +15,19 @@ RSpec.describe User, type: :model do
     it 'is invalid without email' do
       user = FactoryBot.build(:user, email: nil)
       user.valid?
-      expect(user.errors[:email]).to include('を入力してください')
+      expect(user.errors[:email]).to include(I18n.t('errors.messages.blank'))
     end
 
     it 'is invalid without password' do
       user = FactoryBot.build(:user, password: nil)
       user.valid?
-      expect(user.errors[:password]).to include('を入力してください')
+      expect(user.errors[:password]).to include(I18n.t('errors.messages.blank'))
     end
 
     it 'is invalid without short password' do
       user = FactoryBot.build(:user, password: 'a' * 5)
       user.valid?
-      expect(user.errors[:password]).to include('は6文字以上で入力してください')
+      expect(user.errors[:password]).to include(I18n.t('errors.messages.too_short', count: 6))
     end
   end
 end
