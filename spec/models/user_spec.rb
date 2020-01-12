@@ -24,7 +24,7 @@ RSpec.describe User, type: :model do
       expect(user.errors[:password]).to include(I18n.t('errors.messages.blank'))
     end
 
-    it 'is invalid without short password' do
+    it 'is invalid with a short password' do
       user = FactoryBot.build(:user, password: 'a' * 5)
       user.valid?
       expect(user.errors[:password]).to include(I18n.t('errors.messages.too_short', count: 6))
