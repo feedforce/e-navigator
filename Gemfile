@@ -26,7 +26,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
 gem 'enum_help'
-gem 'rails-i18n'
 gem 'uglifier'
 
 group :development, :test do
