@@ -1,0 +1,42 @@
+# 自動生成されるファイルは基本的に除外する
+AllCops:
+  Exclude:
+    # Rails が書き出しているファイルなので無視
+    - 'vendor/**/*'
+    - 'db/schema.rb'
+    - 'bin/*'
+    - 'tmp/**/*'
+    # rspec が書き出しているファイルなので無視
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+
+# 日本語のコメントを OK とする
+Style/AsciiComments:
+  Enabled: false
+
+# 一行に 120 文字まで書いても OK とする
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+    - 'config/initializers/devise.rb'
+
+# クラスをincludeする前にコメントしなくても良い
+Documentation:
+  Enabled: false
+
+# binディレクトリはincludeを文頭に置かなくてもOK
+Style/MixinUsage:
+  Description: 'Checks that `include`, `extend` and `prepend` exists at the top level.'
+  Enabled: true
+  Exclude:
+    - 'bin/**/*'
+
+# マイグレーションファイルのメソッドの長さは除外
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'
+
+# deviseコントローラの定義はネストで定義しなくてもOK
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'app/controllers/users/*'

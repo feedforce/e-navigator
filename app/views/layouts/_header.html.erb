@@ -1,0 +1,12 @@
+<header>
+  <%= link_to "e-Navigator", "#", class: "logo" %>
+  <% if user_signed_in? %>
+    <%= link_to "ホーム", root_path, class: "button" %>
+    <%= link_to "プロフィール", edit_user_registration_path, class: "button" %>
+    <%= link_to "面接一覧", "#", class: "button" %>
+    <%= link_to "ログアウト", logout_path, class: "button", method: :delete, data: { confirm: "ログアウトしてよろしいですか？" } %>
+  <% else %>
+    <%= link_to "ログイン", login_path, class: "button" %>
+    <%= link_to "アカウント登録", new_user_registration_path, class: "button" %>
+  <% end %>
+</header>

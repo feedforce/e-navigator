@@ -1,3 +1,19 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users,
+             controllers: {
+               registrations: 'users/registrations',
+               sessions: 'users/sessions',
+               passwords: 'users/passwords'
+             }
+  root 'pages#home'
+  get 'pages/index'
+  get 'pages/show'
+
+  devise_scope :user do
+    get 'login', to: 'devise/sessions#new'
+    post 'login', to: 'devise/sessions#create'
+    delete 'logout', to: 'devise/sessions#destroy'
+  end
 end
