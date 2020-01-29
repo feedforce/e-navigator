@@ -16,10 +16,6 @@ ActiveRecord::Schema.define(version: 2020_01_27_101651) do
   enable_extension "plpgsql"
 
   create_table "interviews", force: :cascade do |t|
-    t.datetime "schedule"
-    t.boolean "attendable"
-    t.integer "interviewer_id"
-    t.integer "interviewee_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
