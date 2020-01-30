@@ -1,2 +1,17 @@
-<h1>Interviews#new</h1>
-<p>Find me in app/views/interviews/new.html.erb</p>
+<h2>面接予約</h2>
+
+<%= form_with model: @interview, url: user_interviews_path(current_user), local: true do |f| %>
+  <div class="field">
+    <%= f.label '面接官' %><br />
+    <%= f.collection_select(:interviewer_id, current_user.interviewers, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :scheduled_at %><br />
+    <%= f.datetime_select :scheduled_at, value: Time.now %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "予約" %>
+  </div>
+<% end %>
