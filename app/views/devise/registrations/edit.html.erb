@@ -18,6 +18,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :role %><br />
+    <%= f.select :role, User.roles_i18n.invert, value: current_user.role %>
+  </div>
+
+  <div class="field">
     <%= f.label :gender %><br />
     <%= f.select :gender, User.genders_i18n.invert, value: current_user.gender %>
   </div>
