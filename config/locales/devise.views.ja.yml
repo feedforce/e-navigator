@@ -11,6 +11,7 @@ ja:
         birth: "生年月日"
         name: "名前"
         gender: "性別"
+        role: "役割"
     models:
       user: "ユーザ"
   enums:
@@ -19,6 +20,9 @@ ja:
         female: "女性"
         male: "男性"
         other: "その他"
+      role:
+        member: "メンバー"
+        interviewer: "面接官"
   devise:
     confirmations:
       new:
