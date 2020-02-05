@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum gender: { female: 1, male: 2, other: 3 }
+  enum role: { member: 1, interviewer: 2 }
 
   # 自分以外のユーザを面接官として返す
   def interviewers
