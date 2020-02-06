@@ -10,8 +10,7 @@ class User < ApplicationRecord
   enum gender: { female: 1, male: 2, other: 3 }
   enum role: { member: 1, interviewer: 2 }
 
-  # 自分以外のユーザを面接官として返す
-  def interviewers
-    User.where.not(id: id)
+  def self.interviewers
+    all.where(role: :interviewer)
   end
 end
