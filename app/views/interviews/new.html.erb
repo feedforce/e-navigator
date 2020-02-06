@@ -2,7 +2,7 @@
 
 <%= form_with model: @interview, url: user_interviews_path(current_user), local: true do |f| %>
   <div class="field">
-    <%= f.label '面接官' %><br />
+    <%= f.label :interviewer_id %><br />
     <%= f.collection_select(:interviewer_id, User.interviewers, :id, :name) %>
   </div>
 

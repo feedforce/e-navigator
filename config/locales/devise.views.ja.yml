@@ -12,17 +12,18 @@ ja:
         name: "名前"
         gender: "性別"
         role: "役割"
+      interview:
+        interviewer_id: "面接官"
+        scheduled_at: "面接予定日"
     models:
       user: "ユーザ"
+      interview: "面接"
   enums:
     user:
       gender:
         female: "女性"
         male: "男性"
         other: "その他"
-      role:
-        member: "メンバー"
-        interviewer: "面接官"
   devise:
     confirmations:
       new:
