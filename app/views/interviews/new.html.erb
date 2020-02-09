@@ -3,7 +3,7 @@
 <%= form_with model: @interview, url: user_interviews_path(current_user), local: true do |f| %>
   <div class="field">
     <%= f.label :interviewer_id %><br />
-    <%= f.collection_select(:interviewer_id, User.interviewers, :id, :name) %>
+    <%= f.collection_select(:interviewer_id, User.interviewer, :id, :name) %>
   </div>
 
   <div class="field">
@@ -14,4 +14,4 @@
   <div class="actions">
     <%= f.submit "予約" %>
   </div>
-<% end %>
+<% end %>6

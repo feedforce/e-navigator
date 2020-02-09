@@ -9,8 +9,4 @@ class User < ApplicationRecord
 
   enum gender: { female: 1, male: 2, other: 3 }
   enum role: { member: 1, interviewer: 2 }
-
-  def self.interviewers
-    all.where(role: :interviewer)
-  end
 end
