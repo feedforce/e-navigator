@@ -2,8 +2,10 @@
 
 class AddColumnToInterview < ActiveRecord::Migration[6.0]
   def change
+    add_column :interviews, :user_id, :integer
     add_column :interviews, :interviewer_id, :integer
-    add_column :interviews, :interviewee_id, :integer
-    add_column :interviews, :scheduled_at, :datetime
+    add_column :interviews, :schedule, :datetime
+    remove_column :users, :gender
+    remove_column :users, :role
   end
 end
