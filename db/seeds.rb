@@ -4,7 +4,7 @@ User.create!(
   name: 'Yuma Shiraishi',
   email: 'shiraishi@test.com',
   password: 'password',
-  assword_confirmation: 'password',
+  password_confirmation: 'password',
 )
 
 User.create!(
