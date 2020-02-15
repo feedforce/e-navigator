@@ -54,9 +54,9 @@ CREATE TABLE public.interviews (
     id bigint NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL,
-    interviewer_id integer,
     user_id integer,
-    scheduled_at timestamp without time zone
+    interviewer_id integer,
+    schedule timestamp without time zone
 );
 
 
@@ -189,9 +189,6 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20191226155014'),
 ('20200127101651'),
 ('20200130032708'),
-('20200204161612'),
-('20200205150400'),
-('20200212141952'),
 ('20200213031645');
 
 
