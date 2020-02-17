@@ -5,6 +5,8 @@ User.create!(
   email: 'shiraishi@test.com',
   password: 'password',
   password_confirmation: 'password',
+  gender: 'male',
+  role: 'member',
 )
 
 User.create!(
@@ -12,6 +14,8 @@ User.create!(
   email: 'obata@test.com',
   password: 'password',
   password_confirmation: 'password',
+  gender: 'male',
+  role: 'interviewer',
 )
 
 User.create!(
@@ -19,4 +23,6 @@ User.create!(
   email: 'miyazato@test.com',
   password: 'password',
   password_confirmation: 'password',
+  gender: 'female',
+  role: 'interviewer',
 )
