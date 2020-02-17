@@ -14,7 +14,7 @@ ja:
         role: "役割"
       interview:
         interviewer_id: "面接官"
-        scheduled_at: "面接予定日"
+        schedule: "面接予定日"
     models:
       user: "ユーザ"
       interview: "面接"

@@ -3,5 +3,5 @@
 class Interview < ApplicationRecord
   belongs_to :user
   validates :interviewer_id, presence: true
-  validates :scheduled_at, presence: true
+  validates :schedule, presence: true
 end

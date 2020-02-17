@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_02_13_031645) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "interviewer_id"
     t.integer "user_id"
-    t.datetime "scheduled_at"
+    t.datetime "schedule"
   end
 
 # Could not dump table "users" because of following StandardError
