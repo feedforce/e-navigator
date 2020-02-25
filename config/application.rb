@@ -37,6 +37,6 @@ module ENavigator
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-    config.active_record.schema_format = :sql
+    config.active_record.schema_format = :ruby
   end
 end
