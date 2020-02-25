@@ -10,20 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_031645) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "interviews", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "interviewer_id"
-    t.integer "user_id"
-    t.datetime "schedule"
-  end
-
-# Could not dump table "users" because of following StandardError
-#   Unknown type 'user_gender' for column 'gender'
 
 end
