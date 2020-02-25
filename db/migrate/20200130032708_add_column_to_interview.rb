@@ -5,6 +5,6 @@ class AddColumnToInterview < ActiveRecord::Migration[6.0]
     add_column :interviews, :user_id, :integer
     add_column :interviews, :interviewer_id, :integer
     add_column :interviews, :schedule, :datetime
-    remove_column :users, :gender
+    remove_column :users, :gender, :integer
   end
 end
