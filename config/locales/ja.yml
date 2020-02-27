@@ -77,8 +77,8 @@ ja:
       new:
         sign_in: ログイン
       signed_in: ログインしました
-      signed_out: ログインに失敗しました
-      already_signed_out: ログアウトしました
+      signed_out: ログアウトしました
+      already_signed_out: 既にログアウト済みです
     shared:
       links:
         back: 戻る
