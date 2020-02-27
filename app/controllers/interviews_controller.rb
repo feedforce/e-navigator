@@ -12,6 +12,7 @@ class InterviewsController < ApplicationController
       redirect_to user_interviews_path(current_user)
     else
       flash[:danger] = '面接の予約に失敗しました'
+      render 'new'
     end
   end
 
