@@ -1,6 +1,7 @@
 <h2>面接予約</h2>
 
 <%= form_with model: @interview, url: user_interviews_path(current_user), local: true do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
   <div class="field">
     <%= f.label :interviewer_id %><br />
     <%= f.collection_select(:interviewer_id, User.interviewer, :id, :name) %>
