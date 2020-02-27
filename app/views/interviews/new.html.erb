@@ -8,7 +8,7 @@
 
   <div class="field">
     <%= f.label :schedule %><br />
-    <%= f.datetime_select :schedule, value: Time.now %>
+    <%= f.datetime_select :schedule, minute_step: 15, value: Time.now %>
   </div>
 
   <div class="actions">
