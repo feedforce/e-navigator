@@ -36,6 +36,8 @@ ja:
         resend_confirmation_instructions: アカウント確認メール再送
     failure:
       already_authenticated: 既にログインしています
+      invalid: 不不正な%{authentication_keys}またはパスワードです
+      not_found_in_database: 不正な%{authentication_keys}またはパスワードです
     mailer:
       confirmation_instructions:
         action: アカウント確認
