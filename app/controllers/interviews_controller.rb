@@ -11,7 +11,7 @@ class InterviewsController < ApplicationController
       flash[:success] = '面接を予約しました'
       redirect_to user_interviews_path(current_user)
     else
-      flash[:danger] = '面接の予約に失敗しました'
+      flash[:danger] = '面接の予約に失敗しました。（過去の日付は選択できません）'
       render 'new'
     end
   end
