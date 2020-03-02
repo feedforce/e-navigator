@@ -40,3 +40,13 @@ Metrics/MethodLength:
 Style/ClassAndModuleChildren:
   Exclude:
     - 'app/controllers/users/*'
+
+# 引数や配列やハッシュの最後の値の後につくカンマはそのままでOK
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
