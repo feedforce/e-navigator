@@ -6,11 +6,9 @@ class Interview < ApplicationRecord
   validates :schedule, presence: true
   validate :date_cannot_be_in_the_past
 
+  enum schedule_status: { pending: 'pending', fixed: 'fixed' }
+
   def date_cannot_be_in_the_past
     errors.add(:schedule, 'は過去の日付を選択できません。') if schedule.past?
-  end
-
-  def schedule_status
-    is_fixed ? '確定' : '保留'
   end
 end
