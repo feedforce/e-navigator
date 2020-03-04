@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_141048) do
+ActiveRecord::Schema.define(version: 2020_03_03_124255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 2020_02_25_141048) do
     t.integer "user_id"
     t.integer "interviewer_id"
     t.datetime "schedule"
+    t.string "schedule_status", default: "peding"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
