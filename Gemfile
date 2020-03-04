@@ -26,6 +26,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
 gem 'enum_help'
+gem 'seed-fu'
 gem 'uglifier'
 
 group :development, :test do
