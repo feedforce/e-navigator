@@ -214,6 +214,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    seed-fu (2.3.9)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
     spring (2.1.0)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -271,6 +274,7 @@ DEPENDENCIES
   rspec-rails (= 4.0.0.beta3)
   rubocop
   sass-rails (>= 6)
+  seed-fu
   spring
   spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
