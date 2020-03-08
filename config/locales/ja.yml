@@ -15,6 +15,7 @@ ja:
       interview:
         interviewer_id: 面接官
         schedule: 面接予定日
+        schedule_status: 予約ステータス
     models:
       user: ユーザ
       interview: 面接
@@ -30,6 +31,13 @@ ja:
         female: 女性
         male: 男性
         other: その他
+      role:
+        member: メンバー
+        interviewer: 面接官
+    interview:
+      schedule_status:
+        pending: 保留
+        fixed: 確定
   devise:
     confirmations:
       new:
