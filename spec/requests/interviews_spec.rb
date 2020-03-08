@@ -11,7 +11,7 @@ RSpec.describe InterviewsController, type: :request do
     context 'as an authenticated user' do
       it 'responds successfully' do
         sign_in @user
-        get :new, params: { user_id: @user.id }
+        get new_user_interview_path(@user), params: { user_id: @user.id }
         expect(response).to be_successful
       end
     end
