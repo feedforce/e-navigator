@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_124255) do
     t.integer "user_id"
     t.integer "interviewer_id"
     t.datetime "schedule"
-    t.string "schedule_status", default: "peding"
+    t.string "schedule_status", default: "pending"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

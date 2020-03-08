@@ -2,7 +2,7 @@
 
 class AddColumnToInterview < ActiveRecord::Migration[6.0]
   def change
-    add_column :interviews, :schedule_status, :string, default: 'peding'
+    add_column :interviews, :schedule_status, :string, default: 'pending'
     add_timestamps :interviews, null: true
     long_ago = DateTime.new(2000, 1, 1)
     Interview.update_all(created_at: long_ago, updated_at: long_ago)
