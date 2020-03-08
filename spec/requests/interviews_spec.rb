@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe InterviewsController, type: :controller do
+RSpec.describe InterviewsController, type: :request do
   describe 'GET #new' do
     before do
       @user = FactoryBot.create(:user)
