@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class InterviewsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :correct_user
+
   def new
     @interview = current_user.interviews.build
   end
@@ -28,5 +31,10 @@ class InterviewsController < ApplicationController
 
   def interview_params
     params.require(:interview).permit(:interviewer_id, :schedule)
+  end
+
+  def correct_user
+    @user = User.find(params[:user_id])
+    redirect_to(root_path) unless current_user?(@user)
   end
 end
