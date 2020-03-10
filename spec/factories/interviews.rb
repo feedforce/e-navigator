@@ -2,9 +2,9 @@
 
 FactoryBot.define do
   factory :interview do
-    schedule { '2020-01-27 19:16:51' }
-    attendable { false }
-    interviewer_id { 1 }
-    interviewee_id { 1 }
+    schedule { Time.now.tomorrow }
+    schedule_status { 'pending' }
+    association :user, :member
+    interviewer_id { FactoryBot.create(:user, :interviewer).id }
   end
 end
