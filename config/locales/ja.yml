@@ -222,6 +222,7 @@ ja:
       not_saved: 保存に失敗しました
       odd: は奇数にしてください
       other_than: は%{count}以外の値にしてください
+      past_date: は未来の日付のみを選択してください
       present: は入力しないでください
       required: を入力してください
       taken: はすでに存在します
