@@ -10,6 +10,6 @@ class Interview < ApplicationRecord
   enum schedule_status: { pending: 'pending', fixed: 'fixed' }
 
   def date_cannot_be_in_the_past
-    errors.add(:schedule, I18n.t('errors.messages.past_date')) if schedule.present? && schedule.past?
+    errors.add(:schedule, :past_date) if schedule.present? && schedule.past?
   end
 end
