@@ -18,7 +18,9 @@ class InterviewsController < ApplicationController
     end
   end
 
-  def index; end
+  def index
+    @interviews = current_user.interviews.includes(:user)
+  end
 
   def edit; end
 

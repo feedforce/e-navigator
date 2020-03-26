@@ -9,7 +9,7 @@
     <th>編集</th>
     <th>削除</th>
   </tr>
-<% current_user.interviews.all.each do |interview| %>
+<% @interviews.each do |interview| %>
   <tr>
     <td><%= User.find(interview.interviewer_id).name %></td>
     <td><%= interview.schedule.strftime("%Y-%m-%d %H:%M") %></td>
