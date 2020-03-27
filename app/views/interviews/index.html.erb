@@ -11,7 +11,7 @@
   </tr>
 <% @interviews.each do |interview| %>
   <tr>
-    <td><%= User.find(interview.interviewer_id).name %></td>
+    <td><%= interview.interviewer.name %></td>
     <td><%= interview.schedule.strftime("%Y-%m-%d %H:%M") %></td>
     <td><%= interview.schedule_status_i18n %></td>
     <td><%= interview.created_at.strftime("%Y-%m-%d %H:%M") %></td>
