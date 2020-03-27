@@ -77,6 +77,7 @@ ja:
         cancel_my_account: アカウント削除
         currently_waiting_confirmation_for_email: "%{email} の確認待ち"
         leave_blank_if_you_don_t_want_to_change_it: 空欄のままなら変更しません
+        signed_up: Welcome! You have signed up successfully.
         title: "%{resource}編集"
         unhappy: 気に入りません
         update: 更新
