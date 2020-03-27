@@ -2,6 +2,7 @@
 
 class Interview < ApplicationRecord
   belongs_to :user
+  belongs_to :interviewer, class_name: 'User'
   validates :interviewer_id, presence: true
   validates :schedule, presence: true
   validates :schedule_status, presence: true
