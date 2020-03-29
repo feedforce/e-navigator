@@ -78,4 +78,5 @@ en:
       not_saved:
         one: '1 error prohibited this %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
+      past_date: cannot be in the past
   hello: Hello world

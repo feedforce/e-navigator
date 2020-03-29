@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class InterviewsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @interview = current_user.interviews.build
   end
@@ -16,7 +18,9 @@ class InterviewsController < ApplicationController
     end
   end
 
-  def index; end
+  def index
+    @interviews = current_user.interviews.includes(:user, :interviewer)
+  end
 
   def edit; end
 

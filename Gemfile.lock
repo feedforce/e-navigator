@@ -137,10 +137,16 @@ GEM
     pluginator (1.5.0)
     pre-commit (0.39.0)
       pluginator (~> 1.5)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry-byebug (3.8.0)
+      byebug (~> 11.0)
+      pry (~> 0.10)
     public_suffix (4.0.3)
     puma (4.3.1)
       nio4r (~> 2.0)
-    rack (2.1.0)
+    rack (2.2.2)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.2.1)
@@ -214,6 +220,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    seed-fu (2.3.9)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
     spring (2.1.0)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -266,11 +275,13 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   pre-commit
+  pry-byebug
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.1)
   rspec-rails (= 4.0.0.beta3)
   rubocop
   sass-rails (>= 6)
+  seed-fu
   spring
   spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)

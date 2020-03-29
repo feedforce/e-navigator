@@ -15,6 +15,7 @@ ja:
       interview:
         interviewer_id: 面接官
         schedule: 面接予定日
+        schedule_status: 予約ステータス
     models:
       user: ユーザ
       interview: 面接
@@ -30,6 +31,13 @@ ja:
         female: 女性
         male: 男性
         other: その他
+      role:
+        member: メンバー
+        interviewer: 面接官
+    interview:
+      schedule_status:
+        pending: 保留
+        fixed: 確定
   devise:
     confirmations:
       new:
@@ -75,6 +83,7 @@ ja:
         we_need_your_current_password_to_confirm_your_changes: 変更を反映するには現在のパスワードを入力してください
       new:
         sign_up: アカウント登録
+      signed_up: アカウントが正しく登録されました
     sessions:
       new:
         sign_in: ログイン
@@ -103,7 +112,7 @@ ja:
     - 金
     - 土
     abbr_month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -129,7 +138,7 @@ ja:
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
     month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -214,6 +223,7 @@ ja:
       not_saved: 保存に失敗しました
       odd: は奇数にしてください
       other_than: は%{count}以外の値にしてください
+      past_date: は未来の日付のみを選択してください
       present: は入力しないでください
       required: を入力してください
       taken: はすでに存在します

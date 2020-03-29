@@ -50,3 +50,8 @@ Style/TrailingCommaInHashLiteral:
 
 Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: comma
+
+# テストのブロックは長くてもOK
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
