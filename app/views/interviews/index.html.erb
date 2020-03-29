@@ -19,7 +19,7 @@
       <%= link_to "編集", edit_user_interview_path(current_user, interview) %></p>
     </td>
     <td>
-      <%= link_to "削除", user_interview_path(current_user, interview), method: :delete %></p>
+      <%= link_to "削除", user_interview_path(current_user, interview), data: { confirm: "本当によろしいですか？" }, method: :delete %></p>
     </td>
   </tr>
 <% end %>
