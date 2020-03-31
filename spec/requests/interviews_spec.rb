@@ -49,12 +49,25 @@ RSpec.describe InterviewsController, type: :request do
         delete user_interview_path(user, interview)
         expect(response).to have_http_status '302'
       end
+
+      it 'deletes an interview' do
+        sign_in user
+        expect  do
+          delete user_interview_path(user, interview)
+        end.to change(user.interviews, :count).by(0)
+      end
     end
 
     context 'as an unauthorized' do
       it 'returns 302 response' do
         delete user_interview_path(user, interview)
         expect(response).to have_http_status '302'
+      end
+
+      it 'does not delete an interview' do
+        expect do
+          delete user_interview_path(user, interview)
+        end.to change(user.interviews, :count).by(1)
       end
     end
   end
