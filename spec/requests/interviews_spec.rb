@@ -9,60 +9,47 @@ RSpec.describe InterviewsController, type: :request do
   let(:params) { { interviewer: interviewer, schedule: Time.now.tomorrow, schedule_status: 'pending' } }
 
   describe 'GET #new' do
+    subject { get new_user_interview_path(user), params: { user_id: user.id }; response }
+
     context 'as an authenticated user' do
-      it 'returns 200 response' do
-        sign_in user
-        get new_user_interview_path(user), params: { user_id: user.id }
-        expect(response).to have_http_status '200'
-      end
+      before { sign_in user }
+      it { is_expected.to have_http_status '200' }
     end
 
     context 'as an unauthorized' do
-      it 'returns 302 response' do
-        get new_user_interview_path(user), params: { user_id: user.id }
-        expect(response).to have_http_status '302'
-      end
+      it { is_expected.to have_http_status '302' }
     end
   end
 
   describe 'GET #index' do
+    subject { get user_interviews_path(user); response }
+
     context 'as an authenticated user' do
-      it 'returns 200 response' do
-        sign_in user
-        get user_interviews_path(user)
-        expect(response).to have_http_status '200'
-      end
+      before { sign_in user }
+      it { is_expected.to have_http_status '200' }
     end
 
     context 'as an unauthorized' do
-      it 'returns 302 response' do
-        get user_interviews_path(user)
-        expect(response).to have_http_status '302'
-      end
+      it { is_expected.to have_http_status '302' }
     end
   end
 
   describe 'DELETE #destroy' do
+    subject { delete user_interview_path(user, interview); response }
+
     context 'as an authenticated user' do
-      it 'returns 200 response' do
-        sign_in user
-        delete user_interview_path(user, interview)
-        expect(response).to have_http_status '302'
-      end
+      before { sign_in user }
+      it { is_expected.to have_http_status '302' }
 
       it 'deletes an interview' do
-        sign_in user
-        expect  do
+        expect do
           delete user_interview_path(user, interview)
         end.to change(user.interviews, :count).by(0)
       end
     end
 
     context 'as an unauthorized' do
-      it 'returns 302 response' do
-        delete user_interview_path(user, interview)
-        expect(response).to have_http_status '302'
-      end
+      it { is_expected.to have_http_status '302' }
 
       it 'does not delete an interview' do
         expect do
