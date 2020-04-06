@@ -55,3 +55,7 @@ Style/TrailingCommaInArrayLiteral:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+
+# 同一行に複数のステートメントの記述OK
+Style/Semicolon:
+  AllowAsExpressionSeparator: true
